@@ -1,16 +1,28 @@
 # team-quack
 
+## Objective
+Short term: Classification of error scenarios
+Long term: Pipe this into an LLM for immediate remediation
+
 ## Refs
 - [metrics in self-hosted runners](https://docs.google.com/presentation/d/1Kcf75y1m-UrhYgO_mIXXKIF6zybAyyMYUkyKIdhehNQ/edit?disco=AAAB6G81YuY)
 
-## Tech-stack
+## Deliverables
+- [ ] GH Action
+- [ ] Dashboard -> previous fails
+- [ ] Skills, context files
+- [ ] Telemetry artifacts
+
+## Tasks
+- [ ] rank scope items in terms of value vs. expensiveness
+    - hide the expensive ones behind a flag?
 
 ## Scope
-- We need to rank things in terms of value vs. expensiveness
-    - hide the expensive ones behind an --extra flag?
 - For now, we can have this GH action be manually triggered. In the future, we can have this be dynamically allocated to runs which are failing AND have specific identifiers
+- Pick a flaky charm e.g. otelcol and add the workflow there to start gethering
 
 ### Gather
+- Per CI run, we should always output (artifact) this info on failed runs
 - [ ] telemetry from the runner:
     - logs, metrics, traces
 - [ ] telemetry from the workloads/charms:
@@ -18,13 +30,14 @@
     - e.g. pebble logs
 - [ ] telemetry from infra
     - k8s / ceph / LXD
-- We should always gather this info on any failed run and dump to artifacts
 
 ### Classification
 - skill
 - context / knowledge-base
     - sourced from smaller knowledge bases: distributed per charm?
-- 
+- Gather context from historical data
+    - Is a 1-month artifact retention period enough?
+    - Get the CI status with API
 
 #### Examples / ideas
 - context: the previous hook is re-run in the event that the charm hits error state
