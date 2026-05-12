@@ -1,8 +1,7 @@
 # team-quack
 
 ## Objective
-Short term: Classification of error scenarios
-Long term: Pipe this into an LLM for immediate remediation
+Classification of error scenarios to pipe into an LLM for immediate remediation
 
 ## Refs
 - [metrics in self-hosted runners](https://docs.google.com/presentation/d/1Kcf75y1m-UrhYgO_mIXXKIF6zybAyyMYUkyKIdhehNQ/edit?disco=AAAB6G81YuY)
@@ -10,7 +9,7 @@ Long term: Pipe this into an LLM for immediate remediation
 ## Deliverables
 - [ ] GH Action
 - [ ] Dashboard -> previous fails
-- [ ] Skills, context files
+- [ ] Skills, context files (pytest extension?)
 - [ ] Telemetry artifacts
 
 ## Tasks
