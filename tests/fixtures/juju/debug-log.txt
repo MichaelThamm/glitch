@@ -1,0 +1,103 @@
+my-model: 2025-04-01 10:00:00 INFO juju.worker.apiservercertwatcher certificate has been updated
+my-model: 2025-04-01 10:00:05 WARNING juju.state machine 0 has not finished the bootstrap
+my-model: 2025-04-01 10:00:10 INFO juju.apiserver connection established
+my-model: 2025-04-01 10:00:15 INFO juju.worker.machinelock machine lock acquired
+my-model: 2025-04-01 10:00:20 DEBUG juju.state.open state connection pool created
+my-model: 2025-04-01 10:00:25 INFO juju.worker.uniter unit myapp/0 started
+my-model: 2025-04-01 10:00:30 INFO juju.worker.uniter hooks are running
+my-model: 2025-04-01 10:00:35 WARNING juju.worker.uniter.charm installed hook failed
+my-model: 2025-04-01 10:00:40 ERROR juju.worker.uniter.charm install hook returned exit code 1
+my-model: 2025-04-01 10:00:45 INFO juju.worker.instancepoller instance poller started
+my-model: 2025-04-01 10:00:50 DEBUG juju.state.relations relation key "myapp:db otherdb:database"
+my-model: 2025-04-01 10:00:55 INFO juju.worker.leadership myapp/0 promoted to leader
+my-model: 2025-04-01 10:01:00 ERROR juju.worker.uniter.charm config-changed hook failed with exit code 2
+my-model: 2025-04-01 10:01:05 WARNING juju.worker.uniter.charm relation-joined hook for otherdb/0 had error
+my-model: 2025-04-01 10:01:10 INFO juju.worker.uniter.charm hooks completed
+my-model: 2025-04-01 10:01:15 DEBUG juju.state.relations relation scope updated
+my-model: 2025-04-01 10:01:20 INFO juju.worker.migrationminion migration minion starting
+my-model: 2025-04-01 10:01:25 INFO juju.worker.logforwarder log forwarder initialized
+my-model: 2025-04-01 10:01:30 WARNING juju.worker.caasapplicationprovisioner application not ready
+my-model: 2025-04-01 10:01:35 ERROR juju.worker.caasunitprovisioner pod sandbox changed
+my-model: 2025-04-01 10:01:40 DEBUG juju.state.machine machine 0 agent started
+my-model: 2025-04-01 10:01:45 INFO juju.worker.diskmanager disk manager running
+my-model: 2025-04-01 10:01:50 INFO juju.worker.provisioner provisioning started
+my-model: 2025-04-01 10:01:55 WARNING juju.worker.provisioner instance not found for machine 1
+my-model: 2025-04-01 10:02:00 ERROR juju.worker.deployer deploy failed for myapp/0
+my-model: 2025-04-01 10:02:05 INFO juju.worker.resumer transaction pruning
+my-model: 2025-04-01 10:02:10 DEBUG juju.mongo txnsqueueref collection documents cleared
+my-model: 2025-04-01 10:02:15 INFO juju.worker.httpserver HTTP server started on :17070
+my-model: 2025-04-01 10:02:20 WARNING juju.worker.httpserver TLS handshake error
+my-model: 2025-04-01 10:02:25 ERROR juju.worker.httpserver request timeout
+my-model: 2025-04-01 10:02:30 INFO juju.worker.httpserverargs serving model info
+my-model: 2025-04-01 10:02:35 DEBUG juju.state.pooledstate read-only state obtained
+my-model: 2025-04-01 10:02:40 INFO juju.worker.modelcache model cache initialized
+my-model: 2025-04-01 10:02:45 WARNING juju.worker.modelcache watcher error
+my-model: 2025-04-01 10:02:50 ERROR juju.worker.modelcache cache update failed
+my-model: 2025-04-01 10:02:55 INFO juju.worker.undertaker undertaker running
+my-model: 2025-04-01 10:03:00 DEBUG juju.worker.upgrader upgrade check complete
+my-model: 2025-04-01 10:03:05 INFO juju.worker.terminationworker termination signal received
+my-model: 2025-04-01 10:03:10 WARNING juju.worker.terminationworker unhandled stop signal
+my-model: 2025-04-01 10:03:15 ERROR juju.worker.terminationworker worker shutdown error
+my-model: 2025-04-01 10:03:20 INFO juju.worker.lease manager leases refreshed
+my-model: 2025-04-01 10:03:25 DEBUG juju.worker.raft raft log entry appended
+my-model: 2025-04-01 10:03:30 INFO juju.worker.raftlease snapshot created
+my-model: 2025-04-01 10:03:35 WARNING juju.worker.raftlease previous snapshot orphaned
+my-model: 2025-04-01 10:03:40 ERROR juju.worker.raftlease raft transport disconnected
+my-model: 2025-04-01 10:03:45 INFO juju.worker.firewaller ingress rules updated
+my-model: 2025-04-01 10:03:50 DEBUG juju.worker.storageprovisioner storage lifecycle updated
+my-model: 2025-04-01 10:03:55 INFO juju.worker.metricsender metric batch sent
+my-model: 2025-04-01 10:04:00 WARNING juju.worker.metricsender metric buffer full
+my-model: 2025-04-01 10:04:05 ERROR juju.worker.metricsender send failed: connection refused
+my-model: 2025-04-01 10:04:10 INFO juju.worker.charmrevisionupdater revision check completed
+my-model: 2025-04-01 10:04:15 DEBUG juju.worker.credentialvalidator credential check passed
+my-model: 2025-04-01 10:04:20 INFO juju.worker.auditconfigupdater audit config loaded
+my-model: 2025-04-01 10:04:25 WARNING juju.worker.instancemutater mutating profile failed
+my-model: 2025-04-01 10:04:30 ERROR juju.worker.instancemutater machine lxd profile error
+my-model: 2025-04-01 10:04:35 INFO juju.worker.presence ping received
+my-model: 2025-04-01 10:04:40 DEBUG juju.worker.presence agent 1234-alive
+my-model: 2025-04-01 10:04:45 INFO juju.worker.peergrouper peer group updated
+my-model: 2025-04-01 10:04:50 WARNING juju.worker.peergrouper reconfiguration error
+my-model: 2025-04-01 10:04:55 ERROR juju.worker.peergrouper unable to find peer addresses
+my-model: 2025-04-01 10:05:00 INFO juju.worker.restorewatcher restore status updated
+my-model: 2025-04-01 10:05:05 DEBUG juju.worker.centralhub central hub message published
+my-model: 2025-04-01 10:05:10 INFO juju.worker.dblogpruner log pruning completed
+my-model: 2025-04-01 10:05:15 WARNING juju.worker.dblogpruner batch delete error
+my-model: 2025-04-01 10:05:20 ERROR juju.worker.dblogpruner database connection lost
+my-model: 2025-04-01 10:05:25 INFO juju.worker.statecleaner state cleanup finished
+my-model: 2025-04-01 10:05:30 DEBUG juju.worker.remoterelations offer status checked
+my-model: 2025-04-01 10:05:35 INFO juju.worker.remoterelations consuming offer connected
+my-model: 2025-04-01 10:05:40 WARNING juju.worker.remoterelations offer connection dropped
+my-model: 2025-04-01 10:05:45 ERROR juju.worker.remoterelations consume failed
+my-model: 2025-04-01 10:05:50 INFO juju.worker.actions action worker started
+my-model: 2025-04-01 10:05:55 DEBUG juju.worker.actions action completed with results
+my-model: 2025-04-01 10:06:00 INFO juju.worker.actions action pruned
+my-model: 2025-04-01 10:06:05 WARNING juju.worker.upgradesteps upgrade step failed for unit
+my-model: 2025-04-01 10:06:10 ERROR juju.worker.upgradesteps upgrade aborted due to error
+my-model: 2025-04-01 10:06:15 INFO juju.worker.upgradesteps upgrade resumed
+my-model: 2025-04-01 10:06:20 DEBUG juju.worker.proxyupdater proxy settings updated
+my-model: 2025-04-01 10:06:25 INFO juju.worker.apicaller api connection alive
+my-model: 2025-04-01 10:06:30 WARNING juju.worker.apicaller api dial failed, retrying
+my-model: 2025-04-01 10:06:35 ERROR juju.worker.apicaller api connection permanently lost
+my-model: 2025-04-01 10:06:40 INFO juju.worker.uniter unit otherdb/0 started
+my-model: 2025-04-01 10:06:45 DEBUG juju.worker.uniter.charm directory set up
+my-model: 2025-04-01 10:06:50 INFO juju.worker.uniter.charm install hook running
+my-model: 2025-04-01 10:06:55 WARNING juju.worker.uniter.charm install hook timeout
+my-model: 2025-04-01 10:07:00 ERROR juju.worker.uniter.charm install hook killed
+my-model: 2025-04-01 10:07:05 INFO juju.worker.caasunitterminationworker termination check
+my-model: 2025-04-01 10:07:10 DEBUG juju.worker.caasoperatorprovisioner operator status ok
+my-model: 2025-04-01 10:07:15 INFO juju.worker.caasoperatorprovisioner operator lifecycle event
+my-model: 2025-04-01 10:07:20 WARNING juju.worker.caasoperatorprovisioner provisioning failed
+my-model: 2025-04-01 10:07:25 ERROR juju.worker.caasoperatorprovisioner image pull error
+my-model: 2025-04-01 10:07:30 INFO juju.worker.caasfirewaller service ports opened
+my-model: 2025-04-01 10:07:35 DEBUG juju.worker.caasfirewaller ingress updated
+my-model: 2025-04-01 10:07:40 INFO juju.worker.caasunitsmanager unit scale event
+my-model: 2025-04-01 10:07:45 WARNING juju.worker.caasunitsmanager scale up failed
+my-model: 2025-04-01 10:07:50 ERROR juju.worker.caasunitsmanager pod creation error
+my-model: 2025-04-01 10:07:55 INFO juju.worker.caasapplicationprovisioner service created
+my-model: 2025-04-01 10:08:00 DEBUG juju.worker.caasapplicationprovisioner status service ready
+my-model: 2025-04-01 10:08:05 INFO juju.worker.agent agent config updated
+my-model: 2025-04-01 10:08:10 WARNING juju.worker.agent agent config write error
+my-model: 2025-04-01 10:08:15 ERROR juju.worker.agent agent config locked
+my-model: 2025-04-01 10:08:20 INFO juju.state database indexes rebuilt
+my-model: 2025-04-01 10:08:25 DEBUG juju.state unit status history pruned
+my-model: 2025-04-01 10:08:30 INFO juju.worker.leadership otherdb/0 elected leader

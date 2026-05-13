@@ -1,0 +1,31 @@
+{
+  "health": {
+    "checks": {
+      "SLOW_OPS": {
+        "severity": "HEALTH_WARN",
+        "summary": {
+          "message": "2 slow ops",
+          "detail": [
+            {
+              "message": "osd.1: slow request 30.000002 seconds old, received at 2025-04-01 10:00:00"
+            },
+            {
+              "message": "osd.2: slow request 13.000001 seconds old, received at 2025-04-01 10:00:17"
+            }
+          ]
+        }
+      },
+      "MON_DISK_LOW": {
+        "severity": "HEALTH_WARN",
+        "summary": {
+          "message": "1 mgr modules have recently crashed",
+          "detail": [
+            {
+              "message": "mgr module crash - restarting telemetry module"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "fsid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "health": {
+    "status": "HEALTH_WARN",
+    "checks": {
+      "MON_DISK_LOW": {
+        "severity": "HEALTH_WARN",
+        "summary": {
+          "message": "1 mgr modules have recently crashed",
+          "count": 1
+        }
+      },
+      "SLOW_OPS": {
+        "severity": "HEALTH_WARN",
+        "summary": {
+          "message": "2 slow ops, oldest one blocked for 13s"
+        }
+      }
+    }
+  },
+  "monmap": {
+    "epoch": 3,
+    "mons": [
+      {"name": "a", "rank": 0, "public_addr": "10.0.0.11:6789"},
+      {"name": "b", "rank": 1, "public_addr": "10.0.0.12:6789"},
+      {"name": "c", "rank": 2, "public_addr": "10.0.0.13:6789"}
+    ]
+  },
+  "osdmap": {
+    "osdmap": {
+      "epoch": 42,
+      "num_osds": 3,
+      "num_up_osds": 3,
+      "num_in_osds": 3
+    }
+  },
+  "pgmap": {
+    "num_pgs": 128,
+    "pgs_by_state": [
+      {"state_name": "active+clean", "count": 126},
+      {"state_name": "active+undersized+degraded", "count": 2}
+    ]
+  },
+  "fsmap": {
+    "epoch": 5,
+    "filesystems": [
+      {
+        "id": 1,
+        "mdsmap": {"in": [0], "max": 1, "up": 1}
+      }
+    ]
+  }
+}

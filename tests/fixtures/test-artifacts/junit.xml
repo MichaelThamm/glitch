@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="myapp.tests" tests="5" failures="1" errors="1" skipped="0" time="12.345">
+  <testcase classname="myapp.tests.UnitTest" name="test_feature_a" time="0.123"/>
+  <testcase classname="myapp.tests.UnitTest" name="test_feature_b" time="0.456"/>
+  <testcase classname="myapp.tests.UnitTest" name="test_feature_c" time="0.789"/>
+  <testcase classname="myapp.tests.UnitTest" name="test_edge_case" time="1.234">
+    <failure type="AssertionError" message="assert 42 == 99">
+assert 42 == 99
+    </failure>
+  </testcase>
+  <testcase classname="myapp.tests.IntegrationTest" name="test_db_connect" time="2.345">
+    <error type="ConnectionError" message="Connection refused">
+Connection refused to postgresql://db.internal:5432/test
+    </error>
+  </testcase>
+</testsuite>

@@ -1,0 +1,71 @@
+{
+  "model": {
+    "name": "my-model",
+    "type": "iaas",
+    "controller": "my-controller",
+    "cloud": "lxd",
+    "region": "localhost",
+    "version": "3.6.0"
+  },
+  "machines": {
+    "0": {
+      "juju-status": {"current": "started", "since": "01 Apr 25 10:00 UTC"},
+      "machine-status": {"current": "running", "since": "01 Apr 25 09:55 UTC"},
+      "series": "jammy",
+      "containers": {
+        "0/lxd/0": {
+          "juju-status": {"current": "started", "since": "01 Apr 25 10:01 UTC"}
+        }
+      }
+    },
+    "1": {
+      "juju-status": {"current": "started", "since": "01 Apr 25 10:05 UTC"},
+      "machine-status": {"current": "running", "since": "01 Apr 25 10:00 UTC"},
+      "series": "jammy"
+    }
+  },
+  "applications": {
+    "myapp": {
+      "charm": "myapp",
+      "charm-rev": 42,
+      "exposed": false,
+      "units": {
+        "myapp/0": {
+          "workload-status": {"current": "active", "since": "01 Apr 25 10:10 UTC"},
+          "juju-status": {"current": "idle", "since": "01 Apr 25 10:10 UTC"},
+          "containers": {
+            "myapp-container": {}
+          },
+          "machine": "0/lxd/0",
+          "public-address": "10.0.0.1"
+        }
+      }
+    },
+    "otherdb": {
+      "charm": "otherdb",
+      "charm-rev": 17,
+      "exposed": false,
+      "units": {
+        "otherdb/0": {
+          "workload-status": {"current": "active", "since": "01 Apr 25 10:12 UTC"},
+          "juju-status": {"current": "idle", "since": "01 Apr 25 10:12 UTC"},
+          "containers": {
+            "db-container": {},
+            "sidecar-container": {}
+          },
+          "machine": "1",
+          "public-address": "10.0.0.2"
+        },
+        "otherdb/1": {
+          "workload-status": {"current": "active", "since": "01 Apr 25 10:13 UTC"},
+          "juju-status": {"current": "idle", "since": "01 Apr 25 10:13 UTC"},
+          "containers": {
+            "db-container": {}
+          },
+          "machine": "1",
+          "public-address": "10.0.0.3"
+        }
+      }
+    }
+  }
+}

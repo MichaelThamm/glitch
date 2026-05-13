@@ -10,6 +10,8 @@ from typing import Annotated
 
 import typer
 
+from glitch.collectors.runner import run_collectors
+
 
 def run(
     output_dir: Annotated[
@@ -36,7 +38,9 @@ def run(
     ] = None,
 ) -> None:
     """Capture telemetry from the active deployment into an artifact bundle."""
-    raise NotImplementedError(
-        "Phase 2 (Collection) is not implemented yet. "
-        "See docs/specs/phase-2-collection.md for the target behaviour."
+    run_collectors(
+        output_dir,
+        model=model,
+        namespace=namespace,
+        test_artifacts_dir=test_artifacts_dir,
     )

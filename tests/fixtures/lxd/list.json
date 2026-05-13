@@ -1,0 +1,20 @@
+[
+  {
+    "name": "juju-abc123-0",
+    "stateful": false,
+    "status": "Running",
+    "type": "container",
+    "architecture": "x86_64",
+    "profiles": ["default"],
+    "config": {"volatile.eth0.hwaddr": "00:16:3e:aa:bb:01"}
+  },
+  {
+    "name": "juju-abc123-1",
+    "stateful": false,
+    "status": "Running",
+    "type": "container",
+    "architecture": "x86_64",
+    "profiles": ["default"],
+    "config": {"volatile.eth0.hwaddr": "00:16:3e:aa:bb:02"}
+  }
+]
