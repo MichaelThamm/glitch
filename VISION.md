@@ -1,6 +1,6 @@
 # Vision: Automated CI Failure Remediation
 
-**Project Name**: TBD
+**Project Name**: Glitch
 
 ## Overview
 
@@ -15,43 +15,58 @@ CI failures are not just errors to be fixed—they are **signals** carrying cont
 The system operates through three distinct phases that work together:
 
 ```
-┌─────────────┐     ┌────────────┐     ┌──────────┐
-│  DISCOVERY  │ ──▶ │ COLLECTION │ ──▶ │ ANALYSIS │
-└─────────────┘     └────────────┘     └──────────┘
-      │                                      │
-      └──────────── informs ─────────────────┘
+┌─────────────┐     ┌────────────┐
+│  DISCOVERY  │     │ COLLECTION │
+│  (local,    │     │ (CI-side,  │
+│  heuristic) │     │ telemetry) │
+└──────┬──────┘     └─────┬──────┘
+       │  flakiness score │  artifact bundle
+       └────────┬─────────┘
+                ▼
+         ┌──────────────┐
+         │   ANALYSIS   │
+         │  (classify + │
+         │  auto-fix)   │
+         └──────────────┘
+                │
+       patches / issues / feedback
+                ▼
+         back to DISCOVERY
 ```
 
-**Typical workflow**: Use Discovery to identify flaky tests worth investigating → Collection captures detailed telemetry on failures → Analysis diagnoses root cause and suggests fixes.
+**Typical workflow**: Run Discovery locally to score and rank flaky tests → Collection captures telemetry the next time those tests fail in CI → Analysis classifies failures by cause with confidence scores and attempts automated remediation.
 
 ---
 
 ### Phase 1: Discovery
 
-**Purpose**: Identify which tests are flaky and worth acting on.
+**Purpose**: Give developers a fast, local flakiness score for their test suite before investing in deeper investigation.
 
-Discovery performs statistical analysis across historical CI runs to surface patterns that indicate flakiness. This phase operates independently of whether telemetry artifacts exist—it works purely from CI run metadata and code changes.
+Discovery is a **local CLI tool** that applies heuristics to CI run history and git metadata to compute a per-test flakiness score. It requires no telemetry artifacts and no LLM — just a connection to the CI API and a git checkout. The output is designed to be visualized immediately.
 
-**Capabilities**:
-- **Cross-reference analysis**: correlate test failures with code changes to determine if failures are related to the diff or are spurious
-- **Flakiness scoring**: compute likelihood that a test is flaky based on pass/fail patterns across runs
-- **Trend detection**: identify tests that have become more/less stable over time
-- **Repository-wide view**: aggregate data across multiple charm repositories
+**Scoring heuristics** (inputs to the score, not exhaustive):
+- **Pass/fail volatility**: frequency of non-deterministic outcomes across runs on the same commit
+- **Retry rate**: tests that pass only on retry signal infrastructural or timing sensitivity
+- **Timing variance**: high coefficient of variation in test duration across runs
+- **Change-independence**: failures that occur on commits with no related file changes
+- **Recency weighting**: recent failures weighted more heavily than older ones
 
 **Outputs**:
-- Dashboard or visualization showing flaky tests ranked by severity/frequency
-- Prioritized list of tests worth investigating
-- Historical flakiness trends per test/suite
+- A scored, ranked list of tests with a numeric flakiness index (0–1) per test
+- A visual report (e.g., HTML or terminal table) showing score breakdown by heuristic
+- Trend sparklines per test over time
+- Machine-readable format (JSON/CSV) for downstream consumption by Phase 3
 
 **Principles**:
-- Works without telemetry—uses only CI API data and git history
-- Provides actionable prioritization, not just raw data
-- Enables informed decisions about where to invest remediation effort
+- Runs **locally** — developer invokes it from their machine, results are immediate
+- Pure heuristics, no LLM — deterministic and auditable
+- Works from CI API metadata and git history only; no telemetry artifacts required
+- Scoped to a single repository but exportable for cross-repo aggregation
 
 **Open Questions**:
-- Delivery mechanism: standalone dashboard, GitHub Action, CLI tool, or skill?
-- Data retention and storage approach
-- Cross-repository aggregation strategy
+- Delivery mechanism: standalone CLI, GitHub Action, or integrated skill?
+- Data retention and caching strategy for repeated runs
+- Normalization of scores across repositories with different test suite sizes
 
 ---
 
@@ -82,40 +97,57 @@ Collection is an independent tool that gathers all relevant state from a failed 
 
 ### Phase 3: Analysis
 
-**Purpose**: Diagnose root cause and suggest fixes using LLM-powered reasoning.
+**Purpose**: Classify failures by root cause with confidence scores, then attempt automated remediation.
 
-Analysis combines telemetry from Collection with contextual knowledge about how specific charms work to perform root cause analysis. It determines whether the issue lies in the charm, test, infrastructure, or is simply flakiness.
+Analysis is the synthesis layer. It ingests the flakiness scores from Phase 1 and the telemetry bundle from Phase 2 to produce a **classified, confidence-scored verdict** for each failure — and then acts on it. Where Phase 1 answers "is this test flaky?", Phase 3 answers "why, how sure are we, and what can be done about it automatically?"
 
 **Inputs**:
-- Telemetry artifact from Collection phase
+- Flakiness scores and heuristic breakdown from Phase 1 (per-test JSON)
+- Telemetry artifact from Phase 2 (logs, metrics, k8s events, pytest reports)
 - Charm-specific context (reconciler patterns, hook behavior, known quirks)
-- Common charm patterns and failure signatures
-- Historical data from Discovery phase
+- Known failure signatures and previously resolved patterns
+
+**Classification taxonomy** (with confidence score 0–1 per label):
+| Label | Meaning |
+|---|---|
+| `flaky` | Non-deterministic; likely timing/environment sensitivity |
+| `charm-bug` | Defect in the charm's logic or configuration |
+| `test-bug` | Defect in the test itself (bad assertion, wrong assumption) |
+| `infrastructure` | CI runner, Kubernetes, Ceph, or LXD-level issue |
+| `environment` | Transient external dependency (network, registry, upstream package) |
+| `unknown` | Insufficient signal to classify with confidence |
+
+A failure may carry multiple labels with independent confidence scores (e.g., `flaky: 0.7, test-bug: 0.4`).
+
+**Automated remediation**:
+- For `test-bug` and `charm-bug` classifications above a confidence threshold: the agent **attempts a fix** — generates a patch, applies it to a branch, and re-runs the affected test
+- For `flaky`: proposes retry policies, ordering guards, or test isolation changes
+- For `infrastructure` / `environment`: files an annotated issue with reproduction steps
+- Human confirmation is required before merging any patch; the agent does not push without approval
 
 **Execution Modes**:
 
 1. **In-Runner**
-   - Runs within the CI environment after test failure
-   - Direct access to live state for deeper inspection
-   - Can attempt fixes and re-run tests in place
+   - Runs within the CI environment immediately after failure
+   - Direct access to live state; can attempt fix-and-rerun in place
    - *Constraint*: GitHub security policies may restrict agent execution
 
 2. **Offline/Local**
    - Developer downloads artifact and runs analysis locally
-   - Can iterate on hypotheses and test fixes
-   - Full access to local tooling
-   - Works with any artifact from Collection phase
+   - Can iterate on hypotheses, inspect reasoning trace, and apply patches manually
+   - Works with any Phase 2 artifact
 
 **Outputs**:
-- Root cause classification (charm bug, test bug, infrastructure issue, flakiness)
-- Suggested code patches or configuration changes
-- Diagnostic explanations (e.g., Mermaid diagrams of hook sequences)
-- Confidence level and reasoning trace
+- Classified verdict per failure with confidence scores and reasoning trace
+- For actionable classifications: a concrete patch or remediation PR
+- Diagnostic narrative (e.g., Mermaid hook-sequence diagrams for charm-bug cases)
+- Feedback signal written back to Phase 1's known-patterns store
 
 **Principles**:
-- Resolution is advisory—human confirms before applying fixes
-- Analysis must be reproducible given the same inputs
-- Learnings feed back into Discovery (known patterns, resolved flakiness)
+- Classification is always shown before any action is taken
+- Automated fixes require human approval before landing
+- Analysis must be reproducible given the same Phase 1 + Phase 2 inputs
+- Resolved patterns feed back into Discovery to improve future heuristic scores
 
 ---
 
