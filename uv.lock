@@ -303,10 +303,28 @@ wheels = [
 ]
 
 [[package]]
+name = "github-copilot-sdk"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "python-dateutil" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6c/d7/3d71064646a24d633c9dec035ff8b5b6d72c11d3aad765e54efd71737f0f/github_copilot_sdk-0.3.0-py3-none-macosx_10_9_x86_64.whl", hash = "sha256:ed8f27989158824c754d7febb473bdf25744a1e6bc07a06f114f7e7deebd2c22", size = 58566984, upload-time = "2026-04-24T16:05:37.535Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/18/439854722b951a2f213c23cc731e9a31d46c8b1e2f1b1de080745c03c798/github_copilot_sdk-0.3.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:7e241d9b00ebf8bb4d10b2d6101c75fcef38de04d144d729e07fa48394270ee1", size = 55318729, upload-time = "2026-04-24T16:05:41.734Z" },
+    { url = "https://files.pythonhosted.org/packages/11/56/931a65b17ad36d3b8987d8cb9bd2835f759c79ae1799fdc34d1252c38b6f/github_copilot_sdk-0.3.0-py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:f4d98a67b8f038885ddd38bd7033d1ac20c3010f04c72ee0fc74ba4984b69ffa", size = 61452705, upload-time = "2026-04-24T16:05:45.225Z" },
+    { url = "https://files.pythonhosted.org/packages/00/e5/7e275fc76a7f9cc3240da393ed631d9647c346a36d6392ea4b0ed56326f6/github_copilot_sdk-0.3.0-py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:b591546d789f9f8243fb59ca71b08cb0bb1dbec818fbef060c3830c6787de2c8", size = 59646875, upload-time = "2026-04-24T16:05:48.832Z" },
+    { url = "https://files.pythonhosted.org/packages/cf/67/00e3bf21842b0c418aad6ce233ec8cd7e8ca91859e4f7e571fc47c682ed9/github_copilot_sdk-0.3.0-py3-none-win_amd64.whl", hash = "sha256:c5712d57a2c6291b805c79e039c55c48d858034b1a37fc8e1653925403a028e9", size = 54165496, upload-time = "2026-04-24T16:05:52.712Z" },
+    { url = "https://files.pythonhosted.org/packages/91/1c/76bb5159018a1c0d44b17ded340c91085fb48dd3dc912eb349781c54c200/github_copilot_sdk-0.3.0-py3-none-win_arm64.whl", hash = "sha256:93b07c46f60cebbbb003d5bddba22eab886849b1d052b98037b52b6434a5bc07", size = 52103138, upload-time = "2026-04-24T16:05:56.329Z" },
+]
+
+[[package]]
 name = "glitch"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "github-copilot-sdk" },
     { name = "pydantic" },
     { name = "requests" },
     { name = "rich" },
@@ -330,6 +348,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "github-copilot-sdk", specifier = ">=0.1.30" },
     { name = "pydantic", specifier = ">=2.0.0" },
     { name = "requests", specifier = ">=2.32.0" },
     { name = "rich", specifier = ">=14.0.0" },
@@ -741,6 +760,18 @@ wheels = [
 ]
 
 [[package]]
+name = "python-dateutil"
+version = "2.9.0.post0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "six" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3", size = 342432, upload-time = "2024-03-01T18:36:20.211Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427", size = 229892, upload-time = "2024-03-01T18:36:18.57Z" },
+]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -869,6 +900,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz", hash = "sha256:8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de", size = 10310, upload-time = "2023-10-24T04:13:40.426Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl", hash = "sha256:7ecfff8f2fd72616f7481040475a65b2bf8af90a56c89140852d1120324e8686", size = 9755, upload-time = "2023-10-24T04:13:38.866Z" },
+]
+
+[[package]]
+name = "six"
+version = "1.17.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81", size = 34031, upload-time = "2024-12-04T17:35:28.174Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274", size = 11050, upload-time = "2024-12-04T17:35:26.475Z" },
 ]
 
 [[package]]
