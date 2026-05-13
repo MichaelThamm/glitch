@@ -67,16 +67,45 @@ Insufficient data (fewer than 3 runs):
 ### Phase 3: Analysis — classify and fix
 
 ```
-❯ uv run glitch analyze --artifact bundle-2026-05-13.tar.gz --scores discover.json
+❯ uv run glitch analyze \
+    --artifact-dir bundle-2026-05-13 \
+    --discovery-json discover.json \
+    --confidence-threshold 0.6 \
+    --output-dir analysis-out
 
-  TEST                            CLASSIFICATION        CONFIDENCE   ACTION
-  ──────────────────────────────  ────────────────────  ───────────  ────────────────────────
-  test_ssl_termination            flaky                 0.82         Retry policy suggested
-  test_scaling_events             infrastructure        0.91         Issue #1742 filed
-  test_config_update_rollback     charm-bug             0.76         Patch generated → pr/112
+⠋ Resolving auth token...
+⠋ Loading artifact context...
+⠋ Classifying failure with Copilot...
+⠋ Planning remediation...
+⠋ Generating remediation content...
+⠋ Writing outputs...
+
+                  glitch analyze
+┌──────────────────────────────────────────────┬──────────────────┬────────────┬──────────────────────────┐
+│ Test                                         │ Classification   │ Confidence │ Action                   │
+├──────────────────────────────────────────────┼──────────────────┼────────────┼──────────────────────────┤
+│ integration (test_deploy_cos_lite)           │ infrastructure   │       0.55 │ Issue template filed     │
+│ integration (test_ssl_termination)           │ flaky            │       0.82 │ Retry / fix suggested    │
+│ test_config_update_rollback                  │ charm-bug        │       0.76 │ Patch generated → pr/112 │
+└──────────────────────────────────────────────┴──────────────────┴────────────┴──────────────────────────┘
+
+Output written to analysis-out
+  • fix.patch
+  • report.md
+  • verdict.json
 
 → 1 patch ready for review: gh pr checkout 112
 ```
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--artifact-dir` | *(required)* | Path to the Phase 2 artifact bundle directory |
+| `--discovery-json` | — | Path to Phase 1 JSON output to enrich classification confidence |
+| `--confidence-threshold` | `0.8` | Remediation is attempted above this confidence value |
+| `--output-dir` | `glitch-analysis` | Directory to write verdict and report |
+| `--model` | — | Copilot model to use (default: determined by Copilot SDK) |
+
+Auth: set `GITHUB_TOKEN` env var or run `gh auth login` first.
 
 <!--
 ## Grading Notes
