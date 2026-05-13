@@ -1,0 +1,13 @@
+{
+  "sha": "abc1111111111111111111111111111111111111",
+  "commit": {
+    "message": "fix: stabilise the integration suite",
+    "author": {
+      "date": "2026-05-10T09:00:00Z"
+    }
+  },
+  "files": [
+    {"filename": "src/glitch/discover/client.py"},
+    {"filename": "tests/test_discover_client.py"}
+  ]
+}
