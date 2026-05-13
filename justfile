@@ -10,6 +10,16 @@ export UV_FROZEN := "true"
     echo "For help with a specific recipe, run: just --usage <recipe>"
 
 # ============================================================================
+# Docs
+# ============================================================================
+
+# Serve the docs site locally
+[group("docs")]
+serve:
+    @echo "Serving docs/site/ at http://localhost:8080"
+    python3 -m http.server 8080 --directory docs/site
+
+# ============================================================================
 # Development
 # ============================================================================
 

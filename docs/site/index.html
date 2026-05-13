@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>glitch — automated CI failure remediation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+  --bg: #0a0a1a;
+  --bg2: #0d0d24;
+  --pink: #ff2d95;
+  --pink-glow: #ff2d9544;
+  --cyan: #00f0ff;
+  --cyan-glow: #00f0ff44;
+  --purple: #b347ea;
+  --purple-glow: #b347ea44;
+  --yellow: #f7e018;
+  --green: #39ff14;
+  --text: #d4c5f0;
+  --dim: #6b5b8a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.06) 2px,
+      rgba(0, 0, 0, 0.06) 4px
+    );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 45, 149, 0.06), transparent 60%),
+              radial-gradient(ellipse at 80% 50%, rgba(0, 240, 255, 0.04), transparent 50%),
+              radial-gradient(ellipse at 20% 80%, rgba(179, 71, 234, 0.05), transparent 50%);
+  pointer-events: none;
+  z-index: 9997;
+}
+
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 45, 149, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 45, 149, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: -30px -30px;
+  pointer-events: none;
+  z-index: 9996;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 0 4rem;
+  position: relative;
+}
+
+hero img {
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 20px var(--pink-glow))
+          drop-shadow(0 0 40px var(--purple-glow));
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { filter: drop-shadow(0 0 20px var(--pink-glow)) drop-shadow(0 0 40px var(--purple-glow)); }
+  50% { filter: drop-shadow(0 0 30px var(--pink-glow)) drop-shadow(0 0 60px var(--purple-glow)); }
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pink);
+  text-shadow: 0 0 10px var(--pink), 0 0 30px var(--pink), 0 0 60px var(--pink), 0 0 80px var(--pink);
+  animation: glitchTitle 5s infinite;
+  position: relative;
+}
+
+@keyframes glitchTitle {
+  0%, 93%, 96%, 100% { transform: none; }
+  94% { transform: translate(-2px, 1px) skew(1deg); }
+  95% { transform: translate(2px, -1px) skew(-1deg); }
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--cyan);
+  text-shadow: 0 0 10px var(--cyan);
+  margin-top: 0.5rem;
+  max-width: 600px;
+}
+
+/* Glitch text effect */
+.glitch {
+  position: relative;
+  color: var(--pink);
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  color: var(--cyan);
+  animation: glitchShift 2s infinite linear alternate-reverse;
+  clip-path: inset(20% 0 50% 0);
+}
+
+.glitch::after {
+  color: var(--pink);
+  animation: glitchShift 3s infinite linear alternate;
+  clip-path: inset(60% 0 15% 0);
+}
+
+@keyframes glitchShift {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 1px); }
+  40% { transform: translate(3px, -1px); }
+  60% { transform: translate(-1px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+section {
+  padding: 3rem 0;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-shadow: 0 0 15px var(--cyan);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, var(--pink), var(--purple), transparent) 1;
+}
+
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--pink);
+  text-shadow: 0 0 8px var(--pink-glow);
+  margin: 1.5rem 0 0.5rem;
+}
+
+p { margin-bottom: 1rem; }
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--cyan);
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: var(--pink);
+  border-color: var(--pink);
+  text-shadow: 0 0 10px var(--pink);
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: var(--bg2);
+  border: 1px solid rgba(255, 45, 149, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pink), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  border-color: var(--pink);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--pink-glow);
+}
+
+.card:hover::before { opacity: 1; }
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.card h3 { margin-top: 0; }
+
+.card .phase-badge {
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.badge-pink { background: var(--pink-glow); color: var(--pink); border: 1px solid var(--pink); }
+.badge-cyan { background: var(--cyan-glow); color: var(--cyan); border: 1px solid var(--cyan); }
+.badge-purple { background: var(--purple-glow); color: var(--purple); border: 1px solid var(--purple); }
+
+/* Phase flow diagram */
+.phase-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.phase-box {
+  background: var(--bg2);
+  border: 1px solid var(--purple);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 20px var(--purple-glow);
+  transition: all 0.3s;
+}
+
+.phase-box:hover {
+  box-shadow: 0 0 35px var(--pink-glow);
+  border-color: var(--pink);
+}
+
+.phase-arrow {
+  color: var(--cyan);
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px var(--cyan);
+  animation: arrowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Code / terminal blocks */
+.code-block {
+  background: #050510;
+  border: 1px solid var(--dim);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-block::before {
+  content: '❯';
+  color: var(--green);
+  margin-right: 0.5rem;
+}
+
+.code-block code {
+  color: var(--green);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+}
+
+/* Video placeholder */
+.video-placeholder {
+  background: var(--bg2);
+  border: 2px dashed var(--purple);
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 2rem 0;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(179, 71, 234, 0.02) 40px,
+    rgba(179, 71, 234, 0.02) 41px
+  );
+  animation: scanMove 8s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.video-placeholder:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 40px var(--cyan-glow);
+}
+
+.video-placeholder .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: blink 2s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.video-placeholder p {
+  color: var(--dim);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--dim);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(179, 71, 234, 0.15);
+}
+
+footer a { color: var(--dim); border-color: var(--dim); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  h1 { font-size: 2rem; }
+  .phase-flow { flex-direction: column; }
+  .phase-arrow { transform: rotate(90deg); }
+}
+
+/* ASCII art */
+.ascii-art {
+  color: var(--purple);
+  font-size: 0.55rem;
+  line-height: 1.2;
+  text-align: center;
+  opacity: 0.4;
+  margin: 2rem 0;
+  white-space: pre;
+}
+
+/* Steps */
+.steps { counter-reset: step; }
+.step {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.step::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+}
+
+.step + .step::after {
+  content: '';
+  position: absolute;
+  left: 0.95rem;
+  top: -1.5rem;
+  width: 1px;
+  height: 1.5rem;
+  background: linear-gradient(to bottom, transparent, var(--cyan));
+  opacity: 0.3;
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<hero class="container">
+  <img src="https://raw.githubusercontent.com/MichaelThamm/glitch/main/assets/glitch-full.png" alt="glitch logo">
+  <p class="tagline">
+    Automated CI failure remediation for charm development
+    — turn flaky tests and obscure failures into actionable fixes.
+  </p>
+</hero>
+
+<main class="container">
+
+  <!-- The Pipeline -->
+  <section>
+    <h2>╱╲ the pipeline</h2>
+    <p>
+      Three phases, one goal: <strong style="color:var(--pink)">reduce MTTR</strong>.
+      Discovery scores flakiness locally. Collection captures telemetry on failure.
+      Analysis classifies root causes and generates patches — all with human-in-the-loop approval.
+    </p>
+
+    <div class="phase-flow">
+      <div class="phase-box">
+        <span class="phase-badge badge-pink">Phase 1</span>
+        <div style="font-size:1rem;color:var(--pink)">🔍 DISCOVERY</div>
+        <div style="font-size:0.75rem;color:var(--dim)">local · heuristic</div>
+      </div>
+      <div class="phase-arrow">→</div>
+      <div class="phase-box">
+        <span class="phase-badge badge-cyan">Phase 2</span>
+        <div style="font-size:1rem;color:var(--cyan)">📦 COLLECTION</div>
+        <div style="font-size:0.75rem;color:var(--dim)">CI-side · telemetry</div>
+      </div>
+      <div class="phase-arrow">→</div>
+      <div class="phase-box">
+        <span class="phase-badge badge-purple">Phase 3</span>
+        <div style="font-size:1rem;color:var(--purple)">🧠 ANALYSIS</div>
+        <div style="font-size:0.75rem;color:var(--dim)">classify + auto-fix</div>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <span class="phase-badge badge-pink">Phase 1</span>
+        <h3>Discovery</h3>
+        <p>Local CLI that scores and ranks flaky tests using pass/fail volatility, retry rates, timing variance, change-independence, and recency-weighting. Zero telemetry artifacts required.</p>
+        <div class="code-block"><code>uv run glitch discover --workflow "CI" --output table</code></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <span class="phase-badge badge-cyan">Phase 2</span>
+        <h3>Collection</h3>
+        <p>Captures comprehensive telemetry when tests fail: runner logs, charm logs, Kubernetes events, Ceph status, LXD state, and test artifacts — bundled as a single artifact for analysis.</p>
+        <div class="code-block"><code>uv run glitch collect</code></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧠</div>
+        <span class="phase-badge badge-purple">Phase 3</span>
+        <h3>Analysis</h3>
+        <p>Ingests flakiness scores + telemetry bundle to classify failures by root cause (flaky, charm-bug, test-bug, infrastructure, environment) with confidence scores, then generates patches.</p>
+        <div class="code-block"><code>uv run glitch analyze --artifact bundle.tar.gz</code></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Video -->
+  <section>
+    <h2>╱╲ see it in action</h2>
+    <div class="video-placeholder">
+      <div class="icon">📺</div>
+      <p style="color:var(--cyan); font-size:1.1rem;">[ asciinema demo coming soon ]</p>
+      <p>
+        A terminal recording of glitch discovering flaky tests, collecting failure telemetry,
+        and generating an automated patch — all in under 60 seconds.
+      </p>
+    </div>
+  </section>
+
+  <!-- Getting Started -->
+  <section>
+    <h2>╱╲ getting started</h2>
+
+    <h3>Prerequisites</h3>
+    <p>Python 3.11+, <a href="https://docs.astral.sh/uv/">uv</a>, and a GitHub token with <code>repo</code> and <code>actions:read</code> scopes.</p>
+
+    <h3>Installation</h3>
+    <div class="code-block"><code>git clone https://github.com/MichaelThamm/glitch.git && cd glitch</code></div>
+    <div class="code-block"><code>uv sync</code></div>
+
+    <h3>Quick Start</h3>
+    <div class="steps">
+      <div class="step">
+        <strong style="color:var(--pink)">Set your GitHub token</strong>
+        <div class="code-block"><code>export GITHUB_TOKEN=ghp_your_token_here</code></div>
+      </div>
+      <div class="step">
+        <strong style="color:var(--cyan)">Discover flaky tests</strong>
+        <p>Score and rank tests by flakiness using CI run history:</p>
+        <div class="code-block"><code>uv run glitch discover --repo owner/repo --workflow "CI"</code></div>
+      </div>
+      <div class="step">
+        <strong style="color:var(--purple)">Collect telemetry on failure</strong>
+        <p>When tests fail in CI, capture everything needed for diagnosis:</p>
+        <div class="code-block"><code>uv run glitch collect</code></div>
+      </div>
+      <div class="step">
+        <strong style="color:var(--yellow)">Analyze and get patches</strong>
+        <p>Feed scores and artifacts into the analysis engine:</p>
+        <div class="code-block"><code>uv run glitch analyze --artifact bundle.tar.gz --scores discover.json</code></div>
+      </div>
+    </div>
+
+    <h3>Configuration</h3>
+    <p>
+      glitch works out of the box, but you can customize collectors, scoring weights,
+      and analysis thresholds. See the <a href="https://github.com/MichaelThamm/glitch">README</a>
+      for details.
+    </p>
+  </section>
+
+  <!-- Classification taxonomy -->
+  <section>
+    <h2>╱╲ classification taxonomy</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🎲 flaky</h3>
+        <p>Non-deterministic; likely timing or environment sensitivity. Proposes retry policies and ordering guards.</p>
+      </div>
+      <div class="card">
+        <h3>🐛 charm-bug</h3>
+        <p>Defect in the charm's logic or configuration. Generates a concrete patch — human approval required before landing.</p>
+      </div>
+      <div class="card">
+        <h3>🧪 test-bug</h3>
+        <p>Defect in the test itself: bad assertion, wrong assumption. Patch generated with re-run verification.</p>
+      </div>
+      <div class="card">
+        <h3>🏗️ infrastructure</h3>
+        <p>CI runner, Kubernetes, Ceph, or LXD-level issue. Files an annotated issue with reproduction steps.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 environment</h3>
+        <p>Transient external dependency: network, registry, upstream package. Logged for trend analysis.</p>
+      </div>
+      <div class="card">
+        <h3>❓ unknown</h3>
+        <p>Insufficient signal to classify with confidence. Queued for human review with all available context.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ascii-art" aria-hidden="true">
+  ░▒▓█  g l i t c h  █▓▒░
+  ╔══════════════════════════════════════════╗
+  ║  ▐▀▄  ▐▀▀▄  ▄▀▀  ▐▌▐▌  ▐▌▄ ▄▌  ▐▌  ▐▌  ║
+  ║  ▐▌ ▐▌ ▐▌ ▐▌ ▀▀▄  ▐▌▐▌  ▐▌▐▌▐▌  ▐▌  ▐▌  ║
+  ║  ▐▛▀▐▌ ▐▌ ▐▌ ▄▄▀  ▐▀▜▖  ▐▌ ▀ ▐▌ ▐▀▜▖▐▌  ║
+  ╚══════════════════════════════════════════╝
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="https://github.com/MichaelThamm/glitch">github</a> ·
+    <a href="https://github.com/MichaelThamm/glitch/issues">issues</a> ·
+    <a href="https://github.com/MichaelThamm/glitch/releases">releases</a>
+  </p>
+  <p style="margin-top:0.5rem">remediate the signal. glitch v0.1.0</p>
+</footer>
+</body>
+</html>
