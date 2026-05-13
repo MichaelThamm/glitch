@@ -1,0 +1,23 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 9001,
+      "run_id": 123,
+      "name": "integration (test_deploy_local)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-05-10T10:01:00Z",
+      "completed_at": "2026-05-10T10:11:00Z"
+    },
+    {
+      "id": 9002,
+      "run_id": 123,
+      "name": "integration (test_upgrade_path)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-05-10T10:01:00Z",
+      "completed_at": "2026-05-10T10:13:00Z"
+    }
+  ]
+}
