@@ -1,8 +1,13 @@
-"""Per-test heuristic computations, normalisation, and scoring (ADRs 0005, 0006).
+"""Scoring: per-test heuristics, recency decay, and aggregation (ADRs 0005, 0006).
 
-Each heuristic consumes a single test's runs and/or jobs (i.e. one ``job.name``
-group) and returns a ``float`` in ``[0, 1]``. The mappings are the fixed
-thresholds defined in ADR 0005:
+Renamed from ``heuristics.py`` per ADR 0007 to reflect that this module owns
+the full scoring pipeline — the individual heuristics, the equal-weight mean
+(``raw_score``), and the recency-weighted ``final_score`` / ``score_test``
+aggregators — not only the four normalised heuristic primitives.
+
+Each heuristic consumes a single test's runs and/or jobs (i.e. one
+``job.name`` group) and returns a ``float`` in ``[0, 1]``. The mappings are
+the fixed thresholds defined in ADR 0005:
 
 - volatility: identity (already a ratio)
 - retry_rate: identity (already a ratio)

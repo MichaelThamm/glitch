@@ -4,13 +4,12 @@ Per ADR 0003: every internal shape is a ``@dataclass(slots=True, frozen=True)``.
 Parsing from raw GitHub JSON is centralised here via ``from_api`` classmethods,
 so the rest of the package only ever sees typed instances. ``datetime`` values
 are always timezone-aware UTC inside the program; ISO-8601 strings (Z-suffix)
-are reserved for the wire/cache format.
+are reserved for the wire/cache format and are produced by
+``glitch.discover.render`` (see ADR 0007).
 """
 
 from __future__ import annotations
 
-import dataclasses
-import json
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from typing import Any, Self
@@ -38,11 +37,6 @@ def _parse_dt_optional(s: str | None) -> datetime | None:
     if s is None:
         return None
     return _parse_dt(s)
-
-
-def _isoformat(dt: datetime) -> str:
-    """Render a timezone-aware UTC ``datetime`` as ``...Z``-suffix ISO 8601."""
-    return dt.astimezone(UTC).isoformat().replace("+00:00", "Z")
 
 
 # --- Raw API shapes ---------------------------------------------------------
@@ -192,18 +186,6 @@ class DiscoveryReport:
     insufficient_data: tuple[InsufficientData, ...]
 
 
-# --- Serialisation ----------------------------------------------------------
-
-
-def to_json(report: DiscoveryReport) -> str:
-    """Serialise a ``DiscoveryReport`` to the canonical JSON wire format."""
-    return json.dumps(
-        dataclasses.asdict(report),
-        default=_isoformat,
-        indent=2,
-    )
-
-
 __all__ = [
     "Commit",
     "DiscoveryReport",
@@ -213,5 +195,4 @@ __all__ = [
     "Meta",
     "Run",
     "TestScore",
-    "to_json",
 ]

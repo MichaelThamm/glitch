@@ -1,4 +1,4 @@
-"""Tests for `glitch.discover.heuristics` — ADR 0005.
+"""Tests for `glitch.discover.scoring` — ADRs 0005 and 0006.
 
 Covers each of the four heuristics at their boundaries, plus the
 `heuristics_for_test` aggregator and `raw_score` mean. Pure functions, no
@@ -12,7 +12,7 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from glitch.discover.heuristics import (
+from glitch.discover.scoring import (
     DECAY_K,
     HALF_LIFE_DAYS,
     change_independence,

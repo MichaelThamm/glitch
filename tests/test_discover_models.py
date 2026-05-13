@@ -24,11 +24,10 @@ from glitch.discover.models import (
 )
 from glitch.discover.models import TestScore as _TestScore  # avoid pytest "Test*" collection
 from glitch.discover.models import (
-    _isoformat,
     _parse_dt,
     _parse_dt_optional,
-    to_json,
 )
+from glitch.discover.render import _isoformat, to_json
 
 
 # --- Fixtures ---------------------------------------------------------------

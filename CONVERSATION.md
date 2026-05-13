@@ -115,3 +115,20 @@ Team chat for the ADR-relay crew implementing Phase 1 Discovery.
 ✨ **Whimsy**: 118 PASSED and kai LIVE-CONFIRMED the constant-collapse in a test like "yeah the math no-ops on purpose catch me in adr 0007" 💀 half-life=14d hitting 0.5 right on the dot,, edmund margaret kai trilogy now QUADRILOGY the rhythm is criminal 🚀✨
 
 ---
+
+## ADR 0007 — Module layout
+
+🏗️ **Edmund**: Lifted the Typer `run()` and `OutputFormat` out of `__init__.py` and into a new `src/glitch/discover/_entrypoint.py`, so `__init__.py` is now exactly `from glitch.discover._entrypoint import run` plus a docstring — `glitch.cli`'s `app.command("discover", ...)(discover.run)` line resolves unchanged, and `glitch discover --help` still renders the full option block. Renamed `heuristics.py` → `scoring.py` and `tests/test_discover_heuristics.py` → `tests/test_discover_scoring.py` via `git mv` so history follows; the module docstring now leads with "Scoring: per-test heuristics, recency decay, and aggregation" and notes the ADR 0007 rename explicitly. Created `render.py` housing `to_json` and `_isoformat` (moved verbatim from `models.py`); `models.py` no longer imports `dataclasses`/`json` and its docstring now points readers at `glitch.discover.render` for the wire format. Two judgment calls worth flagging: I left `fanout.py` untouched since the ADR's tree is a target rather than an exhaustive whitelist and ADR 0004 already justifies its existence, and I declined to scaffold `render_table` — the ADR mentions rich-table output but a stub would be exactly the kind of half-finished surface the spec warns against, so `render.py` carries a one-line `TODO` instead. `uv run pytest -q` → 118 passed; no behaviour changed. Handing to @margaret.
+
+👀 **Margaret**: Walked the new tree against the ADR and it lines up. Pure refactor — no behaviour drift, full suite still `118 passed in 0.25s`, `uv run glitch discover --help` renders the same option block.
+- `__init__.py` is exactly one re-export plus a docstring; `_entrypoint.py` owns `run()` + `OutputFormat`; `client.py` / `cache.py` / `models.py` / `fanout.py` all still in place.
+- `git status` shows both renames staged (`heuristics → scoring`, `test_discover_heuristics → test_discover_scoring`) so history follows; `models.py` no longer references `to_json`/`_isoformat`; `tests/test_discover_models.py` now imports them from `glitch.discover.render`.
+- Praise: declining to scaffold `render_table` and leaving a one-line TODO instead of an empty `def render_table(): ...` is exactly the call the spec asks for — no half-finished surface to accidentally inherit. `_duration.py` correctly deferred to ADR 0009.
+**APPROVE**
+
+✨ **Whimsy**: edmund played musical chairs with the whole module and `git mv` preserved the receipts so the blame log still snitches accurately 🫡 118 passed UNCHANGED on a "pure refactor" is the cleanest flex — heuristics.py walked so scoring.py could rebrand fr 💅✨
+
+🔌 **Kai**: pure-refactor → smoke pass, no new tests per skill's structural-skeleton clause. full suite `uv run pytest -q` → `118 passed in 0.29s`; per-module splits → client 18, cache 23, models 21, fanout 9, scoring 42 (sum=113 ✅, rest are CLI/integration). one-shot import of `run`/`_entrypoint.run`+`OutputFormat`/`client.GitHubClient`/`cache.Cache`/`models.DiscoveryReport`/`fanout.fetch_jobs_for_runs`/`scoring.score_test`/`render.to_json` → `layout ok`. `glitch discover --help` renders full option block; `tests/test_discover_models.py:30` imports `_isoformat, to_json` from `glitch.discover.render` ✅; `_duration.py` absent — correct (ADR 0009). **APPROVE**
+
+✨ **Whimsy**: "layout ok" hitting after every module got shuffled is the import-graph equivalent of sticking the landing 🤸 118 passed UNCHANGED through a full reorg — pure refactor energy SO clean,, scoring.py truly the rebrand of the season fr 💅✨
+---
