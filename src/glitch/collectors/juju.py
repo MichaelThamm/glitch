@@ -18,8 +18,8 @@ class JujuCollector(Collector):
     """Collect Juju status, debug-logs, and per-unit details.
 
     Args:
-        model: Optional Juju model name (passed to ``-m``).  Defaults to the
-            currently-active model.
+        model: Optional Juju model name (passed via ``-m`` after each subcommand).
+            Defaults to the currently-active model.
     """
 
     name = "juju"
@@ -35,25 +35,27 @@ class JujuCollector(Collector):
         base = output_dir / "juju"
         base.mkdir(parents=True, exist_ok=True)
 
-        juju_args = ["juju"]
-        if self.model:
-            juju_args.extend(["-m", self.model])
-
         artifacts: list[Path] = []
 
-        _collect_status(juju_args, base, artifacts)
-        _collect_debug_log(juju_args, base, artifacts)
-        _collect_units(juju_args, base, artifacts)
+        _collect_status(self.model, base, artifacts)
+        _collect_debug_log(self.model, base, artifacts)
+        _collect_units(self.model, base, artifacts)
 
         return CollectorResult(status="ok", artifacts=artifacts)
 
 
+def _juju_model_args(model: str | None) -> list[str]:
+    """Return ``-m <model>`` args placed *after* the juju subcommand."""
+    if model:
+        return ["-m", model]
+    return []
+
+
 def _collect_status(
-    juju_args: list[str], base: Path, artifacts: list[Path]
+    model: str | None, base: Path, artifacts: list[Path]
 ) -> None:
-    """Fetch ``juju status --format json`` and discover units/containers."""
     try:
-        result = run_tool([*juju_args, "status", "--format", "json"])
+        result = run_tool(["juju", "status", *_juju_model_args(model), "--format", "json"])
         if result.returncode != 0:
             logger.warning("juju status failed: %s", result.stderr[:200])
             return
@@ -70,10 +72,13 @@ def _collect_status(
 
 
 def _collect_debug_log(
-    juju_args: list[str], base: Path, artifacts: list[Path]
+    model: str | None, base: Path, artifacts: list[Path]
 ) -> None:
     try:
-        result = run_tool([*juju_args, "debug-log", "--limit", "0"], timeout=120)
+        result = run_tool(
+            ["juju", "debug-log", *_juju_model_args(model), "--limit", "0"],
+            timeout=120,
+        )
         if result.returncode != 0:
             logger.warning("juju debug-log failed: %s", result.stderr[:200])
             return
@@ -89,7 +94,7 @@ def _collect_debug_log(
 def _discover_containers(status_data: dict) -> list[tuple[str, str]]:
     """Return (unit_name, container_name) pairs from status JSON."""
     pairs: list[tuple[str, str]] = []
-    for app_name, app in status_data.get("applications", {}).items():
+    for app in status_data.get("applications", {}).values():
         for unit_name in app.get("units", {}):
             containers = app.get("units", {}).get(unit_name, {}).get("containers", {})
             for container_name in containers:
@@ -98,12 +103,11 @@ def _discover_containers(status_data: dict) -> list[tuple[str, str]]:
 
 
 def _collect_units(
-    juju_args: list[str], base: Path, artifacts: list[Path]
+    model: str | None, base: Path, artifacts: list[Path]
 ) -> None:
     """Collect ``juju show-unit`` for every unit and ``pebble logs`` for every container."""
-
     try:
-        result = run_tool([*juju_args, "status", "--format", "json"])
+        result = run_tool(["juju", "status", *_juju_model_args(model), "--format", "json"])
         if result.returncode != 0:
             return
         status_data = json.loads(result.stdout)
@@ -117,17 +121,20 @@ def _collect_units(
     for unit_name, container_name in containers:
         if unit_name not in seen_units:
             seen_units.add(unit_name)
-            _collect_show_unit(juju_args, base, artifacts, unit_name)
-        _collect_pebble_logs(juju_args, base, artifacts, unit_name, container_name)
+            _collect_show_unit(model, base, artifacts, unit_name)
+        _collect_pebble_logs(model, base, artifacts, unit_name, container_name)
 
 
 def _collect_show_unit(
-    juju_args: list[str], base: Path, artifacts: list[Path], unit: str
+    model: str | None, base: Path, artifacts: list[Path], unit: str
 ) -> None:
     units_dir = base / "units"
     units_dir.mkdir(parents=True, exist_ok=True)
     try:
-        result = run_tool([*juju_args, "show-unit", unit, "--format", "json"], timeout=30)
+        result = run_tool(
+            ["juju", "show-unit", unit, *_juju_model_args(model), "--format", "json"],
+            timeout=30,
+        )
         if result.returncode != 0:
             logger.warning("juju show-unit %s failed: %s", unit, result.stderr[:200])
             return
@@ -143,7 +150,7 @@ def _collect_show_unit(
 
 
 def _collect_pebble_logs(
-    juju_args: list[str],
+    model: str | None,
     base: Path,
     artifacts: list[Path],
     unit: str,
@@ -153,7 +160,7 @@ def _collect_pebble_logs(
     pebble_dir.mkdir(parents=True, exist_ok=True)
     try:
         result = run_tool(
-            [*juju_args, "exec", "--unit", unit, "--", "pebble", "logs"],
+            ["juju", "exec", *_juju_model_args(model), "--unit", unit, "--", "pebble", "logs"],
             timeout=30,
         )
         if result.returncode != 0:

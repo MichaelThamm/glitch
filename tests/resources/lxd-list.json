@@ -1,0 +1,179 @@
+[
+  {
+    "name": "juju-e76a9b-0",
+    "description": "",
+    "status": "Running",
+    "status_code": 103,
+    "created_at": "2026-04-20T12:38:49.998574036Z",
+    "last_used_at": "2026-05-13T10:13:42.390826783Z",
+    "location": "none",
+    "type": "container",
+    "project": "default",
+    "architecture": "x86_64",
+    "ephemeral": false,
+    "stateful": false,
+    "profiles": [
+      "default",
+      "juju-controller-ca94ff"
+    ],
+    "config": {
+      "image.architecture": "amd64",
+      "image.description": "ubuntu 24.04 LTS amd64 (release) (20260321)",
+      "image.label": "release",
+      "image.os": "ubuntu",
+      "image.release": "noble",
+      "image.serial": "20260321",
+      "image.type": "squashfs",
+      "image.version": "24.04",
+      "user.juju-controller-uuid": "a76009d5-d5da-4db3-8a9e-8dbcd71a518c",
+      "user.juju-is-controller": "true",
+      "user.juju-model-uuid": "ca94ff0e-9cf7-43d4-8ac7-ca9b29e76a9b",
+      "user.user-data": "#cloud-config\noutput:\n  all: '| tee -a /var/log/cloud-init-output.log'\nruncmd:\n- set -xe\n- install -D -m 644 /dev/null '/var/lib/juju/nonce.txt'\n- echo 'user-admin:bootstrap' > '/var/lib/juju/nonce.txt'\nssh_keys:\n  ecdsa_private: |\n    -----BEGIN PRIVATE KEY-----\n    MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgAfgUkl/CRC3ArHxb\n    ZO7B+2QOzx3lnEn5X7NE11Da6MyhRANCAAQUc9hvdoalS9ngmGOCCdqYF6pUZYZ/\n    X4XxfLOYLJMHf7RAuPqQsVl3qS0RiHm3TLI1RQYLNr8dLknmUcJumhHC\n    -----END PRIVATE KEY-----\n  ecdsa_public: |\n    ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBRz2G92hqVL2eCYY4IJ2pgXqlRlhn9fhfF8s5gskwd/tEC4+pCxWXepLRGIebdMsjVFBgs2vx0uSeZRwm6aEcI= juju-bootstrap-1\n  ed25519_private: |\n    -----BEGIN PRIVATE KEY-----\n    MC4CAQAwBQYDK2VwBCIEIDGW5GNJqFcu9WJDMRl9KfoRJgSbGkFzqdIJ+z299BGK\n    -----END PRIVATE KEY-----\n  ed25519_public: |\n    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ668e7I8z/k+3S6LUIm3PsiN/dk3dwFjIXX6G4X09Io juju-bootstrap-2\n  rsa_private: |\n    -----BEGIN PRIVATE KEY-----\n    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1pIpYvQ57+PIy\n    gg72nPB/yWEfQBT+6fkjtVM6FhK7L1Q1GyrJGWIHjTthrgmgO7mn2jE4JRQHXsmS\n    cguHR72AGwlaNtM8idgZJ/BI+GDJ3wvJCStZzwR558uTNxgdE8fMgpWQfGW0NmWz\n    ctX5mH+byYlVSPuguQmSm2xe7PWP4q88LRoughWFat/7APf+PCigIkCuME/HWjsy\n    if11s98tg3VXldW1vfUR5p1LzgByPnP2cUQD86G97cyzhzX926r44Wg6KezWfX3g\n    j2EWor1PLG/3Lb1cAl0u2a/x/aywal2PeUyg1qSavoAMCQkPD9tWAfGen1kFAsg9\n    npUcyaChAgMBAAECggEAFpcmzZqAWVLAwcoDFRC3qGzh3gJuRLXR/RWUCulWiF5+\n    g+Gjv0GfkNOJIGuGBEjpR22PftgTAZz8R3D/lgzfYzX5l8qxwsRcp+RGXLeR8glX\n    bI1DYvaoK9vJfxRJtMlnqTukYO/XsO4C//+235qOZFBQUCxffxcEOxjcBYJFmBCi\n    N03W0V0S2Z8oijVOA6XwjsffKbGvOMofADUmSZl+eMFaiE7dyL93oNkbVBN4kHJa\n    SUvaFBX6vicjcH+bzciG0X46D6IfjzsGgyddBlwwOaTrCMqmWDKZiC8i22XtBIUB\n    zysP5s2q7Ngsvc9BMx4q9p4qq1sygO8IwP27qBNfcQKBgQDOWjye7/CL4vvxCoN1\n    hcD3NoG539Rlm47iVDQQkfbzOkb76HcFF28TDBdwPsVd6+c0WeI4mM2cNOK09ana\n    QmdnKogME6DUMeCmtLxOd7xsXweZwS/cD4lI9huJMe/8VQh/H3Zn07BurJ6SynpB\n    w2mVgGQY7Zf9PN2v6FQdRdMoawKBgQDhWF5YLPuxCm/e23OT3Keee2llYVL3SPDr\n    EzkI8fu8g/jSahfMJknYgalFWEjFlEc/v4sgsct587B178Vvv4GFcvr7JQWqq7wG\n    1/fAkcuvMI7kcAYIEnE8QNibQkT0amUP7ooFcw/2B305E54jDzKVFbI+EnZG1rZG\n    WzOKYG/OIwKBgBGl7AtX0AXWut9pm8agUtmRwtSHzR2HiVfYBb/pC+rPcCS5Q/ye\n    fXRuk06ZP74Bn/t9OHjIsMUMTNtXK1isVzWekJYf06ByR5laWcSIPwgxtG+08wfq\n    GD6yNbatG65EA38DzNeiZjOA9eruADjBorUTjvwGzfnti7QwtYjvYNjTAoGADUac\n    gEteJKb9wj5hh8OHKIISyoM6VRE6CE9gm9NNxmRsA1F2x3M2BIhXBZvW5bT/oZTS\n    SIHRAAVITxpqIlRA+DC28pbSx6RIdorAsNqmClMtB+5FnLIhc7BKUpNL5q5h99dQ\n    0FNgDFmSmgs61MvvafMWRivmRfQeVvTGi4905ssCgYEAou0kXZHsyudzMNu51Vrc\n    E8U33o11qKatxNoxP29DZKErc8U45eG8jsmtR64LwMiTGn5eawI5nqKP3lLLDhHR\n    FDyXHn/4zsBZpo9bKHmbpE3YaZs0spfX7LVrZySUsfkS4dd80I/w0ZMGu8Qrqbby\n    6NBw0l3pFOXe7akEro4HlhY=\n    -----END PRIVATE KEY-----\n  rsa_public: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1pIpYvQ57+PIygg72nPB/yWEfQBT+6fkjtVM6FhK7L1Q1GyrJGWIHjTthrgmgO7mn2jE4JRQHXsmScguHR72AGwlaNtM8idgZJ/BI+GDJ3wvJCStZzwR558uTNxgdE8fMgpWQfGW0NmWzctX5mH+byYlVSPuguQmSm2xe7PWP4q88LRoughWFat/7APf+PCigIkCuME/HWjsyif11s98tg3VXldW1vfUR5p1LzgByPnP2cUQD86G97cyzhzX926r44Wg6KezWfX3gj2EWor1PLG/3Lb1cAl0u2a/x/aywal2PeUyg1qSavoAMCQkPD9tWAfGen1kFAsg9npUcyaCh juju-bootstrap-0\nusers:\n- groups:\n  - adm\n  - audio\n  - cdrom\n  - dialout\n  - dip\n  - floppy\n  - netdev\n  - plugdev\n  - sudo\n  - video\n  lock_passwd: true\n  name: ubuntu\n  shell: /bin/bash\n  ssh_authorized_keys:\n  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMDW4cgRWyQ9jNAB3yALLypiSGhc/JfVJIuKmxWasMGYi5ZV3Rnkf1/3aE6KIgxM7NTCMzTlSAHQ7d7GGyOYu6SaHysHdsyA1QUAG9iG5hyz2Q3C9lMLy9lHDNBZh+VkU6QMfss1jd3GzP+6LnGaCInvx7JUnqKaaIxKCyNbVazmu3U2xdsAC3QrTtwB1kd1qAhRMo8lt9RerRY23Y0ldbDJ1ZH0+iZIOOlllqGNh0KjumJlerbEv4XkSwEA72dcF29DVdLsXt0SWr4HM0D/EwWCfucbGu4P7t7Tx0gZOvNBdvdNKLtgHQIguXYz5Yb48UMFPdadLNJkI1uUN+rTBOtPwfn4XyuTYxq6EqMPJss9yzgA+tRNPFxIc1WFkNKELUfjsUbIDaEghssbrqOFyHK/dN9jOLd0/9vMhBOGen0QC2LWDyVWvDOyzT97A4i+sIS/1tG3fIQUFnwiFMZA5GSvAUtbp1+71WNmXm1/kV3cyPYwxgh3BAVjcjnsrr98wl4Xt59DJ4xhQBdjhDdF7QK1UOJ2j58Y9ziRbZzx4a8v7SdfMH2r3fmAd6Oyvy/LzJwolp7b2ry9IL31KFEgXGhfVgEXiOlZ4Lpuan7jtHm2cgsEkS2tet7Qlcqr6ev5C2uzHmKScWe7wtMoMLXF6uHdaM7WPOvP2gxIeCtYT/tw==\n    Juju:juju-client-key\n  sudo: ALL=(ALL) NOPASSWD:ALL\n",
+      "volatile.base_image": "d6c393290422fba3a8378d739a333b27db84f5b0d3a05f951297f46f1d82346f",
+      "volatile.cloud-init.instance-id": "8922b1ff-7193-46d6-913d-b79822465a2a",
+      "volatile.eth0.host_name": "veth83600867",
+      "volatile.eth0.hwaddr": "00:16:3e:9a:3a:8f",
+      "volatile.idmap.base": "0",
+      "volatile.idmap.current": "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000},{\"Isuid\":false,\"Isgid\":true,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000}]",
+      "volatile.idmap.next": "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000},{\"Isuid\":false,\"Isgid\":true,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000}]",
+      "volatile.last_state.idmap": "[]",
+      "volatile.last_state.power": "RUNNING",
+      "volatile.uuid": "35048e6e-54c1-4b93-98a2-c6bf05040d73",
+      "volatile.uuid.generation": "35048e6e-54c1-4b93-98a2-c6bf05040d73"
+    },
+    "devices": {},
+    "expanded_config": {
+      "boot.autostart": "true",
+      "image.architecture": "amd64",
+      "image.description": "ubuntu 24.04 LTS amd64 (release) (20260321)",
+      "image.label": "release",
+      "image.os": "ubuntu",
+      "image.release": "noble",
+      "image.serial": "20260321",
+      "image.type": "squashfs",
+      "image.version": "24.04",
+      "security.nesting": "true",
+      "user.juju-controller-uuid": "a76009d5-d5da-4db3-8a9e-8dbcd71a518c",
+      "user.juju-is-controller": "true",
+      "user.juju-model-uuid": "ca94ff0e-9cf7-43d4-8ac7-ca9b29e76a9b",
+      "user.user-data": "#cloud-config\noutput:\n  all: '| tee -a /var/log/cloud-init-output.log'\nruncmd:\n- set -xe\n- install -D -m 644 /dev/null '/var/lib/juju/nonce.txt'\n- echo 'user-admin:bootstrap' > '/var/lib/juju/nonce.txt'\nssh_keys:\n  ecdsa_private: |\n    -----BEGIN PRIVATE KEY-----\n    MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgAfgUkl/CRC3ArHxb\n    ZO7B+2QOzx3lnEn5X7NE11Da6MyhRANCAAQUc9hvdoalS9ngmGOCCdqYF6pUZYZ/\n    X4XxfLOYLJMHf7RAuPqQsVl3qS0RiHm3TLI1RQYLNr8dLknmUcJumhHC\n    -----END PRIVATE KEY-----\n  ecdsa_public: |\n    ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBRz2G92hqVL2eCYY4IJ2pgXqlRlhn9fhfF8s5gskwd/tEC4+pCxWXepLRGIebdMsjVFBgs2vx0uSeZRwm6aEcI= juju-bootstrap-1\n  ed25519_private: |\n    -----BEGIN PRIVATE KEY-----\n    MC4CAQAwBQYDK2VwBCIEIDGW5GNJqFcu9WJDMRl9KfoRJgSbGkFzqdIJ+z299BGK\n    -----END PRIVATE KEY-----\n  ed25519_public: |\n    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ668e7I8z/k+3S6LUIm3PsiN/dk3dwFjIXX6G4X09Io juju-bootstrap-2\n  rsa_private: |\n    -----BEGIN PRIVATE KEY-----\n    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1pIpYvQ57+PIy\n    gg72nPB/yWEfQBT+6fkjtVM6FhK7L1Q1GyrJGWIHjTthrgmgO7mn2jE4JRQHXsmS\n    cguHR72AGwlaNtM8idgZJ/BI+GDJ3wvJCStZzwR558uTNxgdE8fMgpWQfGW0NmWz\n    ctX5mH+byYlVSPuguQmSm2xe7PWP4q88LRoughWFat/7APf+PCigIkCuME/HWjsy\n    if11s98tg3VXldW1vfUR5p1LzgByPnP2cUQD86G97cyzhzX926r44Wg6KezWfX3g\n    j2EWor1PLG/3Lb1cAl0u2a/x/aywal2PeUyg1qSavoAMCQkPD9tWAfGen1kFAsg9\n    npUcyaChAgMBAAECggEAFpcmzZqAWVLAwcoDFRC3qGzh3gJuRLXR/RWUCulWiF5+\n    g+Gjv0GfkNOJIGuGBEjpR22PftgTAZz8R3D/lgzfYzX5l8qxwsRcp+RGXLeR8glX\n    bI1DYvaoK9vJfxRJtMlnqTukYO/XsO4C//+235qOZFBQUCxffxcEOxjcBYJFmBCi\n    N03W0V0S2Z8oijVOA6XwjsffKbGvOMofADUmSZl+eMFaiE7dyL93oNkbVBN4kHJa\n    SUvaFBX6vicjcH+bzciG0X46D6IfjzsGgyddBlwwOaTrCMqmWDKZiC8i22XtBIUB\n    zysP5s2q7Ngsvc9BMx4q9p4qq1sygO8IwP27qBNfcQKBgQDOWjye7/CL4vvxCoN1\n    hcD3NoG539Rlm47iVDQQkfbzOkb76HcFF28TDBdwPsVd6+c0WeI4mM2cNOK09ana\n    QmdnKogME6DUMeCmtLxOd7xsXweZwS/cD4lI9huJMe/8VQh/H3Zn07BurJ6SynpB\n    w2mVgGQY7Zf9PN2v6FQdRdMoawKBgQDhWF5YLPuxCm/e23OT3Keee2llYVL3SPDr\n    EzkI8fu8g/jSahfMJknYgalFWEjFlEc/v4sgsct587B178Vvv4GFcvr7JQWqq7wG\n    1/fAkcuvMI7kcAYIEnE8QNibQkT0amUP7ooFcw/2B305E54jDzKVFbI+EnZG1rZG\n    WzOKYG/OIwKBgBGl7AtX0AXWut9pm8agUtmRwtSHzR2HiVfYBb/pC+rPcCS5Q/ye\n    fXRuk06ZP74Bn/t9OHjIsMUMTNtXK1isVzWekJYf06ByR5laWcSIPwgxtG+08wfq\n    GD6yNbatG65EA38DzNeiZjOA9eruADjBorUTjvwGzfnti7QwtYjvYNjTAoGADUac\n    gEteJKb9wj5hh8OHKIISyoM6VRE6CE9gm9NNxmRsA1F2x3M2BIhXBZvW5bT/oZTS\n    SIHRAAVITxpqIlRA+DC28pbSx6RIdorAsNqmClMtB+5FnLIhc7BKUpNL5q5h99dQ\n    0FNgDFmSmgs61MvvafMWRivmRfQeVvTGi4905ssCgYEAou0kXZHsyudzMNu51Vrc\n    E8U33o11qKatxNoxP29DZKErc8U45eG8jsmtR64LwMiTGn5eawI5nqKP3lLLDhHR\n    FDyXHn/4zsBZpo9bKHmbpE3YaZs0spfX7LVrZySUsfkS4dd80I/w0ZMGu8Qrqbby\n    6NBw0l3pFOXe7akEro4HlhY=\n    -----END PRIVATE KEY-----\n  rsa_public: |\n    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1pIpYvQ57+PIygg72nPB/yWEfQBT+6fkjtVM6FhK7L1Q1GyrJGWIHjTthrgmgO7mn2jE4JRQHXsmScguHR72AGwlaNtM8idgZJ/BI+GDJ3wvJCStZzwR558uTNxgdE8fMgpWQfGW0NmWzctX5mH+byYlVSPuguQmSm2xe7PWP4q88LRoughWFat/7APf+PCigIkCuME/HWjsyif11s98tg3VXldW1vfUR5p1LzgByPnP2cUQD86G97cyzhzX926r44Wg6KezWfX3gj2EWor1PLG/3Lb1cAl0u2a/x/aywal2PeUyg1qSavoAMCQkPD9tWAfGen1kFAsg9npUcyaCh juju-bootstrap-0\nusers:\n- groups:\n  - adm\n  - audio\n  - cdrom\n  - dialout\n  - dip\n  - floppy\n  - netdev\n  - plugdev\n  - sudo\n  - video\n  lock_passwd: true\n  name: ubuntu\n  shell: /bin/bash\n  ssh_authorized_keys:\n  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMDW4cgRWyQ9jNAB3yALLypiSGhc/JfVJIuKmxWasMGYi5ZV3Rnkf1/3aE6KIgxM7NTCMzTlSAHQ7d7GGyOYu6SaHysHdsyA1QUAG9iG5hyz2Q3C9lMLy9lHDNBZh+VkU6QMfss1jd3GzP+6LnGaCInvx7JUnqKaaIxKCyNbVazmu3U2xdsAC3QrTtwB1kd1qAhRMo8lt9RerRY23Y0ldbDJ1ZH0+iZIOOlllqGNh0KjumJlerbEv4XkSwEA72dcF29DVdLsXt0SWr4HM0D/EwWCfucbGu4P7t7Tx0gZOvNBdvdNKLtgHQIguXYz5Yb48UMFPdadLNJkI1uUN+rTBOtPwfn4XyuTYxq6EqMPJss9yzgA+tRNPFxIc1WFkNKELUfjsUbIDaEghssbrqOFyHK/dN9jOLd0/9vMhBOGen0QC2LWDyVWvDOyzT97A4i+sIS/1tG3fIQUFnwiFMZA5GSvAUtbp1+71WNmXm1/kV3cyPYwxgh3BAVjcjnsrr98wl4Xt59DJ4xhQBdjhDdF7QK1UOJ2j58Y9ziRbZzx4a8v7SdfMH2r3fmAd6Oyvy/LzJwolp7b2ry9IL31KFEgXGhfVgEXiOlZ4Lpuan7jtHm2cgsEkS2tet7Qlcqr6ev5C2uzHmKScWe7wtMoMLXF6uHdaM7WPOvP2gxIeCtYT/tw==\n    Juju:juju-client-key\n  sudo: ALL=(ALL) NOPASSWD:ALL\n",
+      "volatile.base_image": "d6c393290422fba3a8378d739a333b27db84f5b0d3a05f951297f46f1d82346f",
+      "volatile.cloud-init.instance-id": "8922b1ff-7193-46d6-913d-b79822465a2a",
+      "volatile.eth0.host_name": "veth83600867",
+      "volatile.eth0.hwaddr": "00:16:3e:9a:3a:8f",
+      "volatile.idmap.base": "0",
+      "volatile.idmap.current": "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000},{\"Isuid\":false,\"Isgid\":true,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000}]",
+      "volatile.idmap.next": "[{\"Isuid\":true,\"Isgid\":false,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000},{\"Isuid\":false,\"Isgid\":true,\"Hostid\":1000000,\"Nsid\":0,\"Maprange\":1000000000}]",
+      "volatile.last_state.idmap": "[]",
+      "volatile.last_state.power": "RUNNING",
+      "volatile.uuid": "35048e6e-54c1-4b93-98a2-c6bf05040d73",
+      "volatile.uuid.generation": "35048e6e-54c1-4b93-98a2-c6bf05040d73"
+    },
+    "expanded_devices": {
+      "eth0": {
+        "name": "eth0",
+        "network": "lxdbr0",
+        "type": "nic"
+      },
+      "root": {
+        "path": "/",
+        "pool": "default",
+        "type": "disk"
+      }
+    },
+    "backups": null,
+    "state": {
+      "status": "Running",
+      "status_code": 103,
+      "disk": {
+        "root": {
+          "usage": 0,
+          "total": 0
+        }
+      },
+      "memory": {
+        "usage": 1118539776,
+        "usage_peak": 0,
+        "total": 16762556416,
+        "swap_usage": 0,
+        "swap_usage_peak": 0
+      },
+      "network": {
+        "eth0": {
+          "addresses": [
+            {
+              "family": "inet",
+              "address": "10.19.135.78",
+              "netmask": "24",
+              "scope": "global"
+            },
+            {
+              "family": "inet6",
+              "address": "fd42:7c4d:ed07:3c7f:216:3eff:fe9a:3a8f",
+              "netmask": "64",
+              "scope": "global"
+            },
+            {
+              "family": "inet6",
+              "address": "fe80::216:3eff:fe9a:3a8f",
+              "netmask": "64",
+              "scope": "link"
+            }
+          ],
+          "counters": {
+            "bytes_received": 888868,
+            "bytes_sent": 186080,
+            "packets_received": 824,
+            "packets_sent": 704,
+            "errors_received": 0,
+            "errors_sent": 0,
+            "packets_dropped_outbound": 0,
+            "packets_dropped_inbound": 0
+          },
+          "hwaddr": "00:16:3e:9a:3a:8f",
+          "host_name": "veth83600867",
+          "mtu": 1500,
+          "state": "up",
+          "type": "broadcast"
+        },
+        "lo": {
+          "addresses": [
+            {
+              "family": "inet",
+              "address": "127.0.0.1",
+              "netmask": "8",
+              "scope": "local"
+            },
+            {
+              "family": "inet6",
+              "address": "::1",
+              "netmask": "128",
+              "scope": "local"
+            }
+          ],
+          "counters": {
+            "bytes_received": 42249691,
+            "bytes_sent": 42249691,
+            "packets_received": 255803,
+            "packets_sent": 255803,
+            "errors_received": 0,
+            "errors_sent": 0,
+            "packets_dropped_outbound": 0,
+            "packets_dropped_inbound": 0
+          },
+          "hwaddr": "",
+          "host_name": "",
+          "mtu": 65536,
+          "state": "up",
+          "type": "loopback"
+        }
+      },
+      "pid": 2974,
+      "processes": 164,
+      "cpu": {
+        "usage": 153226558000
+      }
+    },
+    "snapshots": null
+  }
+]

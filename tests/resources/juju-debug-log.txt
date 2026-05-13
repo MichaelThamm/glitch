@@ -1,0 +1,678 @@
+controller-0: 08:13:42 INFO juju.worker.apicaller [f4a4a5] "controller-0" successfully connected to "wss://localhost:17070"
+controller-0: 08:13:42 INFO juju.worker.logforwarder config change - log forwarding not enabled
+controller-0: 08:13:42 INFO juju.worker.logger logger worker started
+controller-0: 08:13:42 INFO juju.worker.pruner.action pruner config: max age: 336h0m0s, max collection size 5120M for cos-lite (f4a4a5ef-b14f-4361-8944-0dda022b8688)
+controller-0: 08:13:42 INFO juju.worker.pruner.statushistory pruner config: max age: 336h0m0s, max collection size 5120M for cos-lite (f4a4a5ef-b14f-4361-8944-0dda022b8688)
+controller-0: 08:13:43 INFO juju.worker.caasapplicationprovisioner.runner start "grafana"
+controller-0: 08:13:43 INFO juju.worker.caasapplicationprovisioner.runner start "alertmanager"
+controller-0: 08:13:43 INFO juju.worker.caasapplicationprovisioner.runner start "traefik"
+controller-0: 08:13:43 INFO juju.worker.caasapplicationprovisioner.runner start "prometheus"
+controller-0: 08:13:43 INFO juju.worker.caasapplicationprovisioner.runner start "catalogue"
+controller-0: 08:13:43 INFO juju.worker.caasapplicationprovisioner.runner start "loki"
+controller-0: 08:13:45 INFO juju.worker.caasapplicationprovisioner.runner stopped "grafana", err: retrieving provisioning info: getting model operator deployment image: k8s "modeloperator" deployment not found: deployments.apps "modeloperator" not found
+controller-0: 08:13:45 INFO juju.worker.caasapplicationprovisioner.runner non-fatal error "grafana": retrieving provisioning info: getting model operator deployment image: k8s "modeloperator" deployment not found: deployments.apps "modeloperator" not found
+controller-0: 08:13:45 ERROR juju.worker.caasapplicationprovisioner.runner exited "grafana": retrieving provisioning info: getting model operator deployment image: k8s "modeloperator" deployment not found: deployments.apps "modeloperator" not found
+controller-0: 08:13:45 INFO juju.worker.caasapplicationprovisioner.runner restarting "grafana" in 3s
+controller-0: 08:13:47 INFO juju.worker.caasapplicationprovisioner.runner stopped "alertmanager", err: retrieving provisioning info: getting model operator deployment image: k8s "modeloperator" deployment not found: deployments.apps "modeloperator" not found
+controller-0: 08:13:47 INFO juju.worker.caasapplicationprovisioner.runner non-fatal error "alertmanager": retrieving provisioning info: getting model operator deployment image: k8s "modeloperator" deployment not found: deployments.apps "modeloperator" not found
+controller-0: 08:13:47 ERROR juju.worker.caasapplicationprovisioner.runner exited "alertmanager": retrieving provisioning info: getting model operator deployment image: k8s "modeloperator" deployment not found: deployments.apps "modeloperator" not found
+controller-0: 08:13:47 INFO juju.worker.caasapplicationprovisioner.runner restarting "alertmanager" in 3s
+controller-0: 08:13:48 INFO juju.worker.caasapplicationprovisioner.runner start "grafana"
+model-f4a4a5ef-b14f-4361-8944-0dda022b8688: 08:13:49 INFO juju.worker.caasupgrader abort check blocked until version event received
+model-f4a4a5ef-b14f-4361-8944-0dda022b8688: 08:13:49 INFO juju.worker.caasupgrader unblocking abort check
+model-f4a4a5ef-b14f-4361-8944-0dda022b8688: 08:13:49 INFO juju.worker.muxhttpserver starting http server on [::]:17071
+model-f4a4a5ef-b14f-4361-8944-0dda022b8688: 08:13:49 INFO juju.worker.caasadmission ensuring model k8s webhook configurations
+controller-0: 08:13:50 INFO juju.worker.caasapplicationprovisioner.runner start "alertmanager"
+controller-0: 08:14:19 INFO juju.worker.caasapplicationprovisioner.alertmanager scaling application "alertmanager" to desired scale 1
+controller-0: 08:14:19 INFO juju.worker.caasapplicationprovisioner.traefik scaling application "traefik" to desired scale 1
+controller-0: 08:14:21 INFO juju.worker.caasapplicationprovisioner.prometheus scaling application "prometheus" to desired scale 1
+unit-alertmanager-0: 08:14:23 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-alertmanager-0: 08:14:23 INFO juju.cmd.containeragent.unit start "unit"
+unit-alertmanager-0: 08:14:23 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-alertmanager-0: 08:14:23 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-alertmanager-0: 08:14:23 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-alertmanager-0: 08:14:23 INFO juju.worker.apicaller [f4a4a5] "unit-alertmanager-0" successfully connected to "wss://10.152.183.81:17070"
+unit-alertmanager-0: 08:14:23 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-alertmanager-0: 08:14:23 INFO juju.worker.apicaller [f4a4a5] "unit-alertmanager-0" successfully connected to "wss://10.152.183.81:17070"
+unit-alertmanager-0: 08:14:23 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-alertmanager-0: 08:14:23 INFO juju.worker.logger logger worker started
+unit-alertmanager-0: 08:14:23 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-alertmanager-0: 08:14:23 INFO juju.worker.leadership alertmanager/0 promoted to leadership of alertmanager
+unit-alertmanager-0: 08:14:23 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-alertmanager-0: 08:14:23 INFO juju.worker.caasupgrader unblocking abort check
+unit-alertmanager-0: 08:14:23 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-alertmanager-0
+unit-alertmanager-0: 08:14:23 INFO juju.worker.uniter unit "alertmanager/0" started
+unit-alertmanager-0: 08:14:23 INFO juju.worker.uniter resuming charm install
+unit-alertmanager-0: 08:14:23 INFO juju.worker.uniter.charm downloading ch:amd64/alertmanager-k8s-191 from API server
+unit-alertmanager-0: 08:14:23 INFO juju.downloader downloading from ch:amd64/alertmanager-k8s-191
+unit-alertmanager-0: 08:14:23 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-alertmanager-0: 08:14:23 INFO juju.downloader download complete ("ch:amd64/alertmanager-k8s-191")
+unit-alertmanager-0: 08:14:23 INFO juju.downloader download verified ("ch:amd64/alertmanager-k8s-191")
+unit-traefik-0: 08:14:27 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-traefik-0: 08:14:27 INFO juju.cmd.containeragent.unit start "unit"
+unit-traefik-0: 08:14:27 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-traefik-0: 08:14:27 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-traefik-0: 08:14:27 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-traefik-0: 08:14:27 INFO juju.worker.apicaller [f4a4a5] "unit-traefik-0" successfully connected to "wss://10.152.183.81:17070"
+unit-traefik-0: 08:14:27 INFO juju.api connection established to "wss://controller-service.controller-k8s.svc.cluster.local:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-traefik-0: 08:14:27 INFO juju.worker.apicaller [f4a4a5] "unit-traefik-0" successfully connected to "wss://controller-service.controller-k8s.svc.cluster.local:17070"
+unit-prometheus-0: 08:14:27 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-prometheus-0: 08:14:27 INFO juju.cmd.containeragent.unit start "unit"
+unit-prometheus-0: 08:14:27 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-prometheus-0: 08:14:27 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-prometheus-0: 08:14:27 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-prometheus-0: 08:14:27 INFO juju.worker.apicaller [f4a4a5] "unit-prometheus-0" successfully connected to "wss://10.152.183.81:17070"
+unit-traefik-0: 08:14:27 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-traefik-0: 08:14:27 INFO juju.worker.logger logger worker started
+unit-traefik-0: 08:14:27 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-traefik-0: 08:14:27 INFO juju.worker.leadership traefik/0 promoted to leadership of traefik
+unit-prometheus-0: 08:14:27 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-prometheus-0: 08:14:27 INFO juju.worker.logger logger worker started
+unit-prometheus-0: 08:14:27 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-traefik-0: 08:14:27 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-traefik-0: 08:14:27 INFO juju.worker.caasupgrader unblocking abort check
+unit-prometheus-0: 08:14:27 INFO juju.worker.leadership prometheus/0 promoted to leadership of prometheus
+unit-prometheus-0: 08:14:27 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-prometheus-0: 08:14:27 INFO juju.worker.caasupgrader unblocking abort check
+unit-traefik-0: 08:14:27 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-traefik-0
+unit-prometheus-0: 08:14:27 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-prometheus-0
+unit-traefik-0: 08:14:27 INFO juju.worker.uniter unit "traefik/0" started
+unit-traefik-0: 08:14:27 INFO juju.worker.uniter resuming charm install
+unit-traefik-0: 08:14:27 INFO juju.worker.uniter.charm downloading ch:amd64/traefik-k8s-281 from API server
+unit-traefik-0: 08:14:27 INFO juju.downloader downloading from ch:amd64/traefik-k8s-281
+unit-prometheus-0: 08:14:27 INFO juju.worker.uniter unit "prometheus/0" started
+unit-prometheus-0: 08:14:27 INFO juju.worker.uniter resuming charm install
+unit-prometheus-0: 08:14:27 INFO juju.worker.uniter.charm downloading ch:amd64/prometheus-k8s-287 from API server
+unit-prometheus-0: 08:14:27 INFO juju.downloader downloading from ch:amd64/prometheus-k8s-287
+unit-traefik-0: 08:14:27 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-traefik-0: 08:14:27 INFO juju.downloader download complete ("ch:amd64/traefik-k8s-281")
+unit-traefik-0: 08:14:27 INFO juju.downloader download verified ("ch:amd64/traefik-k8s-281")
+unit-prometheus-0: 08:14:27 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-prometheus-0: 08:14:27 INFO juju.downloader download complete ("ch:amd64/prometheus-k8s-287")
+unit-prometheus-0: 08:14:27 INFO juju.downloader download verified ("ch:amd64/prometheus-k8s-287")
+controller-0: 08:14:34 INFO juju.worker.caasapplicationprovisioner.catalogue scaling application "catalogue" to desired scale 1
+controller-0: 08:14:34 INFO juju.worker.caasapplicationprovisioner.loki scaling application "loki" to desired scale 1
+unit-alertmanager-0: 08:14:34 INFO juju.worker.uniter hooks are retried true
+unit-alertmanager-0: 08:14:34 INFO juju.worker.uniter found queued "install" hook
+unit-traefik-0: 08:14:35 INFO juju.worker.uniter hooks are retried true
+unit-traefik-0: 08:14:35 INFO juju.worker.uniter found queued "install" hook
+unit-prometheus-0: 08:14:36 INFO juju.worker.uniter hooks are retried true
+unit-prometheus-0: 08:14:36 INFO juju.worker.uniter found queued "install" hook
+unit-alertmanager-0: 08:14:36 WARNING unit.alertmanager/0.juju-log <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:14:36 INFO juju.worker.uniter.operation ran "install" hook (via hook dispatching script: dispatch)
+unit-catalogue-0: 08:14:37 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-catalogue-0: 08:14:37 INFO juju.cmd.containeragent.unit start "unit"
+unit-catalogue-0: 08:14:37 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-catalogue-0: 08:14:37 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-catalogue-0: 08:14:37 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-catalogue-0: 08:14:37 INFO juju.worker.apicaller [f4a4a5] "unit-catalogue-0" successfully connected to "wss://10.152.183.81:17070"
+unit-catalogue-0: 08:14:37 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-catalogue-0: 08:14:37 INFO juju.worker.apicaller [f4a4a5] "unit-catalogue-0" successfully connected to "wss://10.152.183.81:17070"
+unit-catalogue-0: 08:14:37 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-catalogue-0: 08:14:37 INFO juju.worker.logger logger worker started
+unit-catalogue-0: 08:14:37 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-catalogue-0: 08:14:37 INFO juju.worker.leadership catalogue/0 promoted to leadership of catalogue
+unit-catalogue-0: 08:14:37 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-catalogue-0: 08:14:37 INFO juju.worker.caasupgrader unblocking abort check
+unit-catalogue-0: 08:14:37 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-catalogue-0
+unit-catalogue-0: 08:14:37 INFO juju.worker.uniter unit "catalogue/0" started
+unit-catalogue-0: 08:14:37 INFO juju.worker.uniter resuming charm install
+unit-catalogue-0: 08:14:37 INFO juju.worker.uniter.charm downloading ch:amd64/catalogue-k8s-113 from API server
+unit-catalogue-0: 08:14:37 INFO juju.downloader downloading from ch:amd64/catalogue-k8s-113
+unit-catalogue-0: 08:14:37 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-catalogue-0: 08:14:37 INFO juju.downloader download complete ("ch:amd64/catalogue-k8s-113")
+unit-catalogue-0: 08:14:37 INFO juju.downloader download verified ("ch:amd64/catalogue-k8s-113")
+unit-traefik-0: 08:14:37 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:37 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:37 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:37 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:37 WARNING unit.traefik/0.juju-log <class '__main__.TraefikIngressCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:14:37 WARNING unit.alertmanager/0.juju-log replicas:3: <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:14:38 INFO juju.worker.uniter.operation ran "replicas-relation-created" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:14:38 INFO juju.worker.uniter found queued "leader-elected" hook
+unit-traefik-0: 08:14:38 INFO juju.worker.uniter.operation ran "install" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:14:39 WARNING unit.alertmanager/0.juju-log <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-traefik-0: 08:14:39 ERROR unit.traefik/0.juju-log peers:4: Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:39 ERROR unit.traefik/0.juju-log peers:4: Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:39 ERROR unit.traefik/0.juju-log peers:4: Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-loki-0: 08:14:39 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-loki-0: 08:14:39 INFO juju.cmd.containeragent.unit start "unit"
+unit-loki-0: 08:14:39 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-loki-0: 08:14:39 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-traefik-0: 08:14:39 ERROR unit.traefik/0.juju-log peers:4: Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-loki-0: 08:14:39 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-loki-0: 08:14:39 INFO juju.worker.apicaller [f4a4a5] "unit-loki-0" successfully connected to "wss://10.152.183.81:17070"
+unit-loki-0: 08:14:39 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-loki-0: 08:14:39 INFO juju.worker.logger logger worker started
+unit-loki-0: 08:14:39 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-loki-0: 08:14:39 INFO juju.worker.leadership loki/0 promoted to leadership of loki
+unit-loki-0: 08:14:39 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-loki-0: 08:14:39 INFO juju.worker.caasupgrader unblocking abort check
+unit-loki-0: 08:14:39 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-loki-0
+unit-traefik-0: 08:14:39 WARNING unit.traefik/0.juju-log peers:4: <class '__main__.TraefikIngressCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:14:39 INFO juju.worker.uniter unit "loki/0" started
+unit-loki-0: 08:14:39 INFO juju.worker.uniter resuming charm install
+unit-loki-0: 08:14:39 INFO juju.worker.uniter.charm downloading ch:amd64/loki-k8s-217 from API server
+unit-loki-0: 08:14:39 INFO juju.downloader downloading from ch:amd64/loki-k8s-217
+unit-alertmanager-0: 08:14:39 INFO juju.worker.uniter.operation ran "leader-elected" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:14:39 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-loki-0: 08:14:39 INFO juju.downloader download complete ("ch:amd64/loki-k8s-217")
+unit-loki-0: 08:14:39 INFO juju.downloader download verified ("ch:amd64/loki-k8s-217")
+unit-traefik-0: 08:14:40 INFO juju.worker.uniter.operation ran "peers-relation-created" hook (via hook dispatching script: dispatch)
+unit-traefik-0: 08:14:40 INFO juju.worker.uniter found queued "leader-elected" hook
+unit-alertmanager-0: 08:14:40 WARNING unit.alertmanager/0.juju-log <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-traefik-0: 08:14:40 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:40 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:40 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:40 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-prometheus-0: 08:14:41 WARNING unit.prometheus/0.install rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:14:41 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-traefik-0: 08:14:41 WARNING unit.traefik/0.juju-log <class '__main__.TraefikIngressCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:14:41 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager "HTTP/1.1 200 OK"
+controller-0: 08:14:41 INFO juju.worker.caasapplicationprovisioner.grafana scaling application "grafana" to desired scale 1
+unit-prometheus-0: 08:14:41 INFO juju.worker.uniter.operation ran "install" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:14:42 INFO juju.worker.uniter.operation ran "alertmanager-pebble-ready" hook (via hook dispatching script: dispatch)
+unit-traefik-0: 08:14:42 INFO juju.worker.uniter.operation ran "leader-elected" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:14:42 WARNING unit.alertmanager/0.juju-log <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-traefik-0: 08:14:43 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:43 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:43 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-traefik-0: 08:14:43 ERROR unit.traefik/0.juju-log Failed to fetch LoadBalancer traefik-lb: services "traefik-lb" not found
+unit-alertmanager-0: 08:14:43 INFO juju.worker.uniter.operation ran "data-storage-attached" hook (via hook dispatching script: dispatch)
+unit-traefik-0: 08:14:43 WARNING unit.traefik/0.juju-log <class '__main__.TraefikIngressCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:14:44 WARNING unit.alertmanager/0.juju-log <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:14:44 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:14:44 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:14:44 INFO unit.alertmanager/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager?fieldManager=ResourcePatcher "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:14:44 INFO unit.alertmanager/0.juju-log Kubernetes resources for app 'alertmanager', container 'alertmanager' patched successfully: ResourceRequirements(claims=None, limits={}, requests={'cpu': '0.25', 'memory': '200Mi'})
+unit-alertmanager-0: 08:14:44 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:14:44 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/api/v1/namespaces/cos-lite/pods/alertmanager-0 "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:14:45 INFO juju.worker.caasunitterminationworker terminating due to SIGTERM
+unit-alertmanager-0: 08:14:45 WARNING juju.worker.uniter.operation hook "config-changed" was terminated
+unit-alertmanager-0: 08:14:45 INFO juju.worker.uniter unit "alertmanager/0" shutting down: agent should be terminated
+unit-grafana-0: 08:14:47 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-grafana-0: 08:14:47 INFO juju.cmd.containeragent.unit start "unit"
+unit-grafana-0: 08:14:47 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-grafana-0: 08:14:47 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-grafana-0: 08:14:47 INFO juju.api connection established to "wss://controller-service.controller-k8s.svc.cluster.local:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-grafana-0: 08:14:47 INFO juju.worker.apicaller [f4a4a5] "unit-grafana-0" successfully connected to "wss://controller-service.controller-k8s.svc.cluster.local:17070"
+unit-grafana-0: 08:14:47 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-grafana-0: 08:14:47 INFO juju.worker.apicaller [f4a4a5] "unit-grafana-0" successfully connected to "wss://10.152.183.81:17070"
+unit-grafana-0: 08:14:47 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-grafana-0: 08:14:47 INFO juju.worker.logger logger worker started
+unit-grafana-0: 08:14:47 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-grafana-0: 08:14:47 INFO juju.worker.leadership grafana/0 promoted to leadership of grafana
+unit-grafana-0: 08:14:47 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-grafana-0: 08:14:47 INFO juju.worker.caasupgrader unblocking abort check
+unit-grafana-0: 08:14:47 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-grafana-0
+unit-grafana-0: 08:14:47 INFO juju.worker.uniter unit "grafana/0" started
+unit-grafana-0: 08:14:47 INFO juju.worker.uniter resuming charm install
+unit-grafana-0: 08:14:47 INFO juju.worker.uniter.charm downloading ch:amd64/grafana-k8s-180 from API server
+unit-grafana-0: 08:14:47 INFO juju.downloader downloading from ch:amd64/grafana-k8s-180
+unit-grafana-0: 08:14:47 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-grafana-0: 08:14:47 INFO juju.downloader download complete ("ch:amd64/grafana-k8s-180")
+unit-grafana-0: 08:14:47 INFO juju.downloader download verified ("ch:amd64/grafana-k8s-180")
+controller-0: 08:14:49 INFO juju.worker.caasapplicationprovisioner.alertmanager scaling application "alertmanager" to desired scale 1
+unit-alertmanager-0: 08:14:49 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-alertmanager-0: 08:14:49 INFO juju.cmd.containeragent.unit start "unit"
+unit-alertmanager-0: 08:14:49 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-alertmanager-0: 08:14:49 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-alertmanager-0: 08:14:49 INFO juju.api connection established to "wss://controller-service.controller-k8s.svc.cluster.local:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-alertmanager-0: 08:14:49 INFO juju.worker.apicaller [f4a4a5] "unit-alertmanager-0" successfully connected to "wss://controller-service.controller-k8s.svc.cluster.local:17070"
+unit-alertmanager-0: 08:14:49 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-alertmanager-0: 08:14:49 INFO juju.worker.apicaller [f4a4a5] "unit-alertmanager-0" successfully connected to "wss://10.152.183.81:17070"
+unit-alertmanager-0: 08:14:49 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-alertmanager-0: 08:14:49 INFO juju.worker.logger logger worker started
+unit-alertmanager-0: 08:14:49 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-alertmanager-0: 08:14:49 INFO juju.worker.leadership alertmanager/0 promoted to leadership of alertmanager
+unit-alertmanager-0: 08:14:49 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-alertmanager-0
+unit-alertmanager-0: 08:14:49 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-alertmanager-0: 08:14:49 INFO juju.worker.caasupgrader unblocking abort check
+unit-alertmanager-0: 08:14:49 INFO juju.worker.uniter unit "alertmanager/0" started
+unit-alertmanager-0: 08:14:49 INFO juju.worker.uniter hooks are retried true
+unit-alertmanager-0: 08:14:49 INFO juju.worker.uniter.charm downloading ch:amd64/alertmanager-k8s-191 from API server
+unit-alertmanager-0: 08:14:49 INFO juju.downloader downloading from ch:amd64/alertmanager-k8s-191
+unit-alertmanager-0: 08:14:49 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-alertmanager-0: 08:14:49 INFO juju.downloader download complete ("ch:amd64/alertmanager-k8s-191")
+unit-alertmanager-0: 08:14:49 INFO juju.downloader download verified ("ch:amd64/alertmanager-k8s-191")
+unit-grafana-0: 08:14:55 INFO juju.worker.uniter hooks are retried true
+unit-grafana-0: 08:14:55 INFO juju.worker.uniter found queued "install" hook
+unit-grafana-0: 08:14:57 WARNING unit.grafana/0.juju-log get_peer_data: no peer relation. Is the charm being installed/removed?
+unit-grafana-0: 08:14:58 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:14:58 INFO juju.worker.uniter found queued "config-changed" hook
+unit-grafana-0: 08:14:58 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:14:58 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:14:59 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:00 INFO juju.worker.uniter.operation ran "install" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:00 WARNING unit.alertmanager/0.juju-log <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:15:01 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:15:01 INFO unit.alertmanager/0.juju-log Kubernetes resources for app 'alertmanager', container 'alertmanager' patched successfully: ResourceRequirements(claims=None, limits={}, requests={'cpu': '0.25', 'memory': '200Mi'})
+unit-alertmanager-0: 08:15:01 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:15:01 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/api/v1/namespaces/cos-lite/pods/alertmanager-0 "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:02 INFO unit.grafana/0.juju-log replicas:1: HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:03 INFO unit.grafana/0.juju-log replicas:1: HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:03 INFO unit.grafana/0.juju-log replicas:1: HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:03 INFO unit.grafana/0.juju-log replicas:1: HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:03 INFO juju.worker.uniter.operation ran "replicas-relation-created" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:04 WARNING unit.alertmanager/0.config-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-grafana-0: 08:15:05 INFO unit.grafana/0.juju-log grafana:0: HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:05 INFO unit.grafana/0.juju-log grafana:0: HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:05 INFO unit.grafana/0.juju-log grafana:0: HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:05 INFO unit.grafana/0.juju-log grafana:0: HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:15:05 WARNING unit.alertmanager/0.juju-log config remained the same after a reload
+unit-alertmanager-0: 08:15:06 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:06 INFO juju.worker.uniter found queued "start" hook
+unit-grafana-0: 08:15:06 INFO juju.worker.uniter.operation ran "grafana-relation-created" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:06 INFO juju.worker.uniter found queued "leader-elected" hook
+unit-alertmanager-0: 08:15:07 WARNING unit.alertmanager/0.juju-log <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:15:07 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/alertmanager "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:15:07 INFO unit.alertmanager/0.juju-log HTTP Request: GET https://10.152.183.1/api/v1/namespaces/cos-lite/pods/alertmanager-0 "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:07 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:07 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:07 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:08 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:08 INFO juju.worker.uniter.operation ran "leader-elected" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:10 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:10 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:15:10 WARNING unit.alertmanager/0.start rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-grafana-0: 08:15:10 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:10 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:10 INFO juju.worker.uniter.operation ran "grafana-pebble-ready" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:10 INFO juju.worker.uniter.operation ran "start" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:11 WARNING unit.alertmanager/0.juju-log ingress:11: <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-grafana-0: 08:15:12 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:15:12 INFO juju.worker.uniter.operation ran "ingress-relation-created" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:12 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:12 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:12 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:13 INFO juju.worker.uniter.operation ran "litestream-pebble-ready" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:13 WARNING unit.alertmanager/0.juju-log self-metrics-endpoint:13: <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:15:13 INFO juju.worker.uniter.operation ran "self-metrics-endpoint-relation-created" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:14 WARNING unit.alertmanager/0.juju-log alerting:15: <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-grafana-0: 08:15:14 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-alertmanager-0: 08:15:14 INFO juju.worker.uniter.operation ran "alerting-relation-created" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:14 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:14 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:14 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+controller-0: 08:15:14 INFO juju.worker.caasapplicationprovisioner.grafana scaling application "grafana" to desired scale 1
+unit-grafana-0: 08:15:15 INFO juju.worker.uniter.operation ran "database-storage-attached" hook (via hook dispatching script: dispatch)
+unit-alertmanager-0: 08:15:15 WARNING unit.alertmanager/0.juju-log catalogue:9: <class '__main__.AlertmanagerCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-alertmanager-0: 08:15:15 INFO juju.worker.uniter.operation ran "catalogue-relation-created" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:16 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:16 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:16 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:16 INFO unit.grafana/0.juju-log Kubernetes resources for app 'grafana', container 'grafana' patched successfully: ResourceRequirements(claims=None, limits={}, requests={'cpu': '0.25', 'memory': '200Mi'})
+unit-grafana-0: 08:15:16 INFO juju.worker.caasunitterminationworker terminating due to SIGTERM
+unit-grafana-0: 08:15:16 WARNING juju.worker.uniter.operation hook "config-changed" was terminated
+unit-grafana-0: 08:15:16 INFO juju.worker.uniter unit "grafana/0" shutting down: agent should be terminated
+unit-grafana-0: 08:15:19 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-grafana-0: 08:15:19 INFO juju.cmd.containeragent.unit start "unit"
+unit-grafana-0: 08:15:19 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-grafana-0: 08:15:19 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-grafana-0: 08:15:19 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-grafana-0: 08:15:19 INFO juju.worker.apicaller [f4a4a5] "unit-grafana-0" successfully connected to "wss://10.152.183.81:17070"
+unit-grafana-0: 08:15:19 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-grafana-0: 08:15:19 INFO juju.worker.apicaller [f4a4a5] "unit-grafana-0" successfully connected to "wss://10.152.183.81:17070"
+unit-grafana-0: 08:15:19 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-grafana-0: 08:15:19 INFO juju.worker.logger logger worker started
+unit-grafana-0: 08:15:19 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-grafana-0: 08:15:19 INFO juju.worker.leadership grafana/0 promoted to leadership of grafana
+unit-grafana-0: 08:15:19 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-grafana-0
+unit-grafana-0: 08:15:19 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-grafana-0: 08:15:19 INFO juju.worker.caasupgrader unblocking abort check
+unit-grafana-0: 08:15:19 INFO juju.worker.uniter unit "grafana/0" started
+unit-grafana-0: 08:15:19 INFO juju.worker.uniter hooks are retried true
+unit-grafana-0: 08:15:19 INFO juju.worker.uniter.charm downloading ch:amd64/grafana-k8s-180 from API server
+unit-grafana-0: 08:15:19 INFO juju.downloader downloading from ch:amd64/grafana-k8s-180
+unit-grafana-0: 08:15:19 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-grafana-0: 08:15:19 INFO juju.downloader download complete ("ch:amd64/grafana-k8s-180")
+unit-grafana-0: 08:15:19 INFO juju.downloader download verified ("ch:amd64/grafana-k8s-180")
+unit-grafana-0: 08:15:24 INFO juju.worker.uniter found queued "config-changed" hook
+unit-grafana-0: 08:15:25 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log Kubernetes resources for app 'grafana', container 'grafana' patched successfully: ResourceRequirements(claims=None, limits={}, requests={'cpu': '0.25', 'memory': '200Mi'})
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/api/v1/namespaces/cos-lite/pods/grafana-0 "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:26 WARNING unit.grafana/0.juju-log Provided Redirect URL uses http scheme. Don't do this in production
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log Updated Grafana's base configuration
+unit-grafana-0: 08:15:26 WARNING unit.grafana/0.juju-log Could not read configuration from the Grafana workload container: not-found - stat /etc/grafana/provisioning/datasources/datasources.yaml: no such file or directory
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log Updated Grafana's datasource configuration
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log Initializing dashboard provisioning path
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log admin-password secret does not exist yet
+unit-grafana-0: 08:15:26 INFO unit.grafana/0.juju-log leader: creating and priming admin-password secret
+unit-grafana-0: 08:15:27 INFO unit.grafana/0.juju-log Restarted grafana-k8s
+unit-grafana-0: 08:15:29 INFO unit.grafana/0.juju-log litestream replication restarted
+unit-grafana-0: 08:15:29 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:29 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:29 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:29 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:29 INFO juju.worker.uniter found queued "start" hook
+unit-grafana-0: 08:15:31 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:31 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/api/v1/namespaces/cos-lite/pods/grafana-0 "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:31 WARNING unit.grafana/0.juju-log Provided Redirect URL uses http scheme. Don't do this in production
+unit-grafana-0: 08:15:31 INFO unit.grafana/0.juju-log Initializing dashboard provisioning path
+unit-grafana-0: 08:15:31 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:31 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:31 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:32 INFO juju.worker.uniter.operation ran "start" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:33 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:33 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/api/v1/namespaces/cos-lite/pods/grafana-0 "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:33 WARNING unit.grafana/0.juju-log Provided Redirect URL uses http scheme. Don't do this in production
+unit-grafana-0: 08:15:34 INFO unit.grafana/0.juju-log Initializing dashboard provisioning path
+unit-grafana-0: 08:15:34 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:34 INFO unit.grafana/0.juju-log HTTP Request: PATCH https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana?fieldManager=ResourcePatcher&dryRun=All "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:34 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:34 INFO juju.worker.uniter.operation ran "litestream-pebble-ready" hook (via hook dispatching script: dispatch)
+unit-grafana-0: 08:15:36 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/apis/apps/v1/namespaces/cos-lite/statefulsets/grafana "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:36 INFO unit.grafana/0.juju-log HTTP Request: GET https://10.152.183.1/api/v1/namespaces/cos-lite/pods/grafana-0 "HTTP/1.1 200 OK"
+unit-grafana-0: 08:15:36 WARNING unit.grafana/0.juju-log Provided Redirect URL uses http scheme. Don't do this in production
+unit-grafana-0: 08:15:36 INFO unit.grafana/0.juju-log Initializing dashboard provisioning path
+unit-loki-0: 08:15:41 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-loki-0: 08:15:41 INFO juju.cmd.containeragent.unit start "unit"
+unit-loki-0: 08:15:41 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-loki-0: 08:15:41 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-loki-0: 08:15:41 INFO juju.api connection established to "wss://controller-service.controller-k8s.svc.cluster.local:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-loki-0: 08:15:41 INFO juju.worker.apicaller [f4a4a5] "unit-loki-0" successfully connected to "wss://controller-service.controller-k8s.svc.cluster.local:17070"
+unit-loki-0: 08:15:41 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-loki-0: 08:15:41 INFO juju.worker.logger logger worker started
+unit-loki-0: 08:15:41 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-loki-0: 08:15:41 INFO juju.worker.leadership loki/0 promoted to leadership of loki
+unit-loki-0: 08:15:41 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-loki-0
+unit-loki-0: 08:15:41 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-loki-0: 08:15:41 INFO juju.worker.caasupgrader unblocking abort check
+unit-loki-0: 08:15:41 INFO juju.worker.uniter unit "loki/0" started
+unit-loki-0: 08:15:41 INFO juju.worker.uniter hooks are retried true
+unit-loki-0: 08:15:41 INFO juju.worker.uniter.charm downloading ch:amd64/loki-k8s-217 from API server
+unit-loki-0: 08:15:41 INFO juju.downloader downloading from ch:amd64/loki-k8s-217
+unit-loki-0: 08:15:42 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-loki-0: 08:15:42 INFO juju.downloader download complete ("ch:amd64/loki-k8s-217")
+unit-loki-0: 08:15:42 INFO juju.downloader download verified ("ch:amd64/loki-k8s-217")
+unit-prometheus-0: 08:15:43 INFO juju.cmd running containerAgent [3.6.21 d395054dc2c360690239f2aedc6fd3ae9b46e279 gc go1.25.8]
+unit-prometheus-0: 08:15:43 INFO juju.cmd.containeragent.unit start "unit"
+unit-prometheus-0: 08:15:43 INFO juju.worker.upgradesteps upgrade steps for 3.6.21 have already been run.
+unit-prometheus-0: 08:15:43 INFO juju.worker.probehttpserver starting http server on 127.0.0.1:65301
+unit-prometheus-0: 08:15:43 INFO juju.api connection established to "wss://10.152.183.81:17070/model/f4a4a5ef-b14f-4361-8944-0dda022b8688/api"
+unit-prometheus-0: 08:15:43 INFO juju.worker.apicaller [f4a4a5] "unit-prometheus-0" successfully connected to "wss://10.152.183.81:17070"
+unit-prometheus-0: 08:15:43 INFO juju.worker.migrationminion migration migration phase is now: NONE
+unit-prometheus-0: 08:15:43 INFO juju.worker.logger logger worker started
+unit-prometheus-0: 08:15:43 WARNING juju.worker.proxyupdater unable to set snap core settings [proxy.http= proxy.https= proxy.store=]: exec: "snap": executable file not found in $PATH, output: ""
+unit-prometheus-0: 08:15:43 INFO juju.worker.leadership prometheus/0 promoted to leadership of prometheus
+unit-prometheus-0: 08:15:43 INFO juju.agent.tools ensure jujuc symlinks in /var/lib/juju/tools/unit-prometheus-0
+unit-prometheus-0: 08:15:43 INFO juju.worker.caasupgrader abort check blocked until version event received
+unit-prometheus-0: 08:15:43 INFO juju.worker.caasupgrader unblocking abort check
+unit-prometheus-0: 08:15:43 INFO juju.worker.uniter unit "prometheus/0" started
+unit-prometheus-0: 08:15:43 INFO juju.worker.uniter hooks are retried true
+unit-prometheus-0: 08:15:44 INFO juju.worker.uniter.charm downloading ch:amd64/prometheus-k8s-287 from API server
+unit-prometheus-0: 08:15:44 INFO juju.downloader downloading from ch:amd64/prometheus-k8s-287
+unit-prometheus-0: 08:15:44 WARNING juju.worker.s3caller Response has no supported checksum. Not validating response payload.%!(EXTRA []interface {}=[])
+unit-prometheus-0: 08:15:44 INFO juju.downloader download complete ("ch:amd64/prometheus-k8s-287")
+unit-prometheus-0: 08:15:44 INFO juju.downloader download verified ("ch:amd64/prometheus-k8s-287")
+unit-prometheus-0: 08:15:51 INFO juju.worker.uniter found queued "upgrade-charm" hook
+unit-loki-0: 08:15:54 INFO juju.worker.uniter found queued "upgrade-charm" hook
+unit-prometheus-0: 08:15:55 WARNING unit.prometheus/0.upgrade-charm rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:15:55 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:15:56 INFO unit.prometheus/0.juju-log Pushed new configuration
+unit-prometheus-0: 08:15:57 INFO unit.prometheus/0.juju-log Prometheus (re)started
+unit-prometheus-0: 08:15:57 INFO juju.worker.uniter.operation ran "upgrade-charm" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:15:57 INFO juju.worker.uniter found queued "config-changed" hook
+unit-loki-0: 08:15:59 WARNING unit.loki/0.upgrade-charm rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:15:59 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:15:59 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:01 WARNING unit.prometheus/0.config-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:01 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:01 INFO unit.prometheus/0.juju-log Kubernetes resources for app 'prometheus', container 'prometheus' patched successfully: ResourceRequirements(claims=None, limits={}, requests={'cpu': '0.25', 'memory': '200Mi'})
+unit-prometheus-0: 08:16:01 INFO unit.prometheus/0.juju-log Prometheus (re)started
+unit-loki-0: 08:16:02 WARNING unit.loki/0.upgrade-charm rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:02 INFO unit.loki/0.juju-log Pushed new configuration
+unit-prometheus-0: 08:16:02 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:02 INFO juju.worker.uniter reboot detected; triggering implicit start hook to notify charm
+unit-loki-0: 08:16:03 INFO unit.loki/0.juju-log Loki restarted. There was a change to the configuration.
+unit-loki-0: 08:16:04 INFO juju.worker.uniter.operation ran "upgrade-charm" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:04 INFO juju.worker.uniter found queued "config-changed" hook
+unit-prometheus-0: 08:16:05 WARNING unit.prometheus/0.start rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:05 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:06 INFO juju.worker.uniter.operation ran "start" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:07 WARNING unit.loki/0.config-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:07 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:07 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:07 INFO unit.loki/0.juju-log Kubernetes resources for app 'loki', container 'loki' patched successfully: ResourceRequirements(claims=None, limits={}, requests={'cpu': '0.25', 'memory': '200Mi'})
+unit-prometheus-0: 08:16:09 WARNING unit.prometheus/0.grafana-source-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:09 WARNING unit.prometheus/0.juju-log grafana-source:23: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:09 WARNING unit.prometheus/0.juju-log grafana-source:23: remote end is using an old grafana_datasource interface: `grafana_uid` field not found.
+unit-loki-0: 08:16:10 WARNING unit.loki/0.config-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:10 INFO juju.worker.uniter.operation ran "grafana-source-relation-created" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:10 INFO juju.worker.uniter.operation ran "config-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:10 INFO juju.worker.uniter reboot detected; triggering implicit start hook to notify charm
+unit-prometheus-0: 08:16:13 WARNING unit.prometheus/0.metrics-endpoint-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:14 WARNING unit.prometheus/0.juju-log metrics-endpoint:26: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:14 WARNING unit.loki/0.start rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:14 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:14 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:14 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-created" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:15 INFO juju.worker.uniter.operation ran "start" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:18 WARNING unit.prometheus/0.grafana-dashboard-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:18 WARNING unit.prometheus/0.juju-log grafana-dashboard:22: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:18 WARNING unit.loki/0.grafana-dashboard-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:18 WARNING unit.loki/0.juju-log grafana-dashboard:24: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-prometheus-0: 08:16:18 INFO juju.worker.uniter.operation ran "grafana-dashboard-relation-created" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:18 WARNING unit.loki/0.juju-log grafana-dashboard:24: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:19 INFO juju.worker.uniter.operation ran "grafana-dashboard-relation-created" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:21 WARNING unit.prometheus/0.metrics-endpoint-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:22 WARNING unit.prometheus/0.juju-log metrics-endpoint:21: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:22 WARNING unit.loki/0.ingress-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:22 WARNING unit.loki/0.juju-log ingress:27: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-prometheus-0: 08:16:22 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-created" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:22 WARNING unit.loki/0.juju-log ingress:27: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:22 INFO juju.worker.uniter.operation ran "ingress-relation-created" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:25 WARNING unit.prometheus/0.prometheus-pebble-ready rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:25 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:26 INFO unit.prometheus/0.juju-log Prometheus (re)started
+unit-loki-0: 08:16:26 WARNING unit.loki/0.alertmanager-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:26 WARNING unit.loki/0.juju-log alertmanager:28: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:26 WARNING unit.loki/0.juju-log alertmanager:28: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:26 INFO juju.worker.uniter.operation ran "prometheus-pebble-ready" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:26 INFO juju.worker.uniter.operation ran "alertmanager-relation-created" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:29 WARNING unit.prometheus/0.ingress-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:29 WARNING unit.loki/0.grafana-source-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:29 WARNING unit.prometheus/0.juju-log ingress:14: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:29 INFO unit.prometheus/0.juju-log ingress:14: Skipping notice (PrometheusCharm/on/ingress_relation_changed[41]/PrometheusCharm/IngressPerUnitRequirer[ingress]/_handle_relation) - already in the queue.
+unit-loki-0: 08:16:29 WARNING unit.loki/0.juju-log grafana-source:25: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:29 WARNING unit.loki/0.juju-log grafana-source:25: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:29 WARNING unit.loki/0.juju-log grafana-source:25: remote end is using an old grafana_datasource interface: `grafana_uid` field not found.
+unit-prometheus-0: 08:16:29 INFO unit.prometheus/0.juju-log ingress:14: Ingress for unit ready on 'http://10.212.157.128/cos-lite-prometheus-0'
+unit-prometheus-0: 08:16:30 INFO unit.prometheus/0.juju-log ingress:14: Prometheus (re)started
+unit-loki-0: 08:16:30 INFO juju.worker.uniter.operation ran "grafana-source-relation-created" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:30 INFO juju.worker.uniter.operation ran "ingress-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:33 WARNING unit.loki/0.metrics-endpoint-relation-created rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:33 WARNING unit.loki/0.juju-log metrics-endpoint:26: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:33 WARNING unit.loki/0.juju-log metrics-endpoint:26: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:33 WARNING unit.prometheus/0.metrics-endpoint-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:33 WARNING unit.prometheus/0.juju-log metrics-endpoint:26: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:33 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-created" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:33 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-joined" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:36 WARNING unit.loki/0.loki-pebble-ready rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:36 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:36 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:36 WARNING unit.prometheus/0.catalogue-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:37 WARNING unit.prometheus/0.juju-log catalogue:16: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:37 INFO juju.worker.uniter.operation ran "catalogue-relation-joined" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:39 WARNING unit.loki/0.loki-pebble-ready rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:39 WARNING unit.loki/0.juju-log remote end is using an old grafana_datasource interface: `grafana_uid` field not found.
+unit-loki-0: 08:16:40 INFO juju.worker.uniter.operation ran "loki-pebble-ready" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:40 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:40 WARNING unit.prometheus/0.juju-log metrics-endpoint:26: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:41 INFO unit.prometheus/0.juju-log metrics-endpoint:26: Pushed new configuration
+unit-prometheus-0: 08:16:41 INFO unit.prometheus/0.juju-log metrics-endpoint:26: Prometheus (re)started
+unit-prometheus-0: 08:16:41 INFO unit.prometheus/0.juju-log metrics-endpoint:26: Prometheus configuration reloaded
+unit-prometheus-0: 08:16:41 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:43 WARNING unit.loki/0.node-exporter-pebble-ready rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:43 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:43 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:44 WARNING unit.prometheus/0.catalogue-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:44 INFO unit.loki/0.juju-log Node Exporter started
+unit-prometheus-0: 08:16:44 WARNING unit.prometheus/0.juju-log catalogue:16: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:45 INFO juju.worker.uniter.operation ran "node-exporter-pebble-ready" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:45 INFO juju.worker.uniter.operation ran "catalogue-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:48 WARNING unit.loki/0.grafana-source-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:48 WARNING unit.loki/0.juju-log grafana-source:25: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-prometheus-0: 08:16:49 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:49 WARNING unit.loki/0.juju-log grafana-source:25: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:49 WARNING unit.prometheus/0.juju-log metrics-endpoint:13: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:49 INFO unit.prometheus/0.juju-log metrics-endpoint:13: Prometheus (re)started
+unit-loki-0: 08:16:49 INFO juju.worker.uniter.operation ran "grafana-source-relation-joined" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:16:49 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:52 WARNING unit.loki/0.ingress-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:52 WARNING unit.loki/0.juju-log ingress:27: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:16:53 WARNING unit.loki/0.juju-log ingress:27: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:16:53 INFO unit.loki/0.juju-log ingress:27: Skipping notice (LokiOperatorCharm/on/ingress_relation_changed[56]/LokiOperatorCharm/IngressPerUnitRequirer[ingress]/_handle_relation) - already in the queue.
+unit-prometheus-0: 08:16:53 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:53 WARNING unit.prometheus/0.juju-log metrics-endpoint:21: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:53 INFO unit.prometheus/0.juju-log metrics-endpoint:21: Prometheus (re)started
+unit-prometheus-0: 08:16:54 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:55 WARNING unit.loki/0.ingress-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:16:55 INFO unit.loki/0.juju-log ingress:27: Pushed new configuration
+unit-prometheus-0: 08:16:57 WARNING unit.prometheus/0.grafana-source-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:16:57 WARNING unit.prometheus/0.juju-log grafana-source:23: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:16:58 INFO juju.worker.uniter.operation ran "grafana-source-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:16:59 INFO unit.loki/0.juju-log ingress:27: Loki restarted. There was a change to the configuration.
+unit-loki-0: 08:17:00 INFO juju.worker.uniter.operation ran "ingress-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:01 WARNING unit.prometheus/0.alertmanager-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:01 WARNING unit.prometheus/0.juju-log alertmanager:15: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:01 INFO unit.prometheus/0.juju-log alertmanager:15: Prometheus (re)started
+unit-prometheus-0: 08:17:02 INFO juju.worker.uniter.operation ran "alertmanager-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:03 WARNING unit.loki/0.metrics-endpoint-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:03 WARNING unit.loki/0.juju-log metrics-endpoint:26: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:03 WARNING unit.loki/0.juju-log metrics-endpoint:26: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:04 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-joined" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:05 WARNING unit.prometheus/0.metrics-endpoint-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:05 WARNING unit.prometheus/0.juju-log metrics-endpoint:21: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:06 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-joined" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:08 WARNING unit.loki/0.grafana-source-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:08 WARNING unit.loki/0.juju-log grafana-source:25: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:08 WARNING unit.loki/0.juju-log grafana-source:25: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:08 INFO juju.worker.uniter.operation ran "grafana-source-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:09 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:09 WARNING unit.prometheus/0.juju-log metrics-endpoint:12: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:09 INFO unit.prometheus/0.juju-log metrics-endpoint:12: Pushed new configuration
+unit-prometheus-0: 08:17:10 INFO unit.prometheus/0.juju-log metrics-endpoint:12: Prometheus (re)started
+unit-prometheus-0: 08:17:10 INFO unit.prometheus/0.juju-log metrics-endpoint:12: Prometheus configuration reloaded
+unit-prometheus-0: 08:17:10 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:12 WARNING unit.loki/0.grafana-source-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:12 WARNING unit.loki/0.juju-log grafana-source:25: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:12 WARNING unit.loki/0.juju-log grafana-source:25: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:12 INFO juju.worker.uniter.operation ran "grafana-source-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:14 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:14 WARNING unit.prometheus/0.juju-log metrics-endpoint:26: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:14 INFO unit.prometheus/0.juju-log metrics-endpoint:26: Prometheus (re)started
+unit-prometheus-0: 08:17:15 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:16 WARNING unit.loki/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:16 WARNING unit.loki/0.juju-log metrics-endpoint:26: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:16 WARNING unit.loki/0.juju-log metrics-endpoint:26: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:17 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:18 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:18 WARNING unit.prometheus/0.juju-log metrics-endpoint:26: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:19 INFO unit.prometheus/0.juju-log metrics-endpoint:26: Prometheus (re)started
+unit-prometheus-0: 08:17:19 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:20 WARNING unit.loki/0.alertmanager-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:21 WARNING unit.loki/0.juju-log alertmanager:28: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:21 WARNING unit.loki/0.juju-log alertmanager:28: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:21 INFO juju.worker.uniter.operation ran "alertmanager-relation-joined" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:23 WARNING unit.prometheus/0.metrics-endpoint-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:23 WARNING unit.prometheus/0.juju-log metrics-endpoint:12: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:23 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-joined" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:25 WARNING unit.loki/0.grafana-dashboard-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:25 WARNING unit.loki/0.juju-log grafana-dashboard:24: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:25 WARNING unit.loki/0.juju-log grafana-dashboard:24: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:25 INFO juju.worker.uniter.operation ran "grafana-dashboard-relation-joined" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:27 WARNING unit.prometheus/0.ingress-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:27 WARNING unit.prometheus/0.juju-log ingress:14: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:28 INFO juju.worker.uniter.operation ran "ingress-relation-joined" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:29 WARNING unit.loki/0.ingress-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:29 WARNING unit.loki/0.juju-log ingress:27: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:29 WARNING unit.loki/0.juju-log ingress:27: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:29 INFO juju.worker.uniter.operation ran "ingress-relation-joined" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:31 WARNING unit.prometheus/0.ingress-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:31 WARNING unit.prometheus/0.juju-log ingress:14: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:31 INFO unit.prometheus/0.juju-log ingress:14: Skipping notice (PrometheusCharm/on/ingress_relation_changed[124]/PrometheusCharm/IngressPerUnitRequirer[ingress]/_handle_relation) - already in the queue.
+unit-prometheus-0: 08:17:32 INFO juju.worker.uniter.operation ran "ingress-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:33 WARNING unit.loki/0.grafana-dashboard-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:33 WARNING unit.loki/0.juju-log grafana-dashboard:24: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:33 WARNING unit.loki/0.juju-log grafana-dashboard:24: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:34 INFO juju.worker.uniter.operation ran "grafana-dashboard-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:35 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:35 WARNING unit.prometheus/0.juju-log metrics-endpoint:12: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:36 INFO unit.prometheus/0.juju-log metrics-endpoint:12: Pushed new configuration
+unit-prometheus-0: 08:17:36 INFO unit.prometheus/0.juju-log metrics-endpoint:12: Prometheus (re)started
+unit-prometheus-0: 08:17:36 INFO unit.prometheus/0.juju-log metrics-endpoint:12: Prometheus configuration reloaded
+unit-prometheus-0: 08:17:37 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:37 WARNING unit.loki/0.ingress-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:38 WARNING unit.loki/0.juju-log ingress:27: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:38 WARNING unit.loki/0.juju-log ingress:27: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:38 INFO unit.loki/0.juju-log ingress:27: Skipping notice (LokiOperatorCharm/on/ingress_relation_changed[102]/LokiOperatorCharm/IngressPerUnitRequirer[ingress]/_handle_relation) - already in the queue.
+unit-loki-0: 08:17:38 INFO juju.worker.uniter.operation ran "ingress-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:40 WARNING unit.prometheus/0.metrics-endpoint-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:40 WARNING unit.prometheus/0.juju-log metrics-endpoint:13: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:41 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-joined" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:42 WARNING unit.loki/0.alertmanager-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:42 WARNING unit.loki/0.juju-log alertmanager:28: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:17:42 WARNING unit.loki/0.juju-log alertmanager:28: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:44 WARNING unit.prometheus/0.grafana-dashboard-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:44 WARNING unit.prometheus/0.juju-log grafana-dashboard:22: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:44 INFO juju.worker.uniter.operation ran "grafana-dashboard-relation-joined" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:44 WARNING unit.loki/0.alertmanager-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:44 INFO unit.loki/0.juju-log alertmanager:28: Pushed new configuration
+unit-prometheus-0: 08:17:47 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:47 WARNING unit.prometheus/0.juju-log metrics-endpoint:13: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:48 INFO unit.prometheus/0.juju-log metrics-endpoint:13: Pushed new configuration
+unit-prometheus-0: 08:17:48 INFO unit.prometheus/0.juju-log metrics-endpoint:13: Prometheus (re)started
+unit-prometheus-0: 08:17:48 INFO unit.prometheus/0.juju-log metrics-endpoint:13: Prometheus configuration reloaded
+unit-loki-0: 08:17:48 INFO unit.loki/0.juju-log alertmanager:28: Loki restarted. There was a change to the configuration.
+unit-prometheus-0: 08:17:49 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:49 INFO juju.worker.uniter.operation ran "alertmanager-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:51 WARNING unit.prometheus/0.grafana-source-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:51 WARNING unit.prometheus/0.juju-log grafana-source:23: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:52 WARNING unit.loki/0.grafana-source-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:17:52 WARNING unit.loki/0.juju-log grafana-source:25: /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-prometheus-0: 08:17:52 INFO juju.worker.uniter.operation ran "grafana-source-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:17:52 WARNING unit.loki/0.juju-log grafana-source:25: <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:17:52 INFO juju.worker.uniter.operation ran "grafana-source-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:55 WARNING unit.prometheus/0.grafana-dashboard-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:55 WARNING unit.prometheus/0.juju-log grafana-dashboard:22: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:17:56 INFO juju.worker.uniter.operation ran "grafana-dashboard-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:17:59 WARNING unit.prometheus/0.metrics-endpoint-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:17:59 WARNING unit.prometheus/0.juju-log metrics-endpoint:21: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:18:00 INFO unit.prometheus/0.juju-log metrics-endpoint:21: Prometheus (re)started
+unit-prometheus-0: 08:18:00 INFO juju.worker.uniter.operation ran "metrics-endpoint-relation-changed" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:18:04 WARNING unit.prometheus/0.grafana-source-relation-joined rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:18:04 WARNING unit.prometheus/0.juju-log grafana-source:23: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:18:04 INFO juju.worker.uniter.operation ran "grafana-source-relation-joined" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:18:07 WARNING unit.prometheus/0.grafana-source-relation-changed rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:18:08 WARNING unit.prometheus/0.juju-log grafana-source:23: <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:18:08 INFO juju.worker.uniter.operation ran "grafana-source-relation-changed" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:20:31 WARNING unit.loki/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:20:31 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:20:31 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:20:32 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:21:21 WARNING unit.prometheus/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:21:21 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:21:22 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:25:26 WARNING unit.loki/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:25:26 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:25:26 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:25:27 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:25:47 WARNING unit.prometheus/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:25:47 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:25:47 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:29:49 WARNING unit.loki/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:29:49 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:29:49 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:29:49 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:30:43 WARNING unit.prometheus/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:30:43 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:30:44 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-loki-0: 08:34:33 WARNING unit.loki/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-loki-0: 08:34:33 WARNING unit.loki/0.juju-log /var/lib/juju/agents/unit-loki-0/charm/src/charm.py:233: DeprecationWarning: The 'address' parameter is deprecated and will be removed in v2. Use 'update_endpoint()' instead.
+unit-loki-0: 08:34:33 WARNING unit.loki/0.juju-log <class '__main__.LokiOperatorCharm'>._charm_tracing_ca_cert is None; sending traces over INSECURE connection.
+unit-loki-0: 08:34:34 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
+unit-prometheus-0: 08:36:20 WARNING unit.prometheus/0.update-status rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+unit-prometheus-0: 08:36:20 WARNING unit.prometheus/0.juju-log <class '__main__.PrometheusCharm'>.server_cert is None; sending traces over INSECURE connection.
+unit-prometheus-0: 08:36:20 INFO juju.worker.uniter.operation ran "update-status" hook (via hook dispatching script: dispatch)
