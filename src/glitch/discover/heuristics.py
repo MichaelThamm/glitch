@@ -1,4 +1,4 @@
-"""Per-test heuristic computations and normalisation (ADR 0005).
+"""Per-test heuristic computations, normalisation, and scoring (ADRs 0005, 0006).
 
 Each heuristic consumes a single test's runs and/or jobs (i.e. one ``job.name``
 group) and returns a ``float`` in ``[0, 1]``. The mappings are the fixed
@@ -9,16 +9,31 @@ thresholds defined in ADR 0005:
 - timing_variance: ``min(1.0, cv / 0.5)``
 - change_independence: identity, with a permissive Phase-1 default
 
-Recency decay across runs is *not* handled here — see ADR 0006. These are
-pure functions, stdlib only.
+ADR 0006 adds recency-decay weighting (exponential, half-life 14 days) and the
+high-level ``final_score`` / ``score_test`` aggregators that turn a sequence of
+runs into a ``TestScore``. These are all pure functions, stdlib only.
 """
 
 from __future__ import annotations
 
+import math
 import statistics
 from collections.abc import Mapping, Sequence
+from datetime import datetime
 
-from glitch.discover.models import Commit, Heuristics, Job, Run
+from glitch.discover.models import Commit, Heuristics, Job, Run, TestScore
+
+
+# --- ADR 0006 constants -----------------------------------------------------
+
+HALF_LIFE_DAYS = 14.0
+"""Recency half-life in days. After ``HALF_LIFE_DAYS`` a run's weight halves."""
+
+DECAY_K = HALF_LIFE_DAYS / math.log(2)
+"""Decay constant ``k`` such that ``exp(-Δdays / k)`` halves at ``HALF_LIFE_DAYS``.
+
+Approximately ``20.2`` days for the default 14-day half-life.
+"""
 
 
 # --- Individual heuristics --------------------------------------------------
@@ -150,11 +165,127 @@ def raw_score(h: Heuristics) -> float:
     ) / 4
 
 
+# --- ADR 0006: recency decay + final aggregation ---------------------------
+
+
+def recency_weight(run_created_at: datetime, now: datetime) -> float:
+    """Exponential-decay weight for a run, half-life ``HALF_LIFE_DAYS``.
+
+    ``weight = exp(-Δdays / DECAY_K)`` where ``Δdays`` is the difference
+    between ``now`` and ``run_created_at`` in days. A run at ``now`` weighs
+    ``1.0``; at the half-life it weighs ``0.5``.
+
+    Future-dated ``run_created_at`` (``Δdays < 0``) yields a weight ``> 1.0``;
+    the ADR does not pin behaviour for this case, so we let ``math.exp`` speak
+    for itself and treat the caller's clock as the contract. In normal flow
+    ``now`` is captured once per invocation (matching ``meta.generated_at``),
+    so this only matters under clock skew between the runner and GitHub.
+    """
+    delta_days = (now - run_created_at).total_seconds() / 86400.0
+    return math.exp(-delta_days / DECAY_K)
+
+
+def final_score(
+    per_run_scores: Sequence[tuple[float, datetime]],
+    now: datetime,
+) -> float:
+    """Recency-weighted mean of per-run raw scores.
+
+    ``per_run_scores`` is a sequence of ``(raw_score, run_created_at)`` pairs
+    for a single test. Each run contributes ``w_i = recency_weight(t_i, now)``,
+    and the return value is ``Σ(w_i * raw_score_i) / Σ(w_i)``.
+
+    Returns ``0.0`` when ``per_run_scores`` is empty so the caller never has to
+    guard the boundary; ADR 0006 notes that the spec's 3-run minimum already
+    guarantees ``Σw > 0`` in the normal pipeline, but defending here keeps the
+    function safe to call in isolation (tests, future call sites).
+    """
+    if not per_run_scores:
+        return 0.0
+    weighted_sum = 0.0
+    weight_total = 0.0
+    for raw, created_at in per_run_scores:
+        w = recency_weight(created_at, now)
+        weighted_sum += w * raw
+        weight_total += w
+    # weight_total > 0 is guaranteed for any non-empty input because exp(...)
+    # is strictly positive for all finite inputs.
+    return weighted_sum / weight_total
+
+
+def score_test(
+    test_id: str,
+    job_name: str,
+    runs: Sequence[Run],
+    jobs: Sequence[Job],
+    commits_by_sha: Mapping[str, Commit] | None,
+    now: datetime,
+) -> TestScore:
+    """Compose a ``TestScore`` for one test from its runs, jobs, and commits.
+
+    Thin orchestrator: derives the test-level ``Heuristics`` via
+    ``heuristics_for_test``, projects the single ``raw_score`` across each
+    run with recency weighting via ``final_score``, and packages the
+    ``trend`` / ``last_failed_at`` / ``run_count`` fields.
+
+    AMBIGUITY (ADR 0005 + ADR 0006): the spec defines ``raw_score(test)`` as
+    a single test-level number (mean of four heuristics aggregated over all
+    runs), then defines ``final_score(test) = weighted_mean(raw_score,
+    weight=recency_multiplier) per run``. Taken literally, the weighted mean
+    of a *constant* (the same test-level ``raw_score`` repeated per run)
+    collapses to that constant — ``Σ(w_i · c) / Σ(w_i) = c`` — so the
+    recency multiplier becomes a mathematical no-op in Phase 1. The only
+    interpretation that makes recency *matter* is to weight per-run signals
+    rather than the aggregate, but that contradicts the spec's definition of
+    ``raw_score`` as test-level. We proceed with the literal reading so the
+    recency machinery is wired and exercised, and flag this for a follow-up
+    ADR to resolve (likely by redefining ``raw_score`` per-run, or by moving
+    recency into the heuristic inputs themselves).
+    """
+    h = heuristics_for_test(runs, jobs, commits_by_sha)
+    test_raw = raw_score(h)
+    # Per the AMBIGUITY note above: raw_score is test-level, so every per-run
+    # entry uses the same value. The weighted-mean collapses to test_raw in
+    # Phase 1; the recency wiring is still exercised end-to-end.
+    per_run_scores: list[tuple[float, datetime]] = [
+        (test_raw, r.created_at) for r in runs
+    ]
+    flakiness_index = final_score(per_run_scores, now)
+
+    # trend: last up-to-5 runs by created_at, success -> "pass", else "fail".
+    ordered = sorted(runs, key=lambda r: r.created_at)
+    tail = ordered[-5:]
+    trend = tuple("pass" if r.conclusion == "success" else "fail" for r in tail)
+
+    # last_failed_at: max created_at among concluded non-success runs.
+    failure_times = [
+        r.created_at
+        for r in runs
+        if r.conclusion is not None and r.conclusion != "success"
+    ]
+    last_failed_at = max(failure_times) if failure_times else None
+
+    return TestScore(
+        id=test_id,
+        job_name=job_name,
+        flakiness_index=flakiness_index,
+        run_count=len(runs),
+        heuristics=h,
+        trend=trend,
+        last_failed_at=last_failed_at,
+    )
+
+
 __all__ = [
+    "DECAY_K",
+    "HALF_LIFE_DAYS",
     "change_independence",
+    "final_score",
     "heuristics_for_test",
     "raw_score",
+    "recency_weight",
     "retry_rate",
+    "score_test",
     "timing_variance",
     "volatility",
 ]

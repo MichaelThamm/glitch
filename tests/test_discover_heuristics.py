@@ -10,15 +10,23 @@ from __future__ import annotations
 import math
 from datetime import UTC, datetime, timedelta
 
+import pytest
+
 from glitch.discover.heuristics import (
+    DECAY_K,
+    HALF_LIFE_DAYS,
     change_independence,
+    final_score,
     heuristics_for_test,
     raw_score,
+    recency_weight,
     retry_rate,
+    score_test,
     timing_variance,
     volatility,
 )
 from glitch.discover.models import Heuristics, Job, Run
+from glitch.discover.models import TestScore as _TestScore
 
 # --- Helper factories -------------------------------------------------------
 
@@ -311,3 +319,143 @@ def test_raw_score_boundaries() -> None:
     ones = Heuristics(1.0, 1.0, 1.0, 1.0)
     assert raw_score(zeros) == 0.0
     assert raw_score(ones) == 1.0
+
+
+# --- ADR 0006: constants ----------------------------------------------------
+
+
+def test_half_life_days_constant() -> None:
+    assert HALF_LIFE_DAYS == 14.0
+
+
+def test_decay_k_constant() -> None:
+    assert DECAY_K == pytest.approx(14.0 / math.log(2), abs=0.001)
+
+
+# --- ADR 0006: recency_weight ----------------------------------------------
+
+
+def test_recency_weight_zero_age_is_one() -> None:
+    assert recency_weight(_EPOCH, _EPOCH) == 1.0
+
+
+def test_recency_weight_at_half_life_is_one_half() -> None:
+    fourteen_days_old = _EPOCH - timedelta(days=14)
+    assert recency_weight(fourteen_days_old, _EPOCH) == pytest.approx(0.5, abs=0.001)
+
+
+def test_recency_weight_at_seven_days_matches_spec_table() -> None:
+    seven_days_old = _EPOCH - timedelta(days=7)
+    assert recency_weight(seven_days_old, _EPOCH) == pytest.approx(0.71, abs=0.01)
+
+
+def test_recency_weight_at_thirty_days_matches_spec_table() -> None:
+    thirty_days_old = _EPOCH - timedelta(days=30)
+    assert recency_weight(thirty_days_old, _EPOCH) == pytest.approx(0.23, abs=0.01)
+
+
+def test_recency_weight_future_dated_run_is_above_one() -> None:
+    # Negative age (clock skew) → exp(positive) > 1.0; must not crash.
+    future = _EPOCH + timedelta(days=3)
+    w = recency_weight(future, _EPOCH)
+    assert w > 1.0
+    assert math.isfinite(w)
+
+
+# --- ADR 0006: final_score --------------------------------------------------
+
+
+def test_final_score_empty_input_returns_zero() -> None:
+    assert final_score([], _EPOCH) == 0.0
+
+
+def test_final_score_single_run_returns_that_score() -> None:
+    # Only one weight → ratio collapses to the raw_score itself.
+    assert final_score([(0.8, _EPOCH)], _EPOCH) == pytest.approx(0.8, abs=1e-9)
+
+
+def test_final_score_two_runs_same_score_different_ages_collapses_to_constant() -> None:
+    # Weighted mean of equal values equals that value regardless of weights.
+    pairs = [(0.8, _EPOCH), (0.8, _EPOCH - timedelta(days=14))]
+    assert final_score(pairs, _EPOCH) == pytest.approx(0.8, abs=1e-9)
+
+
+def test_final_score_weighting_skews_toward_recent() -> None:
+    # raw=1.0 at age 0d (w=1.0) and raw=0.0 at age 14d (w=0.5):
+    # result = (1.0 * 1.0 + 0.5 * 0.0) / (1.0 + 0.5) = 1.0 / 1.5 ≈ 0.667.
+    pairs = [(1.0, _EPOCH), (0.0, _EPOCH - timedelta(days=14))]
+    assert final_score(pairs, _EPOCH) == pytest.approx(1.0 / 1.5, abs=0.001)
+
+
+# --- ADR 0006: score_test ---------------------------------------------------
+
+
+def test_score_test_three_successful_runs() -> None:
+    runs = [
+        make_run("a", "success", attempt=1, created_at=_EPOCH - timedelta(days=2)),
+        make_run("b", "success", attempt=1, created_at=_EPOCH - timedelta(days=1)),
+        make_run("c", "success", attempt=1, created_at=_EPOCH),
+    ]
+    jobs = [
+        make_job("t", _EPOCH, _EPOCH + timedelta(seconds=60)),
+        make_job("t", _EPOCH, _EPOCH + timedelta(seconds=62)),
+        make_job("t", _EPOCH, _EPOCH + timedelta(seconds=61)),
+    ]
+    score = score_test("test::id", "ci-job", runs, jobs, None, _EPOCH)
+
+    assert isinstance(score, _TestScore)
+    assert score.id == "test::id"
+    assert score.job_name == "ci-job"
+    assert score.run_count == 3
+    assert 0.0 <= score.flakiness_index <= 1.0
+    assert isinstance(score.heuristics, Heuristics)
+    assert isinstance(score.heuristics.volatility, float)
+    assert isinstance(score.heuristics.retry_rate, float)
+    assert isinstance(score.heuristics.timing_variance, float)
+    assert isinstance(score.heuristics.change_independence, float)
+    assert score.trend == ("pass", "pass", "pass")
+    assert score.last_failed_at is None
+
+
+def test_score_test_trend_sorted_by_created_at_with_mixed_outcomes() -> None:
+    # Build out-of-order input so we know the trend honors created_at sorting.
+    runs = [
+        make_run("c", "failure", attempt=1, created_at=_EPOCH - timedelta(days=1)),
+        make_run("a", "success", attempt=1, created_at=_EPOCH - timedelta(days=3)),
+        make_run("b", "success", attempt=1, created_at=_EPOCH - timedelta(days=2)),
+        make_run("d", "failure", attempt=1, created_at=_EPOCH),
+    ]
+    score = score_test("t", "j", runs, [], None, _EPOCH)
+
+    assert len(score.trend) <= 5
+    # Chronological: success, success, failure, failure
+    assert score.trend == ("pass", "pass", "fail", "fail")
+    # last_failed_at is the max created_at among failures.
+    assert score.last_failed_at == _EPOCH
+
+
+def test_score_test_trend_is_last_five_when_seven_runs() -> None:
+    runs = [
+        make_run(f"sha{i}", "success", attempt=1, created_at=_EPOCH + timedelta(days=i))
+        for i in range(7)
+    ]
+    score = score_test("t", "j", runs, [], None, _EPOCH + timedelta(days=10))
+
+    assert score.run_count == 7
+    assert len(score.trend) == 5
+    assert score.trend == ("pass", "pass", "pass", "pass", "pass")
+
+
+def test_score_test_last_failed_at_is_max_of_failures() -> None:
+    failure_early = _EPOCH - timedelta(days=4)
+    failure_late = _EPOCH - timedelta(days=1)
+    runs = [
+        make_run("a", "success", created_at=_EPOCH - timedelta(days=5)),
+        make_run("b", "failure", created_at=failure_early),
+        make_run("c", "success", created_at=_EPOCH - timedelta(days=2)),
+        make_run("d", "failure", created_at=failure_late),
+        make_run("e", None, created_at=_EPOCH),  # in-progress, not a failure
+    ]
+    score = score_test("t", "j", runs, [], None, _EPOCH)
+
+    assert score.last_failed_at == failure_late
