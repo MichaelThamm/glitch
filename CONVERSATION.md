@@ -30,3 +30,21 @@ Team chat for the ADR-relay crew implementing Phase 1 Discovery.
 ✨ **Whimsy**: 18 PASSED 0.14s NO RETRIES NO NOTES bestie kai really said "the impl held up" and walked away like a final boss 💀🔥 adr 0001 is SEALED, crew ate fr ✨🚀
 
 ---
+
+## ADR 0002 — Local cache layer
+
+🏗️ **Edmund**: Added `src/glitch/discover/cache.py` with a `CacheEnvelope` dataclass, four `key_*` filename helpers, four `ttl_for_*` policy helpers, and a `Cache(cache_dir)` class exposing `get` / `put`; writes go through `*.tmp` + `os.replace` and the directory is created lazily on first `put`. Two judgment calls worth flagging: `get` swallows `JSONDecodeError`, `OSError`, and bad-envelope shapes by returning `None` rather than raising — a corrupt entry should be a miss, not a crash, and the next `put` overwrites it. Second, `ttl_for_jobs` treats an empty jobs list as in-progress (TTL one hour) rather than immutable, since "all completed" is vacuously true on an empty list but almost certainly means GitHub hasn't materialised the jobs yet. Per the ADR, the client is untouched; this is the cache layer in isolation, ready to be wired in later. Handing to @margaret.
+
+👀 **Margaret**: Walked the checklist and it lines up with ADR 0002 cleanly. Envelope fields match, filename helpers match the table verbatim, TTL policy is right (completed run/jobs/commit → `null`; in-flight → 3600; runs list → 300), and `os.replace` after `*.tmp` is the atomic write the ADR calls for. Zero new deps, client untouched — scope respected. A couple of small observations, none blocking:
+- 💭 `Cache.get` types `kind` as `str` while `put` uses `CacheKind`. Asymmetric, but the equality check still works and it spares callers a cast. Fine.
+- Praise: defending against corrupt envelopes by returning `None` (wrong shape, bad JSON, unparseable timestamp) is exactly the right call — a poisoned entry becomes a miss the next `put` heals.
+**APPROVE**
+
+✨ **Whimsy**: margaret really said "a poisoned entry becomes a miss the next put heals" and lowkey dropped a haiku on us 😭 the way edmund's tmp+os.replace combo is so cracked it didn't even get a 💭 bullet, that's the highest honor fr 🫠✨
+
+🔌 **Kai**: wrote `tests/test_discover_cache.py` — 23 tests. round-trip + wrong-kind/missing-file misses, expired vs fresh TTL (pre-baked envelopes with backdated `fetched_at`, no clock patching), 10-year-old immutable still hits ✅, no `.tmp` leftover after `put`, plus a monkeypatched `os.replace` raising → original file untouched. corrupt-bytes / non-dict / unparseable `fetched_at` / missing `fetched_at` all return `None` cleanly. all four `key_*` helpers + all six TTL branches (completed/in-flight run, jobs all-completed/mixed/empty, commit, runs-list=300). `uv run pytest tests/test_discover_cache.py -q` → `23 passed in 0.03s`; full suite `uv run pytest -q` → `46 passed in 0.18s`. didn't touch cache code, impl held up. **APPROVE**
+
+
+✨ **Whimsy**: 23 PASSED 0.03s the cache is so locked in it's basically a vault 😭🔒 edmund's tmp+replace + kai's poisoned-envelope gauntlet = cache vibes IMMACULATE, adr 0002 sealed in atomic ink fr 🚀✨
+
+---
