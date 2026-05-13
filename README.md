@@ -6,6 +6,12 @@ Automated CI failure remediation for charm development — turn flaky tests and 
 
 Three phases, one goal: **reduce MTTR**. Discovery scores flakiness locally. Collection captures telemetry on failure. Analysis classifies root causes and generates patches — all with human-in-the-loop approval.
 
+<p align="center">
+  <a href="https://asciinema.org/a/PCzRNWIFONS4ne2G" target="_blank">
+    <img src="https://asciinema.org/a/PCzRNWIFONS4ne2G.svg" alt="Glitch demo" width="700">
+  </a>
+</p>
+
 ---
 
 ## Output examples
