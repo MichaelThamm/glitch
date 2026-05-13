@@ -85,7 +85,7 @@ def run_collectors(
                 msg = f"Failed to instantiate collector '{cls.name}': {exc}"
                 logger.error(msg)
                 collector_results[cls.name] = CollectorResult(status="error", reason=msg)
-                _ci_log(cls.name, "error")
+                _ci_log(cls.name, "error", console=console)
                 if progress is not None and task is not None:
                     progress.advance(task)
                 continue
@@ -97,7 +97,7 @@ def run_collectors(
                         reason=f"{cls.name} tool not available or source not found",
                     )
                     _log_collector(cls.name, "skipped")
-                    _ci_log(cls.name, "skipped")
+                    _ci_log(cls.name, "skipped", console=console)
                     if progress is not None and task is not None:
                         progress.advance(task)
                     continue
@@ -114,12 +114,12 @@ def run_collectors(
                     artifacts=len(result.artifacts),
                     elapsed=elapsed,
                 )
-                _ci_log(cls.name, result.status)
+                _ci_log(cls.name, result.status, console=console)
             except Exception:
                 msg = f"Collector '{cls.name}' crashed"
                 logger.exception(msg)
                 collector_results[cls.name] = CollectorResult(status="error", reason=msg)
-                _ci_log(cls.name, "error")
+                _ci_log(cls.name, "error", console=console)
 
             if progress is not None and task is not None:
                 progress.advance(task)
@@ -161,8 +161,12 @@ def _instantiate(
     return cls(**kwargs)
 
 
-def _ci_log(name: str, status: str) -> None:
-    typer.echo(f"[COLLECT] {name}: {status}", err=True)
+def _ci_log(name: str, status: str, *, console: Console | None = None) -> None:
+    msg = f"[COLLECT] {name}: {status}"
+    if console is not None:
+        console.log(msg)
+    else:
+        typer.echo(msg, err=True)
 
 
 def _write_manifest(
