@@ -1,0 +1,519 @@
+{
+  "meta": {
+    "repo": "canonical/opentelemetry-collector-operator",
+    "branch": "main",
+    "generated_at": "2026-05-13T13:29:51.398200Z",
+    "lookback_days": 30,
+    "total_runs_analysed": 17,
+    "glitch_version": "0.1.0",
+    "workflows": [
+      "Release Charm"
+    ]
+  },
+  "tests": [
+    {
+      "id": "release / Quality Checks / Integration Tests (parallel) (test_external_config.py)",
+      "job_name": "release / Quality Checks / Integration Tests (parallel) (test_external_config.py)",
+      "flakiness_index": 0.6751115041752834,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.7004460167011336,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Define Integration tests matrix",
+      "job_name": "release / Quality Checks / Define Integration tests matrix",
+      "flakiness_index": 0.6280190957978101,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.5120763831912406,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Select snap channels",
+      "job_name": "release / Quality Checks / Select snap channels",
+      "flakiness_index": 0.6118033988749895,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.4472135954999579,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Integration Tests (parallel) (test_tracing.py)",
+      "job_name": "release / Quality Checks / Integration Tests (parallel) (test_tracing.py)",
+      "flakiness_index": 0.6006409100010287,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.4025636400041149,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Inclusive naming / check",
+      "job_name": "release / Quality Checks / Inclusive naming / check",
+      "flakiness_index": 0.5909933102004526,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.36397324080181037,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Lint alert rules",
+      "job_name": "release / Quality Checks / Lint alert rules",
+      "flakiness_index": 0.5814795797629759,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.32591831905190405,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Define runner and build matrix",
+      "job_name": "release / Define runner and build matrix",
+      "flakiness_index": 0.5808823529411766,
+      "run_count": 17,
+      "heuristics": {
+        "volatility": 0.5,
+        "retry_rate": 0.23529411764705882,
+        "timing_variance": 1.0,
+        "change_independence": 0.5882352941176471
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Release any bumped charm library",
+      "job_name": "release / Release any bumped charm library",
+      "flakiness_index": 0.5808823529411766,
+      "run_count": 17,
+      "heuristics": {
+        "volatility": 0.5,
+        "retry_rate": 0.23529411764705882,
+        "timing_variance": 1.0,
+        "change_independence": 0.5882352941176471
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Integration Tests (parallel) (test_removal_hooks.py)",
+      "job_name": "release / Quality Checks / Integration Tests (parallel) (test_removal_hooks.py)",
+      "flakiness_index": 0.5796560697665061,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.31862427906602453,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Static analysis",
+      "job_name": "release / Quality Checks / Static analysis",
+      "flakiness_index": 0.577526317881918,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.3101052715276715,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Integration Tests (parallel) (test_principal.py)",
+      "job_name": "release / Quality Checks / Integration Tests (parallel) (test_principal.py)",
+      "flakiness_index": 0.5764869966608251,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.3059479866433008,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Validate Terraform files",
+      "job_name": "release / Quality Checks / Validate Terraform files",
+      "flakiness_index": 0.5648577501522946,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.25943100060917845,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Integration Tests (parallel) (test_cos_agent.py)",
+      "job_name": "release / Quality Checks / Integration Tests (parallel) (test_cos_agent.py)",
+      "flakiness_index": 0.5636695490687567,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.25467819627502647,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Integration Tests (parallel) (test_snap_refresh.py)",
+      "job_name": "release / Quality Checks / Integration Tests (parallel) (test_snap_refresh.py)",
+      "flakiness_index": 0.5497841769677476,
+      "run_count": 7,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.0,
+        "timing_variance": 0.1991367078709905,
+        "change_independence": 1.0
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Linting",
+      "job_name": "release / Quality Checks / Linting",
+      "flakiness_index": 0.5479013889545369,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.19160555581814775,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Unit tests",
+      "job_name": "release / Quality Checks / Unit tests",
+      "flakiness_index": 0.547693412271681,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.19077364908672417,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Integration Tests (parallel) (test_log_rotation.py)",
+      "job_name": "release / Quality Checks / Integration Tests (parallel) (test_log_rotation.py)",
+      "flakiness_index": 0.535644720631254,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.14257888252501613,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Pack the charm",
+      "job_name": "release / Quality Checks / Pack the charm",
+      "flakiness_index": 0.5288911880995847,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.11556475239833904,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / CodeQL analysis",
+      "job_name": "release / Quality Checks / CodeQL analysis",
+      "flakiness_index": 0.520015834877873,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": 0.08006333951149198,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Release the charm / Release the charm (ubuntu-latest)",
+      "job_name": "release / Release the charm / Release the charm (ubuntu-latest)",
+      "flakiness_index": 0.49999999999999983,
+      "run_count": 6,
+      "heuristics": {
+        "volatility": 0.0,
+        "retry_rate": 0.6666666666666666,
+        "timing_variance": 1.0,
+        "change_independence": 0.3333333333333333
+      },
+      "trend": [
+        "pass",
+        "fail",
+        "fail",
+        "pass",
+        "pass"
+      ],
+      "last_failed_at": "2026-04-21T14:22:06Z"
+    },
+    {
+      "id": "release / Check against ignorelist",
+      "job_name": "release / Check against ignorelist",
+      "flakiness_index": 0.4863253231135431,
+      "run_count": 17,
+      "heuristics": {
+        "volatility": 0.5,
+        "retry_rate": 0.23529411764705882,
+        "timing_variance": 0.6217718806894663,
+        "change_independence": 0.5882352941176471
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "Inclusive naming check",
+      "job_name": "Inclusive naming check",
+      "flakiness_index": 0.2307692307692308,
+      "run_count": 13,
+      "heuristics": {
+        "volatility": 0.0,
+        "retry_rate": 0.3076923076923077,
+        "timing_variance": 0.0,
+        "change_independence": 0.6153846153846154
+      },
+      "trend": [
+        "pass",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks",
+      "job_name": "release / Quality Checks",
+      "flakiness_index": -0.35355339059327384,
+      "run_count": 3,
+      "heuristics": {
+        "volatility": 0.0,
+        "retry_rate": 0.0,
+        "timing_variance": -1.4142135623730951,
+        "change_independence": 0.0
+      },
+      "trend": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "last_failed_at": null
+    },
+    {
+      "id": "release / Release the charm",
+      "job_name": "release / Release the charm",
+      "flakiness_index": -0.5096783991095442,
+      "run_count": 11,
+      "heuristics": {
+        "volatility": 0.5,
+        "retry_rate": 0.0,
+        "timing_variance": -3.265986323710904,
+        "change_independence": 0.7272727272727273
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    },
+    {
+      "id": "release / Quality Checks / Integration Tests (sequential)",
+      "job_name": "release / Quality Checks / Integration Tests (sequential)",
+      "flakiness_index": -0.9571975029558195,
+      "run_count": 14,
+      "heuristics": {
+        "volatility": 1.0,
+        "retry_rate": 0.2857142857142857,
+        "timing_variance": -5.828790011823278,
+        "change_independence": 0.7142857142857143
+      },
+      "trend": [
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "fail"
+      ],
+      "last_failed_at": "2026-05-08T16:25:00Z"
+    }
+  ],
+  "insufficient_data": [
+    {
+      "id": "release / Release the charm / Release the charm (Ubuntu_ARM64_4C_16G_03)",
+      "run_count": 2
+    }
+  ]
+}
