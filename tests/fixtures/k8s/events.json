@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "metadata": {"name": "good-pod.174f2b", "namespace": "default"},
+      "type": "Warning",
+      "reason": "FailedScheduling",
+      "message": "0/2 nodes available",
+      "firstTimestamp": "2025-04-01T10:00:00Z",
+      "lastTimestamp": "2025-04-01T10:00:00Z",
+      "count": 1,
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "good-pod",
+        "namespace": "default"
+      }
+    },
+    {
+      "metadata": {"name": "error-pod.17a3c1", "namespace": "default"},
+      "type": "Normal",
+      "reason": "Started",
+      "message": "Started container app",
+      "firstTimestamp": "2025-04-01T10:00:05Z",
+      "lastTimestamp": "2025-04-01T10:00:05Z",
+      "count": 1,
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "error-pod",
+        "namespace": "default"
+      }
+    },
+    {
+      "metadata": {"name": "crashy-pod.18b4d2", "namespace": "default"},
+      "type": "Warning",
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container app",
+      "firstTimestamp": "2025-04-01T10:00:10Z",
+      "lastTimestamp": "2025-04-01T10:05:10Z",
+      "count": 42,
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "crashy-pod",
+        "namespace": "default"
+      }
+    },
+    {
+      "metadata": {"name": "crashloop-pod.19c5e3", "namespace": "default"},
+      "type": "Warning",
+      "reason": "CrashLoopBackOff",
+      "message": "Container app is in CrashLoopBackOff",
+      "firstTimestamp": "2025-04-01T10:00:15Z",
+      "lastTimestamp": "2025-04-01T10:05:15Z",
+      "count": 36,
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "crashloop-pod",
+        "namespace": "default"
+      }
+    }
+  ]
+}

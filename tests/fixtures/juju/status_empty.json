@@ -1,0 +1,10 @@
+{
+  "model": {
+    "name": "empty-model",
+    "type": "iaas",
+    "controller": "my-controller",
+    "cloud": "lxd"
+  },
+  "machines": {},
+  "applications": {}
+}

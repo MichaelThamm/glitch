@@ -1,0 +1,25 @@
+{
+  "myapp/0": {
+    "charm": "myapp",
+    "application": "myapp",
+    "model": "my-model",
+    "opened-ports": ["8080/tcp"],
+    "public-address": "10.0.0.1",
+    "relation-info": [
+      {
+        "relation-id": 0,
+        "endpoint": "db",
+        "related-endpoint": "database",
+        "application-data": {"password": "secret123"},
+        "related-units": {
+          "otherdb/0": {
+            "in-scope": true,
+            "data": {"host": "10.0.0.2", "port": "5432"}
+          }
+        }
+      }
+    ],
+    "provider-id": "myapp-0",
+    "address": "10.0.0.1"
+  }
+}

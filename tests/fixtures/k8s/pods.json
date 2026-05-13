@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "metadata": {"name": "good-pod", "namespace": "default"},
+      "status": {
+        "phase": "Running",
+        "containerStatuses": [
+          {"name": "app", "restartCount": 0, "ready": true}
+        ]
+      }
+    },
+    {
+      "metadata": {"name": "crashy-pod", "namespace": "default"},
+      "status": {
+        "phase": "Running",
+        "containerStatuses": [
+          {"name": "app", "restartCount": 5, "ready": false}
+        ]
+      }
+    },
+    {
+      "metadata": {"name": "error-pod", "namespace": "default"},
+      "status": {
+        "phase": "Error",
+        "containerStatuses": [
+          {"name": "app", "restartCount": 0, "ready": false}
+        ]
+      }
+    },
+    {
+      "metadata": {"name": "crashloop-pod", "namespace": "default"},
+      "status": {
+        "phase": "CrashLoopBackOff",
+        "containerStatuses": [
+          {"name": "app", "restartCount": 12, "ready": false}
+        ]
+      }
+    }
+  ]
+}

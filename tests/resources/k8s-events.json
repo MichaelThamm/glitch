@@ -1,0 +1,5717 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:14:47.108409Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508787",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/alertmanager-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "alertmanager-0.18af1f05af25af41",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508796",
+        "uid": "2cebd3f9-64ef-4660-87b3-3811e98b818f"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:14:21.235919Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508419",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/alertmanager-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:21Z",
+        "name": "alertmanager-0.18af1effa906e736",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508440",
+        "uid": "6e502f0f-1221-4533-a3a4-41934d3b3c5f"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:14:22.650047Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508447",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/traefik-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "traefik-0.18af1efffd50af05",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508478",
+        "uid": "a1bf8d0f-c0c0-4015-b910-d48d83f2b1ed"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:14:35.623079Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508605",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/catalogue-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "catalogue-0.18af1f030291717d",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508609",
+        "uid": "8bd2e51f-e652-40f4-be8a-5ade35759d1b"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:15:41.793956Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509208",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/prometheus-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "prometheus-0.18af1f126aa8ef15",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509213",
+        "uid": "e22b31d8-d6aa-4afa-bc49-b152d615525e"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:15:17.512475Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508996",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/grafana-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:17Z",
+        "name": "grafana-0.18af1f0cc35efae8",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509000",
+        "uid": "1c3187c7-5344-43f4-95f0-04825ab68fdd"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:15:39.199567Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509153",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/loki-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:39Z",
+        "name": "loki-0.18af1f11d005b7a3",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509162",
+        "uid": "bb1dcfbe-8f01-452e-a0e8-024215133739"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:14:36.892139Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508621",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/loki-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:36Z",
+        "name": "loki-0.18af1f034e35f359",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508656",
+        "uid": "a83dd45e-7f83-48d3-b933-44006e1004cc"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:13:48.429621Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "modeloperator-58bdfb479-6mqfz",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508225",
+        "uid": "1fe0bb2d-d213-449f-a12d-e0e5492d1636"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/modeloperator-58bdfb479-6mqfz to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:13:48Z",
+        "name": "modeloperator-58bdfb479-6mqfz.18af1ef8059e72a2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508230",
+        "uid": "a9dd257e-6a99-45af-98a0-58954bdacba8"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:14:44.235401Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508729",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/grafana-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:44Z",
+        "name": "grafana-0.18af1f0503e720ed",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508748",
+        "uid": "270a2919-cf41-4b40-8479-9d191c02dab1"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "action": "Binding",
+      "apiVersion": "v1",
+      "eventTime": "2026-05-13T12:14:23.720611Z",
+      "firstTimestamp": null,
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508475",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": null,
+      "message": "Successfully assigned cos-lite/prometheus-0 to charm-dev-x",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "prometheus-0.18af1f003d203d17",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508511",
+        "uid": "417c0162-453d-43d0-95c8-97f191b5ef79"
+      },
+      "reason": "Scheduled",
+      "reportingComponent": "default-scheduler",
+      "reportingInstance": "default-scheduler-charm-dev-x",
+      "source": {},
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:13:48Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{juju-operator}",
+        "kind": "Pod",
+        "name": "modeloperator-58bdfb479-6mqfz",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508229",
+        "uid": "1fe0bb2d-d213-449f-a12d-e0e5492d1636"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:13:48Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:13:49Z",
+        "name": "modeloperator-58bdfb479-6mqfz.18af1ef8278e6ca9",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508236",
+        "uid": "bfe35b11-0328-47ed-a860-43e039fd32b2"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:13:48Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "modeloperator",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508219",
+        "uid": "dc9b88dc-d01b-4a78-9370-9f042383d252"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:13:48Z",
+      "message": "Scaled up replica set modeloperator-58bdfb479 from 0 to 1",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:13:48Z",
+        "name": "modeloperator.18af1ef8043a0f9b",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508224",
+        "uid": "1e02d1fa-2b15-4a4e-ac88-14b1cf6c145a"
+      },
+      "reason": "ScalingReplicaSet",
+      "reportingComponent": "deployment-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "deployment-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:13:48Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "ReplicaSet",
+        "name": "modeloperator-58bdfb479",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508222",
+        "uid": "2b1c7c38-cdba-46e7-bbf1-1949dc626e80"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:13:48Z",
+      "message": "Created pod: modeloperator-58bdfb479-6mqfz",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:13:48Z",
+        "name": "modeloperator-58bdfb479.18af1ef805217215",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508227",
+        "uid": "e0a3fb64-8173-4e24-a5cf-98afea04714e"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "replicaset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "replicaset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:13:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{juju-operator}",
+        "kind": "Pod",
+        "name": "modeloperator-58bdfb479-6mqfz",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508229",
+        "uid": "1fe0bb2d-d213-449f-a12d-e0e5492d1636"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:13:49Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:13:49Z",
+        "name": "modeloperator-58bdfb479-6mqfz.18af1ef8293e4fed",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508237",
+        "uid": "4ab16ffb-485f-4ad0-9516-6cbd6c4650d7"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:13:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{juju-operator}",
+        "kind": "Pod",
+        "name": "modeloperator-58bdfb479-6mqfz",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508229",
+        "uid": "1fe0bb2d-d213-449f-a12d-e0e5492d1636"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:13:49Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:13:49Z",
+        "name": "modeloperator-58bdfb479-6mqfz.18af1ef82d215af1",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508238",
+        "uid": "45aec6a0-6683-4d12-871d-ce56314878e0"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:20Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508425",
+        "uid": "780ad183-b6bb-4e3f-b765-d245225015c7"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:20Z",
+      "message": "External provisioner is provisioning volume for claim \"cos-lite/alertmanager-data-5f8f0e93-alertmanager-0\"",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:20Z",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0.18af1eff6d1b566b",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508427",
+        "uid": "87558bf2-1af5-495a-8218-3c9b854c8e1e"
+      },
+      "reason": "Provisioning",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:20Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508417",
+        "uid": "780ad183-b6bb-4e3f-b765-d245225015c7"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:20Z",
+      "message": "waiting for first consumer to be created before binding",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:20Z",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0.18af1eff6b67bb03",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508420",
+        "uid": "b1c1e7cd-b679-4c61-b2c8-258b0a66f1fd"
+      },
+      "reason": "WaitForFirstConsumer",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:20Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508425",
+        "uid": "780ad183-b6bb-4e3f-b765-d245225015c7"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:20Z",
+      "message": "Waiting for a volume to be created either by the external provisioner 'rawfile.csi.openebs.io' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:20Z",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0.18af1eff6d0aff97",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508428",
+        "uid": "7623fc4d-b219-4918-a048-67254fe23c32"
+      },
+      "reason": "ExternalProvisioning",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:20Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508425",
+        "uid": "780ad183-b6bb-4e3f-b765-d245225015c7"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:20Z",
+      "message": "Successfully provisioned volume pvc-780ad183-b6bb-4e3f-b765-d245225015c7",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:20Z",
+        "name": "alertmanager-data-5f8f0e93-alertmanager-0.18af1eff6dc457f9",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508431",
+        "uid": "d6fbb8d9-bf6f-410d-8bfc-954232d14d2c"
+      },
+      "reason": "ProvisioningSucceeded",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:20Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "alertmanager",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508416",
+        "uid": "3483c9a2-a2c7-4f9a-a76b-7de44e52cd7a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:20Z",
+      "message": "Create Claim alertmanager-data-5f8f0e93-alertmanager-0 Pod alertmanager-0 in StatefulSet alertmanager success",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:20Z",
+        "name": "alertmanager.18af1eff6b48294c",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508418",
+        "uid": "3755d82d-ad65-4bd8-ae19-a1e1584d32f8"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "traefik-configurations-4d5d9197-traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508444",
+        "uid": "a45e2e17-a074-4c55-9780-bd8528ee3109"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:21Z",
+      "message": "waiting for first consumer to be created before binding",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:21Z",
+        "name": "traefik-configurations-4d5d9197-traefik-0.18af1effbe984f68",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508445",
+        "uid": "0b5d45d3-1e94-4a83-86b5-682f68cc3feb"
+      },
+      "reason": "WaitForFirstConsumer",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "traefik-configurations-4d5d9197-traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508452",
+        "uid": "a45e2e17-a074-4c55-9780-bd8528ee3109"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:21Z",
+      "message": "External provisioner is provisioning volume for claim \"cos-lite/traefik-configurations-4d5d9197-traefik-0\"",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:21Z",
+        "name": "traefik-configurations-4d5d9197-traefik-0.18af1effc077f4db",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508453",
+        "uid": "460bb34b-19b2-4c46-a39a-45dbbae51836"
+      },
+      "reason": "Provisioning",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "traefik-configurations-4d5d9197-traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508452",
+        "uid": "a45e2e17-a074-4c55-9780-bd8528ee3109"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:21Z",
+      "message": "Waiting for a volume to be created either by the external provisioner 'rawfile.csi.openebs.io' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:21Z",
+        "name": "traefik-configurations-4d5d9197-traefik-0.18af1effc07813e4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508459",
+        "uid": "41c016df-a3c1-4d69-8d88-4deaed0dc560"
+      },
+      "reason": "ExternalProvisioning",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "traefik-configurations-4d5d9197-traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508452",
+        "uid": "a45e2e17-a074-4c55-9780-bd8528ee3109"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:21Z",
+      "message": "Successfully provisioned volume pvc-a45e2e17-a074-4c55-9780-bd8528ee3109",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:21Z",
+        "name": "traefik-configurations-4d5d9197-traefik-0.18af1effc0f23c1e",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508458",
+        "uid": "e049c09a-0ee8-447c-b330-18d92e970726"
+      },
+      "reason": "ProvisioningSucceeded",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:21Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "traefik",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508443",
+        "uid": "3b8be167-963c-42d0-b8be-9f88b3852b3f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:21Z",
+      "message": "Create Pod traefik-0 in StatefulSet traefik successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:21Z",
+        "name": "traefik.18af1effbf26a108",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508448",
+        "uid": "46b5055f-7f75-4d21-b5ff-c690d073a7c9"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:21Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "traefik",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508443",
+        "uid": "3b8be167-963c-42d0-b8be-9f88b3852b3f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:21Z",
+      "message": "Create Claim traefik-configurations-4d5d9197-traefik-0 Pod traefik-0 in StatefulSet traefik success",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:21Z",
+        "name": "traefik.18af1effbe9b45ae",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508446",
+        "uid": "ff727261-2f97-4bed-8b98-04f8260fbe6e"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "alertmanager-0.18af1f0010d44a3f",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508500",
+        "uid": "8a9e62ed-8671-4c68-8a6b-f371696e7d95"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "alertmanager-0.18af1f000a7e396e",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508494",
+        "uid": "f31b7842-2c7a-4e93-90cf-2057edd12ed6"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "alertmanager-0.18af1efffa604e33",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508471",
+        "uid": "4d48692f-7c36-4a27-a1dd-07dad6dd2211"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508472",
+        "uid": "cafd9b6f-71cb-4aed-88f5-57a8f87eeb91"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "waiting for first consumer to be created before binding",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0.18af1efffae5c275",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508474",
+        "uid": "1ef094a5-777b-47f5-93f4-4eae2b388665"
+      },
+      "reason": "WaitForFirstConsumer",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508483",
+        "uid": "cafd9b6f-71cb-4aed-88f5-57a8f87eeb91"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Waiting for a volume to be created either by the external provisioner 'rawfile.csi.openebs.io' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0.18af1f00014753e6",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508491",
+        "uid": "d8258215-a6b9-4468-a456-089fcfbbfb60"
+      },
+      "reason": "ExternalProvisioning",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508483",
+        "uid": "cafd9b6f-71cb-4aed-88f5-57a8f87eeb91"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "External provisioner is provisioning volume for claim \"cos-lite/prometheus-database-f3a8d4ed-prometheus-0\"",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0.18af1f0001480c27",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508484",
+        "uid": "bd2557b9-e0a8-46ac-9c8b-38bd5f0ec5c0"
+      },
+      "reason": "Provisioning",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508483",
+        "uid": "cafd9b6f-71cb-4aed-88f5-57a8f87eeb91"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Successfully provisioned volume pvc-cafd9b6f-71cb-4aed-88f5-57a8f87eeb91",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "prometheus-database-f3a8d4ed-prometheus-0.18af1f000232f259",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508490",
+        "uid": "9ff4c03b-d88a-4b74-bf3c-577a8d3eae2d"
+      },
+      "reason": "ProvisioningSucceeded",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "prometheus",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508470",
+        "uid": "41a26009-4954-44b4-83b1-f6a83070593e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Create Claim prometheus-database-f3a8d4ed-prometheus-0 Pod prometheus-0 in StatefulSet prometheus success",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "prometheus.18af1efffae26bfe",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508473",
+        "uid": "c11c0e67-040f-4a4f-8e26-130500a6cfda"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "alertmanager-0.18af1efff5a50e44",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508469",
+        "uid": "04f9f3a8-5a3d-4767-92a7-938b3ac8386a"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:22Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "alertmanager-0.18af1efff0f5f721",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508468",
+        "uid": "df55fa8b-ad53-4275-a6dc-7780fccf5429"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:23Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "traefik-0.18af1f003d4b855e",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508512",
+        "uid": "071dde69-4193-4ffd-95a4-908908c6bb5b"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:23Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "traefik-0.18af1f00432826a4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508514",
+        "uid": "99f5a9b6-cd74-40c1-86b9-11e276e877af"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:23Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "alertmanager-0.18af1f00168053e1",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508501",
+        "uid": "b946df96-b478-4fe4-a561-73ad9725fe4f"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{alertmanager}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:23Z",
+      "message": "Container image \"registry.jujucharms.com/charm/1jnkh3bao436pdx7l4bgcvejm1lom0wctgn3/alertmanager-image@sha256:368985dfd680291f1888cc339afa7a097981ccb33b3398598e18f0dda2027573\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "alertmanager-0.18af1f001699ed8e",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508502",
+        "uid": "aa9727e8-6114-4fd0-a9c8-d87f5f902a17"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{alertmanager}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:23Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "alertmanager-0.18af1f001a206ab5",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508503",
+        "uid": "f35872d0-2c7d-4f85-b71c-4360b3771a3f"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:23Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "traefik-0.18af1f0038d83da0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508509",
+        "uid": "af1c0560-c605-45ae-9361-864d4dc6e0c4"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:23Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{alertmanager}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:23Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:23Z",
+        "name": "alertmanager-0.18af1f001e8f730a",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508504",
+        "uid": "4c84a53b-a71d-465a-a06e-8550210b4cd9"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:24Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:24Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:24Z",
+        "name": "prometheus-0.18af1f0073fe1d6d",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508527",
+        "uid": "c02bbf78-c678-45eb-8852-493476dcd489"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:24Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:24Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-20.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:24Z",
+        "name": "traefik-0.18af1f0082924006",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508530",
+        "uid": "ceac4727-5b11-4d30-ae46-4b3c3785f575"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:25Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:25Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:25Z",
+        "name": "traefik-0.18af1f00ae94735b",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508541",
+        "uid": "6a88d536-8ecc-47af-80e8-856b20475d68"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:25Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:25Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:25Z",
+        "name": "prometheus-0.18af1f008c0d8cd4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508533",
+        "uid": "c400e60d-2bc6-4434-aed7-1722f6bffb7f"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:25Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:25Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:25Z",
+        "name": "prometheus-0.18af1f0098ebae9a",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508539",
+        "uid": "eafa1bb0-e40d-40e3-ba1d-1f781e236506"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:26Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:26Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:26Z",
+        "name": "prometheus-0.18af1f00ffc8fe60",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508556",
+        "uid": "64daf012-c39d-43d9-8de3-9d1eef4bd71f"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:26Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:26Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:26Z",
+        "name": "prometheus-0.18af1f00fa907eb5",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508552",
+        "uid": "2772cc71-ec66-4004-abf7-3f42387a9d55"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{prometheus}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container image \"registry.jujucharms.com/charm/h9a0wskime1pr9ve26xf9oj0yp09xk5potmgk/prometheus-image@sha256:e945d24df7b2f591c056a84af143dd13ac9132aa353c14a9bd71bec6faf0b966\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "prometheus-0.18af1f010876a4d0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508564",
+        "uid": "07894c9a-8194-4b4e-a488-a772271f9290"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "traefik-0.18af1f0104a11021",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508560",
+        "uid": "dddaf42b-27fe-4f5c-8995-ed333620a67a"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "prometheus-0.18af1f0108670f20",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508563",
+        "uid": "9b2c388c-398f-4493-baef-b53a74b9030e"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{prometheus}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "prometheus-0.18af1f010bda2c99",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508566",
+        "uid": "2390be56-1ff4-4da6-90e8-a3cf256615e0"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{prometheus}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "prometheus-0.18af1f0110cee26a",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508567",
+        "uid": "abc88b98-bbca-424c-a9d1-bcb69412835f"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{traefik}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "traefik-0.18af1f010ba052c5",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508565",
+        "uid": "e8ee817e-9e2f-4d5f-8af5-ddd8377b5838"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{traefik}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "traefik-0.18af1f0107585519",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508562",
+        "uid": "64924535-1ff8-4053-9fa8-87ebb34389e3"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:27Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{traefik}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:27Z",
+      "message": "Container image \"registry.jujucharms.com/charm/3cs9bo6mym14ler2zuvzsnqcd8pvucf6cxvlw/traefik-image@sha256:36f0319a476ee3886b083dcc7e6a37e55402d169354ed86ddf70764dc0e1d99b\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:27Z",
+        "name": "traefik-0.18af1f0104af79d7",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508561",
+        "uid": "cbd3ed77-1ac9-4db1-8e8f-3294bf941cec"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-active-index-directory-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508627",
+        "uid": "e8900892-5b27-4c05-ac4f-25c12cd2924f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "External provisioner is provisioning volume for claim \"cos-lite/loki-active-index-directory-12341ce8-loki-0\"",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-active-index-directory-12341ce8-loki-0.18af1f0311991cc2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508629",
+        "uid": "12602882-e8af-4403-89a4-679a90c39502"
+      },
+      "reason": "Provisioning",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-active-index-directory-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508627",
+        "uid": "e8900892-5b27-4c05-ac4f-25c12cd2924f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "Successfully provisioned volume pvc-e8900892-5b27-4c05-ac4f-25c12cd2924f",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-active-index-directory-12341ce8-loki-0.18af1f031343fc1c",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508639",
+        "uid": "0e92a4df-b3b1-45aa-97f0-7cff0f8cb738"
+      },
+      "reason": "ProvisioningSucceeded",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-active-index-directory-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508627",
+        "uid": "e8900892-5b27-4c05-ac4f-25c12cd2924f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "Waiting for a volume to be created either by the external provisioner 'rawfile.csi.openebs.io' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-active-index-directory-12341ce8-loki-0.18af1f03119cdb54",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508630",
+        "uid": "10b42beb-ea1d-4340-a4ba-169315fa8052"
+      },
+      "reason": "ExternalProvisioning",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "catalogue",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508604",
+        "uid": "4096fc22-27f1-48c3-ba2c-d97454a481b9"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "Create Pod catalogue-0 in StatefulSet catalogue successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "catalogue.18af1f0301e9499b",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508606",
+        "uid": "9be4fbe2-3b0d-455a-ac08-c21fb061b10e"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-active-index-directory-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508615",
+        "uid": "e8900892-5b27-4c05-ac4f-25c12cd2924f"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "waiting for first consumer to be created before binding",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-active-index-directory-12341ce8-loki-0.18af1f030d695aca",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508617",
+        "uid": "fcdf57ec-97d5-4acb-ac9a-1da5ea1ac09e"
+      },
+      "reason": "WaitForFirstConsumer",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-loki-chunks-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508631",
+        "uid": "51c62c7e-e51c-4222-8c88-0789f936d01a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "Waiting for a volume to be created either by the external provisioner 'rawfile.csi.openebs.io' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-loki-chunks-12341ce8-loki-0.18af1f0313151bb2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508641",
+        "uid": "eb83a446-b8d5-42e3-9f9e-f57dfa1573ac"
+      },
+      "reason": "ExternalProvisioning",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-loki-chunks-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508618",
+        "uid": "51c62c7e-e51c-4222-8c88-0789f936d01a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "waiting for first consumer to be created before binding",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-loki-chunks-12341ce8-loki-0.18af1f030e384646",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508619",
+        "uid": "13ce768f-42f7-4b83-b97f-3df091565d76"
+      },
+      "reason": "WaitForFirstConsumer",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-loki-chunks-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508631",
+        "uid": "51c62c7e-e51c-4222-8c88-0789f936d01a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "External provisioner is provisioning volume for claim \"cos-lite/loki-loki-chunks-12341ce8-loki-0\"",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-loki-chunks-12341ce8-loki-0.18af1f031313e164",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508634",
+        "uid": "09e1f051-2d04-49dc-8b34-4814b525cf63"
+      },
+      "reason": "Provisioning",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "loki",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508614",
+        "uid": "9a6c49ed-c37b-4d4b-ae51-1c86267dd7ea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "Create Claim loki-loki-chunks-12341ce8-loki-0 Pod loki-0 in StatefulSet loki success",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki.18af1f030e4af09a",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508620",
+        "uid": "2729310c-d391-48ec-980f-0f480040470e"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "loki",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508614",
+        "uid": "9a6c49ed-c37b-4d4b-ae51-1c86267dd7ea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "Create Claim loki-active-index-directory-12341ce8-loki-0 Pod loki-0 in StatefulSet loki success",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki.18af1f030d6cb3fe",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508616",
+        "uid": "7924c3e5-7bfb-4027-a700-1b0e9e86bf99"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "loki-loki-chunks-12341ce8-loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508631",
+        "uid": "51c62c7e-e51c-4222-8c88-0789f936d01a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:35Z",
+      "message": "Successfully provisioned volume pvc-51c62c7e-e51c-4222-8c88-0789f936d01a",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki-loki-chunks-12341ce8-loki-0.18af1f03147dcce8",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508643",
+        "uid": "b7cf69fb-06b8-4e24-b33f-d1e2ca3dcc7f"
+      },
+      "reason": "ProvisioningSucceeded",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:36Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:36Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:36Z",
+        "name": "catalogue-0.18af1f0351b81fa8",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508658",
+        "uid": "b2e15c57-3b2c-4348-8d67-e3d9a5c31948"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:36Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:36Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:36Z",
+        "name": "catalogue-0.18af1f032a719517",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508650",
+        "uid": "3050edac-c81b-4ddb-bdf7-b59f6e606b5c"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:36Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:36Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:36Z",
+        "name": "catalogue-0.18af1f0326c559fb",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508649",
+        "uid": "a2448497-1109-46c4-ac4e-2d80fdf9db8a"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:36Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:36Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:36Z",
+        "name": "catalogue-0.18af1f032e76cdb0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508651",
+        "uid": "aaa4100a-83f7-487e-9e78-1a12824e792e"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:37Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:37Z",
+      "message": "MountVolume.MountDevice failed for volume \"pvc-51c62c7e-e51c-4222-8c88-0789f936d01a\" : rpc error: code = Unknown desc = Exception calling application: Command 'mknod /dev/loop45 b 7 45' returned non-zero exit status 1.",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:37Z",
+        "name": "loki-0.18af1f035cbb1ace",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508665",
+        "uid": "4ee8b928-0553-41f2-8a9d-924d0949575a"
+      },
+      "reason": "FailedMount",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:37Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:37Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:37Z",
+        "name": "catalogue-0.18af1f035874cd7e",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508664",
+        "uid": "52363a1d-b077-4f7d-9621-1b1466dabc52"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:37Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{catalogue}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:37Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:37Z",
+        "name": "catalogue-0.18af1f0362924fc9",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508669",
+        "uid": "f4a70051-327e-44a1-9738-cbb42fa199cf"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:37Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{catalogue}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:37Z",
+      "message": "Container image \"registry.jujucharms.com/charm/e6vdes9jekio4t37t4rhe6skqyxnfg6t0wtlp/catalogue-image@sha256:ae553b99137278a26c3faf2c042772db96f4f637b909331bdff65f52ec62722c\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:37Z",
+        "name": "catalogue-0.18af1f035f05ca21",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508668",
+        "uid": "766e107c-7dee-48b1-ae34-57c80cf5aa56"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:37Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{catalogue}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:37Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:37Z",
+        "name": "catalogue-0.18af1f0367d772da",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508670",
+        "uid": "cccfba21-c669-4052-bca4-48ddf75062d9"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:37Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "catalogue-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508607",
+        "uid": "56e1192c-b7cd-4d09-868e-2fec1fcf4f65"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:37Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:37Z",
+        "name": "catalogue-0.18af1f035ecc7cc4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508667",
+        "uid": "fc9134c2-58b4-4368-9806-3608545a827b"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:38Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:38Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:38Z",
+        "name": "loki-0.18af1f0396aca2c0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508676",
+        "uid": "ced93c3e-3349-479f-98cd-6425ccede491"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:38Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:38Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:38Z",
+        "name": "loki-0.18af1f039a115f07",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508677",
+        "uid": "6c95f638-ac8b-4d47-86eb-6c4b14204778"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:38Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:38Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:38Z",
+        "name": "loki-0.18af1f039dfe984d",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508678",
+        "uid": "31e78578-42db-4cff-9a39-5ac92bc438a3"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:38Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:38Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:38Z",
+        "name": "loki-0.18af1f03c9b41744",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508683",
+        "uid": "676d315a-e8b4-4e3d-b5b5-63a560949e10"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03e4eb4e49",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508700",
+        "uid": "7b9bbd2f-0e1b-408e-b32a-4421255c0698"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03d876c296",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508695",
+        "uid": "1b4cb643-0784-4348-a268-a450f98a665f"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03e1051e62",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508698",
+        "uid": "bbe0f0b0-a89f-47d4-a5ff-00dfc8894f43"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container image \"registry.jujucharms.com/charm/ayt4gaga2x20gye32qthgygevco13qgq6rfff/node-exporter-image@sha256:4cb2b9019f1757be8482419002cb7afe028fdba35d47958829e4cfeaf6246d80\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03e12e1242",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508699",
+        "uid": "10d9f26a-46a3-45eb-b343-dedc3fcf32c0"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container image \"registry.jujucharms.com/charm/ayt4gaga2x20gye32qthgygevco13qgq6rfff/loki-image@sha256:c1cf06a25176ea7c9574b53df272c2cc56c3f797a2a0c574c8e6ad923b0657b4\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03d8995918",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508696",
+        "uid": "fd344676-842d-43d5-822d-85a1d174952c"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03e9e3fd21",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508701",
+        "uid": "1ef58fbf-c819-4e79-a99c-c85fca86e9a1"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03dc943f90",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508697",
+        "uid": "edd63301-033e-4ed1-8ca5-2a25ca922561"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:39Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:39Z",
+        "name": "loki-0.18af1f03cfb32ca6",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508689",
+        "uid": "464ba78b-d30f-492e-905b-1bdc5907a281"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "grafana-database-e830effa-grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508735",
+        "uid": "e310610f-ad55-46d7-b957-b20880d93ce0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:43Z",
+      "message": "External provisioner is provisioning volume for claim \"cos-lite/grafana-database-e830effa-grafana-0\"",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:43Z",
+        "name": "grafana-database-e830effa-grafana-0.18af1f04c15f62b4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508737",
+        "uid": "87f9360b-7ed3-4c38-934e-de1e401c8d82"
+      },
+      "reason": "Provisioning",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "grafana-database-e830effa-grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508735",
+        "uid": "e310610f-ad55-46d7-b957-b20880d93ce0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:43Z",
+      "message": "Waiting for a volume to be created either by the external provisioner 'rawfile.csi.openebs.io' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:43Z",
+        "name": "grafana-database-e830effa-grafana-0.18af1f04c159f3d4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508740",
+        "uid": "5b05228b-daf2-4a9d-982a-31841055fa43"
+      },
+      "reason": "ExternalProvisioning",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "grafana-database-e830effa-grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508735",
+        "uid": "e310610f-ad55-46d7-b957-b20880d93ce0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:43Z",
+      "message": "Successfully provisioned volume pvc-e310610f-ad55-46d7-b957-b20880d93ce0",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:43Z",
+        "name": "grafana-database-e830effa-grafana-0.18af1f04c3dfda0c",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508742",
+        "uid": "653929aa-6cbf-4155-b452-23d8997e53aa"
+      },
+      "reason": "ProvisioningSucceeded",
+      "reportingComponent": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b",
+      "reportingInstance": "",
+      "source": {
+        "component": "rawfile.csi.openebs.io_ck-storage-rawfile-csi-node-6hgfr_6fc323b5-b3e9-4ecf-b4de-2491cf699c0b"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:43Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "grafana",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508725",
+        "uid": "9de1a76e-573a-4da6-8b7d-cafc4d316c3d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:43Z",
+      "message": "Create Claim grafana-database-e830effa-grafana-0 Pod grafana-0 in StatefulSet grafana success",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:43Z",
+        "name": "grafana.18af1f04bbac6b79",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508728",
+        "uid": "1c54907f-bc9e-43e1-ba50-4eacda685ac2"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "name": "grafana-database-e830effa-grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508726",
+        "uid": "e310610f-ad55-46d7-b957-b20880d93ce0"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:43Z",
+      "message": "waiting for first consumer to be created before binding",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:43Z",
+        "name": "grafana-database-e830effa-grafana-0.18af1f04bba57887",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508727",
+        "uid": "43feb422-fa4d-44da-9eb9-25022c580129"
+      },
+      "reason": "WaitForFirstConsumer",
+      "reportingComponent": "persistentvolume-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "persistentvolume-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:44Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "alertmanager",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508750",
+        "uid": "3483c9a2-a2c7-4f9a-a76b-7de44e52cd7a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:44Z",
+      "message": "Delete Pod alertmanager-0 in StatefulSet alertmanager successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:44Z",
+        "name": "alertmanager.18af1f052d5eaf7a",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508756",
+        "uid": "2f782d39-80a7-46a7-9487-75952f4d491a"
+      },
+      "reason": "SuccessfulDelete",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:44Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{alertmanager}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:44Z",
+      "message": "Stopping container alertmanager",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:45Z",
+        "name": "alertmanager-0.18af1f052dc8db67",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508763",
+        "uid": "ba1faaac-c0f4-4b29-90cc-ed06f82d1e67"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:44Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508439",
+        "uid": "7a33d287-e064-431e-b4b9-d3f20d764d55"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:44Z",
+      "message": "Stopping container charm",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:44Z",
+        "name": "alertmanager-0.18af1f052dc1eb00",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508757",
+        "uid": "59899bb9-3422-4da1-98d8-051eed140f63"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:45Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:45Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:45Z",
+        "name": "grafana-0.18af1f0564a90094",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508769",
+        "uid": "b9e8125a-a066-4b3c-8cf6-65978bc9f61e"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:45Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:45Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:45Z",
+        "name": "grafana-0.18af1f05693df8fb",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508770",
+        "uid": "1624fb24-b446-4a61-910a-a15cf8456a49"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:46Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:46Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:46Z",
+        "name": "grafana-0.18af1f056d90309a",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508774",
+        "uid": "7f5a8172-2ab0-4b0f-bb85-8b0b43302c82"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{grafana}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05bae04b39",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508802",
+        "uid": "d88c3e75-92ea-4cde-91c9-9ee5ffe8cb54"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:20Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "alertmanager",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508416",
+        "uid": "3483c9a2-a2c7-4f9a-a76b-7de44e52cd7a"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Create Pod alertmanager-0 in StatefulSet alertmanager successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:20Z",
+        "name": "alertmanager.18af1eff6bcfb247",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508792",
+        "uid": "3d7712d1-c8a7-42a7-a6a3-676ca1b9226d"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{litestream}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05cc1967ec",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508807",
+        "uid": "64c5e979-79d6-442a-8d1a-0ca80577a78d"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{litestream}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05c3e24215",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508806",
+        "uid": "e21ea4bd-05ea-4a5a-8a2a-3c826566c534"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{litestream}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container image \"registry.jujucharms.com/charm/h71m6jk2jeap1qu5lv9nv5mplqayr91q34lqp/litestream-image@sha256:86ffeaba5e3744771b5db95c847078bdb46d34238058a49ee54537dff70b8824\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05c0429045",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508805",
+        "uid": "90a9b16b-802c-421e-964d-6f31eaacec91"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{grafana}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05c01f3646",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508803",
+        "uid": "62bdbd99-79a7-4a7d-9d3b-0bf501d555fb"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{grafana}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container image \"registry.jujucharms.com/charm/h71m6jk2jeap1qu5lv9nv5mplqayr91q34lqp/grafana-image@sha256:d2f26ddd1e0263cd84291375f9a2309dbc08abbd465e0554a5b678824a5f207a\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05b72148c5",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508801",
+        "uid": "7671f719-ee7b-478b-9fd0-36112f4e0e69"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05b7095991",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508800",
+        "uid": "608ccd4f-57ed-43e6-b70e-a1c3b122a4aa"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05afb5ac5f",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508797",
+        "uid": "3454d0ec-6ccf-432d-b488-b06690c7c768"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:47Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:47Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:47Z",
+        "name": "grafana-0.18af1f05a9afd144",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508784",
+        "uid": "b2a0663b-50e4-47d4-af5a-fab0326c35fd"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:48Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:48Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:48Z",
+        "name": "alertmanager-0.18af1f05ebc1cd84",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508813",
+        "uid": "21e965cd-931f-4298-85ed-00949808d83c"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:48Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:48Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:48Z",
+        "name": "alertmanager-0.18af1f05e6d725d2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508810",
+        "uid": "46ca0e0d-dd3c-4ac1-89c5-984adcbdc196"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:48Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:48Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:48Z",
+        "name": "alertmanager-0.18af1f05f0344b16",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508814",
+        "uid": "df0329bc-285c-4eef-a734-78d57834cf8e"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:49Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:49Z",
+        "name": "alertmanager-0.18af1f062fd6a6dc",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508832",
+        "uid": "c5834dd0-892c-4e74-8431-cbc3b416c9bf"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:49Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:49Z",
+        "name": "alertmanager-0.18af1f062861500b",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508831",
+        "uid": "686ea654-1ac9-4227-ae26-dd84a9734d92"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{alertmanager}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:49Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:49Z",
+        "name": "alertmanager-0.18af1f0637936e8b",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508835",
+        "uid": "4d18c74e-d335-4dbc-bf72-d2b43305e843"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{alertmanager}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:49Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:49Z",
+        "name": "alertmanager-0.18af1f06332f66da",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508834",
+        "uid": "99e3561d-fe44-4acc-b936-4a5825b43447"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{alertmanager}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:49Z",
+      "message": "Container image \"registry.jujucharms.com/charm/1jnkh3bao436pdx7l4bgcvejm1lom0wctgn3/alertmanager-image@sha256:368985dfd680291f1888cc339afa7a097981ccb33b3398598e18f0dda2027573\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:49Z",
+        "name": "alertmanager-0.18af1f062fe55591",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508833",
+        "uid": "111a11b0-f844-4a31-8457-165eadf147a5"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:49Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "alertmanager-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508793",
+        "uid": "b35edc9f-47e3-4162-8da4-697cfcf4c980"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:49Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:49Z",
+        "name": "alertmanager-0.18af1f0621eec901",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508820",
+        "uid": "92d0a101-2863-4acd-8fc3-d7bd96151063"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:50Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "name": "traefik-lb",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508842",
+        "uid": "e606f7b9-7600-4aab-acf0-41a2b443e9b2"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:14:50Z",
+      "message": "Assigned IP [\"10.212.157.128\"]",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:50Z",
+        "name": "traefik-lb.18af1f067258762c",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508846",
+        "uid": "9288bc38-52bc-4e20-bc57-6d422b9cc05b"
+      },
+      "reason": "IPAllocated",
+      "reportingComponent": "metallb-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "metallb-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 5,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:58Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "traefik-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508476",
+        "uid": "d56507aa-7aba-4838-9354-8a2d93910792"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:13Z",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 502",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:58Z",
+        "name": "traefik-0.18af1f086ee1eaa0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508961",
+        "uid": "3b607112-d3e9-41f0-b5af-43ea048b2e89"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:10Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:15Z",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 502",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:10Z",
+        "name": "loki-0.18af1f0b3da2978f",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508972",
+        "uid": "98ea5228-05f1-43f2-8310-10f1a4770a6f"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:16Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "grafana",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508973",
+        "uid": "9de1a76e-573a-4da6-8b7d-cafc4d316c3d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:16Z",
+      "message": "Delete Pod grafana-0 in StatefulSet grafana successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:16Z",
+        "name": "grafana.18af1f0c7efd8031",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508978",
+        "uid": "51457db2-05a9-4af6-8b7a-768eb46b48f5"
+      },
+      "reason": "SuccessfulDelete",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:16Z",
+      "message": "Stopping container charm",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:16Z",
+        "name": "grafana-0.18af1f0c7f42f0af",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508980",
+        "uid": "87428e16-b9ac-4dd1-b1a0-324503799ece"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{litestream}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:16Z",
+      "message": "Stopping container litestream",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:16Z",
+        "name": "grafana-0.18af1f0c7f453148",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508982",
+        "uid": "0f5031c4-57f9-417f-9e3e-5f5def3580f6"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:16Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{grafana}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508747",
+        "uid": "add5a726-2581-4ef5-afc4-5f2c5ce90065"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:16Z",
+      "message": "Stopping container grafana",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:16Z",
+        "name": "grafana-0.18af1f0c7f50a685",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508984",
+        "uid": "cf12b9c1-4da0-4ae5-8236-c2f7f254c970"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:43Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "grafana",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508725",
+        "uid": "9de1a76e-573a-4da6-8b7d-cafc4d316c3d"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:17Z",
+      "message": "Create Pod grafana-0 in StatefulSet grafana successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:43Z",
+        "name": "grafana.18af1f04bd9ea210",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508997",
+        "uid": "e9cf32d0-cd11-4e9c-8dec-36ee6466dc31"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:18Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:18Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:18Z",
+        "name": "grafana-0.18af1f0ce9b6886b",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509007",
+        "uid": "b1c140e3-73ac-4cec-9adc-d2e812bbc1a0"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:50Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "kind": "Service",
+        "name": "traefik-lb",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508847",
+        "uid": "e606f7b9-7600-4aab-acf0-41a2b443e9b2"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:18Z",
+      "message": "announcing from node \"charm-dev-x\" with protocol \"layer2\"",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:50Z",
+        "name": "traefik-lb.18af1f067356eb12",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509018",
+        "uid": "e4f6093d-c0fc-4b40-8b23-70edccfa95d0"
+      },
+      "reason": "nodeAssigned",
+      "reportingComponent": "metallb-speaker",
+      "reportingInstance": "",
+      "source": {
+        "component": "metallb-speaker"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:18Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:18Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:18Z",
+        "name": "grafana-0.18af1f0ceda06cdb",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509008",
+        "uid": "85831c37-fb21-4358-93c2-0dd4cdf8291b"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:18Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:18Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:18Z",
+        "name": "grafana-0.18af1f0ce650eb90",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509006",
+        "uid": "0e8fd068-5620-46c5-b91c-ce87f34d5bd1"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d261ee74c",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509021",
+        "uid": "7d4997cb-c988-405c-b748-e73b56159f75"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d2ad64cfb",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509029",
+        "uid": "49665600-4914-4de0-99d5-a26cd8e54c3d"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d32461e3d",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509030",
+        "uid": "385e8c12-8830-4676-99a6-3b1803b60613"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{grafana}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container image \"registry.jujucharms.com/charm/h71m6jk2jeap1qu5lv9nv5mplqayr91q34lqp/grafana-image@sha256:d2f26ddd1e0263cd84291375f9a2309dbc08abbd465e0554a5b678824a5f207a\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d32593825",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509031",
+        "uid": "c4dd776f-07fe-485b-8449-4fedce97b30e"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{grafana}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d3521869f",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509032",
+        "uid": "61ff3613-27da-4596-bb54-4e00b0c0393e"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{litestream}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d411d6094",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509036",
+        "uid": "44a86c79-19d2-46d9-9976-45c2e35004b7"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{litestream}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d3c3a7ea3",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509035",
+        "uid": "63bfcc85-ba51-4b9a-b2f9-6071b319b070"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{grafana}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d39605f97",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509033",
+        "uid": "912a4b84-2c45-4f60-9a74-7fe18ab6b357"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:19Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{litestream}",
+        "kind": "Pod",
+        "name": "grafana-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508998",
+        "uid": "c9ee00de-297b-490c-92ec-7235272bfc8c"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:19Z",
+      "message": "Container image \"registry.jujucharms.com/charm/h71m6jk2jeap1qu5lv9nv5mplqayr91q34lqp/litestream-image@sha256:86ffeaba5e3744771b5db95c847078bdb46d34238058a49ee54537dff70b8824\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:19Z",
+        "name": "grafana-0.18af1f0d397fcb95",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509034",
+        "uid": "6ee0016f-98b0-4538-a01a-b5395e43f7d2"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:21Z",
+      "message": "Stopping container node-exporter",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:21Z",
+        "name": "loki-0.18af1f0d9e0355d2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509053",
+        "uid": "63a0e723-2dab-4837-84e9-bf77e9c3e46e"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:21Z",
+      "message": "Stopping container charm",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:21Z",
+        "name": "loki-0.18af1f0d9e009340",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509052",
+        "uid": "9dfbe968-a6e9-4aa7-a495-2c507535c732"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:21Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:21Z",
+      "message": "Stopping container loki",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:21Z",
+        "name": "loki-0.18af1f0d9e042549",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509054",
+        "uid": "25728c45-7d9f-47d3-94a0-c4c18a440617"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:21Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "loki",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508966",
+        "uid": "9a6c49ed-c37b-4d4b-ae51-1c86267dd7ea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:21Z",
+      "message": "Delete Pod loki-0 in StatefulSet loki successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:21Z",
+        "name": "loki.18af1f0d940d933a",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509046",
+        "uid": "fb4d58b4-c39c-45f1-88e1-ca49fb5f5777"
+      },
+      "reason": "SuccessfulDelete",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 9,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:58Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:33Z",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 502",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:59Z",
+        "name": "prometheus-0.18af1f086ee203ac",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509119",
+        "uid": "93d9debc-2f55-46db-9a89-8ef6d5860d76"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:25Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:35Z",
+      "message": "Readiness probe failed: Get \"http://10.1.0.5:38814/v1/health?level=ready\": dial tcp 10.1.0.5:38814: connect: connection refused",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:25Z",
+        "name": "loki-0.18af1f0ebbac3891",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509133",
+        "uid": "563fa658-1e90-4e0b-8026-75a419454e1b"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:25Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508655",
+        "uid": "50a614dd-ad07-47b5-91b9-8c79c9938be1"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:35Z",
+      "message": "Readiness probe failed: Get \"http://10.1.0.5:38813/v1/health?level=ready\": dial tcp 10.1.0.5:38813: connect: connection refused",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:25Z",
+        "name": "loki-0.18af1f0ebbac3b45",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509132",
+        "uid": "77fe5747-39d8-424b-a1c8-7bd19e756516"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Warning"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:35Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "loki",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508614",
+        "uid": "9a6c49ed-c37b-4d4b-ae51-1c86267dd7ea"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:39Z",
+      "message": "Create Pod loki-0 in StatefulSet loki successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:35Z",
+        "name": "loki.18af1f030f1e2886",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509161",
+        "uid": "b9409875-2757-4a69-91eb-765a38363a8a"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:39Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "prometheus",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509090",
+        "uid": "41a26009-4954-44b4-83b1-f6a83070593e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:39Z",
+      "message": "Delete Pod prometheus-0 in StatefulSet prometheus successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:39Z",
+        "name": "prometheus.18af1f11d2891be9",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509165",
+        "uid": "8e489527-5ff2-42fd-8d32-60377312f371"
+      },
+      "reason": "SuccessfulDelete",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{prometheus}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:39Z",
+      "message": "Stopping container prometheus",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:39Z",
+        "name": "prometheus-0.18af1f11d3d596c2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509172",
+        "uid": "3a042f4a-e611-47d0-9c5c-c87c58296c4f"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:39Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508510",
+        "uid": "7bfcda8d-8d33-4aa1-adba-83c6a5071805"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:39Z",
+      "message": "Stopping container charm",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:39Z",
+        "name": "prometheus-0.18af1f11d3d49acc",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509171",
+        "uid": "c76cdc1f-adbb-43a3-84a3-c88d27598a6d"
+      },
+      "reason": "Killing",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:40Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:40Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:40Z",
+        "name": "loki-0.18af1f12113264ed",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509180",
+        "uid": "ae989d0a-2751-43a8-8137-ca576c6b5afd"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:40Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:40Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:40Z",
+        "name": "loki-0.18af1f120ceff24c",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509179",
+        "uid": "34bf8eaf-d5df-459d-b6ef-04ecab69ba0d"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:40Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:40Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:40Z",
+        "name": "loki-0.18af1f120795aead",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509178",
+        "uid": "98d1d21c-97f4-41f3-8e6a-4ba05e6536d7"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container image \"registry.jujucharms.com/charm/ayt4gaga2x20gye32qthgygevco13qgq6rfff/loki-image@sha256:c1cf06a25176ea7c9574b53df272c2cc56c3f797a2a0c574c8e6ad923b0657b4\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f125e61ed23",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509204",
+        "uid": "54114645-6056-4ed7-ad15-cb162a09e3c3"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f1250f6c1f9",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509200",
+        "uid": "c50b46c8-bb3e-4173-89c3-386e5a829fcd"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f12725ccf9c",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509218",
+        "uid": "60182dc7-1c86-4c68-a3ed-ecf48a27fb49"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f126d7c31f2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509217",
+        "uid": "28d4f4ca-329a-48c3-8684-550d2e1acf8c"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{node-exporter}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container image \"registry.jujucharms.com/charm/ayt4gaga2x20gye32qthgygevco13qgq6rfff/node-exporter-image@sha256:4cb2b9019f1757be8482419002cb7afe028fdba35d47958829e4cfeaf6246d80\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f126a2cb965",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509214",
+        "uid": "0d8327f4-132f-47fb-b51c-d4de943af255"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f126a1204f4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509211",
+        "uid": "6b620120-bac2-41c5-883f-520d4432a0a9"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{loki}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f1262857d92",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509205",
+        "uid": "6a9f6db0-1fc5-457d-9667-e8a498f4ddd3"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 2,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:14:22Z",
+      "involvedObject": {
+        "apiVersion": "apps/v1",
+        "kind": "StatefulSet",
+        "name": "prometheus",
+        "namespace": "cos-lite",
+        "resourceVersion": "4508470",
+        "uid": "41a26009-4954-44b4-83b1-f6a83070593e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Create Pod prometheus-0 in StatefulSet prometheus successful",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:14:22Z",
+        "name": "prometheus.18af1efffd4a7bb9",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509210",
+        "uid": "a01c5fc6-51de-4370-bbe0-e26b41b7b12c"
+      },
+      "reason": "SuccessfulCreate",
+      "reportingComponent": "statefulset-controller",
+      "reportingInstance": "",
+      "source": {
+        "component": "statefulset-controller"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f125e4fa5f2",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509203",
+        "uid": "b2378ed8-419c-4abf-8994-ad3b1129737a"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:41Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:41Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:41Z",
+        "name": "loki-0.18af1f124c6acd13",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509194",
+        "uid": "a2209b0a-ab18-42b0-af83-6ea579f1b3f6"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:42Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:42Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:42Z",
+        "name": "prometheus-0.18af1f1295e103f4",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509225",
+        "uid": "80a73027-4bce-4777-8e89-51be68b05386"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:42Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:42Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:42Z",
+        "name": "prometheus-0.18af1f1292c5d2de",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509224",
+        "uid": "07536ee2-38b2-4ad3-b987-d679d660282f"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:42Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.initContainers{charm-init}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:42Z",
+      "message": "Container image \"ghcr.io/juju/jujud-operator:3.6.21\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:42Z",
+        "name": "prometheus-0.18af1f128da825f8",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509223",
+        "uid": "2354616e-5ba6-44a1-9dd7-ced5774a32bc"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{prometheus}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:43Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:43Z",
+        "name": "prometheus-0.18af1f12df3beea8",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509246",
+        "uid": "9bd381c8-d167-4882-806f-660a1851e675"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{prometheus}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:43Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:43Z",
+        "name": "prometheus-0.18af1f12da149320",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509245",
+        "uid": "1abd5b4d-a420-4733-95a2-c119574ad759"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{prometheus}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:43Z",
+      "message": "Container image \"registry.jujucharms.com/charm/h9a0wskime1pr9ve26xf9oj0yp09xk5potmgk/prometheus-image@sha256:e945d24df7b2f591c056a84af143dd13ac9132aa353c14a9bd71bec6faf0b966\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:43Z",
+        "name": "prometheus-0.18af1f12d7ac259f",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509244",
+        "uid": "bed7e738-5e55-465f-9ab4-b086a52f3a66"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:43Z",
+      "message": "Container started",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:43Z",
+        "name": "prometheus-0.18af1f12d79f4057",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509243",
+        "uid": "c5177a9e-118c-4c2e-b195-ef31e7da440d"
+      },
+      "reason": "Started",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:43Z",
+      "message": "Container created",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:43Z",
+        "name": "prometheus-0.18af1f12cd9a3deb",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509240",
+        "uid": "e2135078-7c91-4287-b551-e24b30adb6f8"
+      },
+      "reason": "Created",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 1,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:15:43Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "prometheus-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509209",
+        "uid": "dbbfe6b1-d075-4e1d-8a5e-3017cafcd6ef"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:15:43Z",
+      "message": "Container image \"ghcr.io/juju/charm-base:ubuntu-24.04\" already present on machine and can be accessed by the pod",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:15:43Z",
+        "name": "prometheus-0.18af1f12c4be5508",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509229",
+        "uid": "87a24f65-aa46-4008-bea1-e68db5382d5f"
+      },
+      "reason": "Pulled",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Normal"
+    },
+    {
+      "apiVersion": "v1",
+      "count": 3,
+      "eventTime": null,
+      "firstTimestamp": "2026-05-13T12:16:13Z",
+      "involvedObject": {
+        "apiVersion": "v1",
+        "fieldPath": "spec.containers{charm}",
+        "kind": "Pod",
+        "name": "loki-0",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509156",
+        "uid": "a2a7ae91-d1f1-4b8c-8981-d9b69423031e"
+      },
+      "kind": "Event",
+      "lastTimestamp": "2026-05-13T12:16:18Z",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 502",
+      "metadata": {
+        "creationTimestamp": "2026-05-13T12:16:13Z",
+        "name": "loki-0.18af1f19c0f1118d",
+        "namespace": "cos-lite",
+        "resourceVersion": "4509431",
+        "uid": "95931f89-0954-4213-8737-238328a52d3e"
+      },
+      "reason": "Unhealthy",
+      "reportingComponent": "kubelet",
+      "reportingInstance": "charm-dev-x",
+      "source": {
+        "component": "kubelet",
+        "host": "charm-dev-x"
+      },
+      "type": "Warning"
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}
