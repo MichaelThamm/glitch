@@ -50,11 +50,11 @@ def run_collectors(
     collector_results: dict[str, CollectorResult] = {}
     total_artifacts = 0
 
+    console = Console() if is_tty else None
     progress: Progress | None = None
     task: TaskID | None = None
 
     if is_tty:
-        console = Console()
         progress = Progress(
             TextColumn("[progress.description]{task.description}"),
             BarColumn(),
@@ -64,6 +64,15 @@ def run_collectors(
         )
         task = progress.add_task("Collecting…", total=len(collector_classes))
         progress.start()
+
+    def _log_collector(name: str, status: str, *, artifacts: int = 0, elapsed: float = 0.0) -> None:
+        msg = f"{name}: {status}"
+        if status == "ok":
+            msg += f" ({artifacts} artifacts, {elapsed:.1f}s)"
+        if console is not None:
+            console.log(msg)
+        else:
+            logger.info(msg)
 
     try:
         for cls in collector_classes:
@@ -87,6 +96,7 @@ def run_collectors(
                         status="skipped",
                         reason=f"{cls.name} tool not available or source not found",
                     )
+                    _log_collector(cls.name, "skipped")
                     _ci_log(cls.name, "skipped")
                     if progress is not None and task is not None:
                         progress.advance(task)
@@ -98,12 +108,11 @@ def run_collectors(
 
                 collector_results[cls.name] = result
                 total_artifacts += len(result.artifacts)
-                logger.info(
-                    "%s: %s (%d artifacts, %.1fs)",
+                _log_collector(
                     cls.name,
                     result.status,
-                    len(result.artifacts),
-                    elapsed,
+                    artifacts=len(result.artifacts),
+                    elapsed=elapsed,
                 )
                 _ci_log(cls.name, result.status)
             except Exception:
