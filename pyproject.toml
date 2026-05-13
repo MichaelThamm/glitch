@@ -1,0 +1,62 @@
+[project]
+name = "glitch"
+version = "0.1.0"
+description = "Automated CI failure remediation for charm development: discover flaky tests, collect telemetry, analyse failures."
+authors = [
+    {name = "Luca Bello", email = "luca.bello@canonical.com"},
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.20.0",
+    "rich>=14.0.0",
+]
+
+[project.scripts]
+glitch = "glitch.cli:app"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.14",
+    "pyright>=1.1.408",
+    "codespell>=2.4.1",
+    "vulture>=2.14",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "pytest-sugar>=1.1.1",
+    "actionlint-py>=1.7.10.24",
+    "uv-secure>=0.15.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/MichaelThamm/glitch"
+Documentation = "https://github.com/MichaelThamm/glitch"
+Repository = "https://github.com/MichaelThamm/glitch"
+Issues = "https://github.com/MichaelThamm/glitch/issues"
+Changelog = "https://github.com/MichaelThamm/glitch/releases"
+
+
+# Building and publishing
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
+# Tools configuration
+[tool.ruff]
+line-length = 99
+
+[tool.lint.pydocstyle]
+convention = "google"
+
+[tool.codespell]
+skip = ".git,build,venv*"
+ignore-words-list = "assertIn"
+
+[tool.vulture]
+min_confidence = 80
