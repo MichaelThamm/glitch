@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import logging
 import sys
 import time
 from datetime import datetime, timezone
@@ -11,7 +10,6 @@ from typing import TYPE_CHECKING
 
 import typer
 from rich.console import Console
-from rich.logging import RichHandler
 from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn, TimeElapsedColumn
 
 from glitch import __version__
@@ -22,7 +20,7 @@ from glitch.collectors.summary import build_summary
 if TYPE_CHECKING:
     from rich.progress import TaskID
 
-logger = logging.getLogger(__name__)
+_console = Console(stderr=True)
 
 
 def run_collectors(
@@ -51,9 +49,20 @@ def run_collectors(
     collector_results: dict[str, CollectorResult] = {}
     total_artifacts = 0
 
-    console = Console() if is_tty else None
+    console = _console if is_tty else None
     progress: Progress | None = None
     task: TaskID | None = None
+
+    if is_tty:
+        progress = Progress(
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            MofNCompleteColumn(),
+            TimeElapsedColumn(),
+            console=_console,
+        )
+        task = progress.add_task("Collecting…", total=len(collector_classes))
+        progress.start()
 
     def _log_collector(name: str, status: str, *, artifacts: int = 0, elapsed: float = 0.0) -> None:
         msg = f"{name}: {status}"
@@ -62,25 +71,7 @@ def run_collectors(
         if console is not None:
             console.log(msg)
         else:
-            logger.info(msg)
-
-    rich_handler: RichHandler | None = None
-
-    if is_tty:
-        rich_handler = RichHandler(
-            console=console, show_time=False, show_path=False
-        )
-        logging.root.addHandler(rich_handler)
-
-        progress = Progress(
-            TextColumn("[progress.description]{task.description}"),
-            BarColumn(),
-            MofNCompleteColumn(),
-            TimeElapsedColumn(),
-            console=console,
-        )
-        task = progress.add_task("Collecting…", total=len(collector_classes))
-        progress.start()
+            _log_info(msg)
 
     try:
         for cls in collector_classes:
@@ -91,7 +82,7 @@ def run_collectors(
                 instance = _instantiate(cls, model, namespace, test_artifacts_dir)
             except TypeError as exc:
                 msg = f"Failed to instantiate collector '{cls.name}': {exc}"
-                logger.error(msg)
+                _log_error(msg)
                 collector_results[cls.name] = CollectorResult(status="error", reason=msg)
                 _ci_log(cls.name, "error", console=console)
                 if progress is not None and task is not None:
@@ -125,15 +116,13 @@ def run_collectors(
                 _ci_log(cls.name, result.status, console=console)
             except Exception:
                 msg = f"Collector '{cls.name}' crashed"
-                logger.exception(msg)
+                _log_error(msg, exc_info=True)
                 collector_results[cls.name] = CollectorResult(status="error", reason=msg)
                 _ci_log(cls.name, "error", console=console)
 
             if progress is not None and task is not None:
                 progress.advance(task)
     finally:
-        if rich_handler is not None:
-            logging.root.removeHandler(rich_handler)
         if progress is not None:
             progress.stop()
 
@@ -147,10 +136,10 @@ def run_collectors(
             "Ensure at least one backend tool (juju, kubectl, lxc, ceph) "
             "is installed and accessible."
         )
-        typer.echo(msg, err=True)
+        _console.print(msg)
         raise typer.Exit(1)
 
-    typer.echo(
+    _log_success(
         f"Collected {total_artifacts} artifact(s) from {ok_count} collector(s) into {output_dir}"
     )
 
@@ -179,9 +168,29 @@ def _ci_log(name: str, status: str, *, console: Console | None = None) -> None:
         typer.echo(msg, err=True)
 
 
-def _write_manifest(
-    output_dir: Path, collector_results: dict[str, CollectorResult]
-) -> None:
+def _log_info(fmt: str, *args: object) -> None:
+    if _console.is_terminal:
+        _console.log(fmt % args if args else fmt)
+    else:
+        typer.echo(fmt % args if args else fmt, err=True)
+
+
+def _log_error(msg: str, exc_info: bool = False) -> None:
+    if _console.is_terminal:
+        _console.log(f"[red]{msg}[/red]")
+        if exc_info:
+            import traceback
+
+            _console.log(traceback.format_exc())
+    else:
+        typer.echo(msg, err=True)
+
+
+def _log_success(msg: str) -> None:
+    typer.echo(msg)
+
+
+def _write_manifest(output_dir: Path, collector_results: dict[str, CollectorResult]) -> None:
     entries: dict[str, CollectorEntry] = {}
     for name, result in collector_results.items():
         entries[name] = CollectorEntry(
@@ -198,13 +207,13 @@ def _write_manifest(
 
     manifest_path = output_dir / "manifest.json"
     manifest_path.write_text(manifest.model_dump_json(indent=2))
-    logger.info("Manifest written to %s", manifest_path)
+    _log_info("Manifest written to %s", manifest_path)
 
 
 def _write_summary(output_dir: Path) -> None:
     manifest_path = output_dir / "manifest.json"
     if not manifest_path.is_file():
-        logger.warning("No manifest found; skipping summary generation")
+        _log_info("No manifest found; skipping summary generation")
         return
 
     manifest = Manifest.model_validate_json(manifest_path.read_text())
@@ -212,4 +221,4 @@ def _write_summary(output_dir: Path) -> None:
 
     summary_path = output_dir / "summary.md"
     summary_path.write_text(summary_md)
-    logger.info("Summary written to %s", summary_path)
+    _log_info("Summary written to %s", summary_path)
