@@ -56,9 +56,10 @@ def render_table(report: DiscoveryReport, console: Console | None = None) -> Non
         table.add_column("Trend")
         for rank, test in enumerate(report.tests, start=1):
             trend = "".join("↑" if r == "pass" else "↓" for r in test.trend)
+            short_name = test.job_name.rsplit(" / ", 1)[-1]
             table.add_row(
                 str(rank),
-                test.job_name,
+                short_name,
                 f"{test.flakiness_index:.2f}",
                 f"{test.heuristics.volatility:.2f}",
                 f"{test.heuristics.retry_rate:.2f}",
@@ -74,7 +75,8 @@ def render_table(report: DiscoveryReport, console: Console | None = None) -> Non
         console.print("[bold]Insufficient data[/bold] (fewer than 3 runs):")
         for entry in report.insufficient_data:
             suffix = "" if entry.run_count == 1 else "s"
-            console.print(f"  {entry.id}  ({entry.run_count} run{suffix})")
+            short_id = entry.id.rsplit(" / ", 1)[-1]
+            console.print(f"  {short_id}  ({entry.run_count} run{suffix})")
 
 
 __all__ = ["render_table", "to_json"]
