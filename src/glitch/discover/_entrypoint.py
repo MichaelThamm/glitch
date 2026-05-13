@@ -25,8 +25,10 @@ from glitch.discover.cache import (
     Cache,
     key_jobs,
     key_runs,
+    key_workflows,
     ttl_for_jobs,
     ttl_for_runs_list,
+    ttl_for_workflows,
 )
 from glitch.discover.client import (
     GitHubClient,
@@ -34,7 +36,7 @@ from glitch.discover.client import (
     build_session,
     resolve_token,
 )
-from glitch.discover.fanout import fetch_jobs_for_runs
+from glitch.discover.fanout import fetch_jobs_for_runs, fetch_runs_for_workflows
 from glitch.discover.models import (
     DiscoveryReport,
     InsufficientData,
@@ -74,10 +76,22 @@ def run(
         str | None,
         typer.Option("--branch", help="Filter to a specific branch (default: repo default branch)."),
     ] = None,
+    workflow: Annotated[
+        list[str] | None,
+        typer.Option(
+            "--workflow",
+            help=(
+                "Limit discovery to one or more workflows (repeatable). Each "
+                "value is matched against the workflow's path, basename, "
+                "display name, or numeric id, in that order."
+            ),
+        ),
+    ] = None,
 ) -> None:
     """Score test flakiness from CI history for the given repo."""
     owner, repo_name = _parse_repo(repo)
     since_delta = _parse_since(since)
+    workflow_filters: list[str] = list(workflow) if workflow else []
 
     now = datetime.now(UTC)
     since_dt = now - since_delta
@@ -89,9 +103,25 @@ def run(
 
     try:
         target_branch = _resolve_branch(client, owner, repo_name, branch)
-        raw_runs = _fetch_runs(
-            client, cache, owner, repo_name, target_branch, since_iso
-        )
+        if workflow_filters:
+            resolved_workflows = _resolve_workflows(
+                client, cache, owner, repo_name, workflow_filters
+            )
+            raw_runs = _fetch_runs_for_workflows(
+                client,
+                cache,
+                owner,
+                repo_name,
+                target_branch,
+                since_iso,
+                resolved_workflows,
+            )
+            workflow_names = tuple(name for _, name in resolved_workflows)
+        else:
+            raw_runs = _fetch_runs(
+                client, cache, owner, repo_name, target_branch, since_iso
+            )
+            workflow_names = ()
     except GitHubHTTPError as exc:
         print(f"error: {exc}", file=sys.stderr)
         raise typer.Exit(code=1) from exc
@@ -103,7 +133,9 @@ def run(
             f"warning: no workflow runs found for {repo} (branch {target_branch}) in the last {since}.",
             file=sys.stderr,
         )
-        report = _empty_report(repo, target_branch, now, since_delta)
+        report = _empty_report(
+            repo, target_branch, now, since_delta, workflow_names
+        )
         _emit(report, output)
         return
 
@@ -124,6 +156,7 @@ def run(
             lookback_days=max(1, since_delta.days),
             total_runs_analysed=len(parsed_runs),
             glitch_version=__version__,
+            workflows=workflow_names,
         ),
         tests=tuple(test_scores),
         insufficient_data=tuple(insufficient),
@@ -205,6 +238,146 @@ def _fetch_runs(
 
     cache.put(cache_key, "runs", runs, ttl_for_runs_list())
     return runs
+
+
+def _list_workflows(
+    client: GitHubClient,
+    cache: Cache,
+    owner: str,
+    repo: str,
+) -> list[dict[str, Any]]:
+    """Return the repo's full workflow listing, cached for an hour (ADR 0010)."""
+    cache_key = key_workflows(owner, repo)
+    cached = cache.get(cache_key, "workflows")
+    if cached is not None:
+        return list(cached)
+
+    workflows: list[dict[str, Any]] = []
+    params = {"per_page": 100}
+    for page in client.paginate(
+        f"/repos/{owner}/{repo}/actions/workflows", params=params
+    ):
+        workflows.extend(page.json().get("workflows", []))
+
+    cache.put(cache_key, "workflows", workflows, ttl_for_workflows())
+    return workflows
+
+
+def _resolve_workflows(
+    client: GitHubClient,
+    cache: Cache,
+    owner: str,
+    repo: str,
+    identifiers: list[str],
+) -> list[tuple[int, str]]:
+    """Resolve each ``--workflow`` identifier to a ``(id, display_name)`` pair.
+
+    Per ADR 0010, identifiers are matched in this order — first match wins:
+    1. exact ``path`` (e.g. ``.github/workflows/ci.yml``);
+    2. exact basename of ``path`` (e.g. ``ci.yml``);
+    3. exact ``name`` (the YAML ``name:`` display string);
+    4. ``str(id)`` (the numeric id rendered as a string).
+
+    An unmatched identifier exits ``1`` with a stderr message listing the
+    candidate values for the repo, so a typo fails loud rather than producing
+    an empty-window warning.
+    """
+    workflows = _list_workflows(client, cache, owner, repo)
+
+    by_path: dict[str, dict[str, Any]] = {}
+    by_basename: dict[str, dict[str, Any]] = {}
+    by_name: dict[str, dict[str, Any]] = {}
+    by_id: dict[str, dict[str, Any]] = {}
+    for wf in workflows:
+        path = wf.get("path") or ""
+        if path:
+            by_path.setdefault(path, wf)
+            by_basename.setdefault(path.rsplit("/", 1)[-1], wf)
+        name = wf.get("name")
+        if name:
+            by_name.setdefault(name, wf)
+        wf_id = wf.get("id")
+        if wf_id is not None:
+            by_id.setdefault(str(wf_id), wf)
+
+    resolved: list[tuple[int, str]] = []
+    unmatched: list[str] = []
+    seen_ids: set[int] = set()
+    for identifier in identifiers:
+        match = (
+            by_path.get(identifier)
+            or by_basename.get(identifier)
+            or by_name.get(identifier)
+            or by_id.get(identifier)
+        )
+        if match is None:
+            unmatched.append(identifier)
+            continue
+        wf_id = int(match["id"])
+        if wf_id in seen_ids:
+            continue
+        seen_ids.add(wf_id)
+        resolved.append((wf_id, match.get("name") or match.get("path") or str(wf_id)))
+
+    if unmatched:
+        print(
+            f"error: unknown workflow(s): {', '.join(repr(u) for u in unmatched)}.",
+            file=sys.stderr,
+        )
+        if workflows:
+            print("Available workflows:", file=sys.stderr)
+            for wf in workflows:
+                name = wf.get("name") or "(unnamed)"
+                path = wf.get("path") or "(no path)"
+                print(f"  - {name}  [{path}]  (id={wf.get('id')})", file=sys.stderr)
+        else:
+            print(
+                "  (this repository has no workflows configured)",
+                file=sys.stderr,
+            )
+        raise typer.Exit(code=1)
+
+    return resolved
+
+
+def _fetch_runs_for_workflows(
+    client: GitHubClient,
+    cache: Cache,
+    owner: str,
+    repo: str,
+    branch: str,
+    since_iso: str,
+    resolved_workflows: list[tuple[int, str]],
+) -> list[dict[str, Any]]:
+    """Return aggregated runs for the resolved workflows; per-workflow cached.
+
+    Each workflow gets its own cache entry under the existing ``runs`` kind,
+    keyed by ``runs_{o}_{r}_{branch}_{since_iso}_w{workflow_id}.json`` per
+    ADR 0010. Misses are dispatched through ``fetch_runs_for_workflows``.
+    """
+    aggregated: list[dict[str, Any]] = []
+    misses: list[int] = []
+    for workflow_id, _ in resolved_workflows:
+        cache_key = key_runs(owner, repo, branch, since_iso, workflow_id)
+        cached = cache.get(cache_key, "runs")
+        if cached is not None:
+            aggregated.extend(cached)
+        else:
+            misses.append(workflow_id)
+
+    if misses:
+        params = {"branch": branch, "created": f">={since_iso}"}
+        fresh = fetch_runs_for_workflows(client, owner, repo, misses, params)
+        for workflow_id, runs in fresh.items():
+            cache.put(
+                key_runs(owner, repo, branch, since_iso, workflow_id),
+                "runs",
+                runs,
+                ttl_for_runs_list(),
+            )
+            aggregated.extend(runs)
+
+    return aggregated
 
 
 def _fetch_jobs(
@@ -289,7 +462,11 @@ def _score_all_tests(
 
 
 def _empty_report(
-    repo: str, branch: str, now: datetime, since_delta: timedelta
+    repo: str,
+    branch: str,
+    now: datetime,
+    since_delta: timedelta,
+    workflows: tuple[str, ...] = (),
 ) -> DiscoveryReport:
     """Build the empty-window report so callers can still render JSON cleanly."""
     return DiscoveryReport(
@@ -300,6 +477,7 @@ def _empty_report(
             lookback_days=max(1, since_delta.days),
             total_runs_analysed=0,
             glitch_version=__version__,
+            workflows=workflows,
         ),
         tests=(),
         insufficient_data=(),

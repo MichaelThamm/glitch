@@ -30,6 +30,7 @@ from glitch.discover.fanout import (
     MAX_WORKERS,
     fetch_commits,
     fetch_jobs_for_runs,
+    fetch_runs_for_workflows,
 )
 
 
@@ -116,6 +117,58 @@ class TestFetchJobsForRuns:
         # No HTTP traffic should be issued; responses is intentionally not
         # activated so any stray call would blow up.
         assert fetch_jobs_for_runs(gh_client, "o", "r", []) == {}
+
+
+# -------------------------------------------------------- fetch_runs_for_workflows
+
+
+class TestFetchRunsForWorkflows:
+    @responses.activate
+    def test_happy_path_two_workflows(self, gh_client: GitHubClient) -> None:
+        for wf_id, runs in [(10, [{"id": 100}]), (20, [{"id": 200}, {"id": 201}])]:
+            responses.add(
+                responses.GET,
+                f"{BASE_URL}/repos/o/r/actions/workflows/{wf_id}/runs",
+                json={"total_count": len(runs), "workflow_runs": runs},
+                status=200,
+            )
+
+        result = fetch_runs_for_workflows(
+            gh_client, "o", "r", [10, 20], {"branch": "main"}
+        )
+
+        assert set(result.keys()) == {10, 20}
+        assert result[10] == [{"id": 100}]
+        assert result[20] == [{"id": 200}, {"id": 201}]
+        # Verify correct endpoints were hit.
+        urls = {c.request.url.split("?")[0] for c in responses.calls}
+        assert f"{BASE_URL}/repos/o/r/actions/workflows/10/runs" in urls
+        assert f"{BASE_URL}/repos/o/r/actions/workflows/20/runs" in urls
+
+    def test_empty_input_returns_empty_dict(self, gh_client: GitHubClient) -> None:
+        assert fetch_runs_for_workflows(gh_client, "o", "r", [], {}) == {}
+
+    @responses.activate
+    def test_error_propagates_on_404(self, gh_client: GitHubClient) -> None:
+        responses.add(
+            responses.GET,
+            f"{BASE_URL}/repos/o/r/actions/workflows/10/runs",
+            json={"workflow_runs": [{"id": 100}]},
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            f"{BASE_URL}/repos/o/r/actions/workflows/99/runs",
+            json={"message": "Not Found"},
+            status=404,
+        )
+
+        with pytest.raises(GitHubHTTPError) as excinfo:
+            fetch_runs_for_workflows(
+                gh_client, "o", "r", [10, 99], {"branch": "main"}
+            )
+
+        assert excinfo.value.status_code == 404
 
 
 # ----------------------------------------------------------------- fetch_commits

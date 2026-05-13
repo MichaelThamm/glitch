@@ -167,7 +167,13 @@ class InsufficientData:
 
 @dataclass(slots=True, frozen=True)
 class Meta:
-    """Provenance for a discovery report."""
+    """Provenance for a discovery report.
+
+    ``workflows`` records the resolved display names of the workflows the
+    report covers (per ADR 0010). It is an empty tuple when no ``--workflow``
+    filter was supplied; downstream consumers can therefore always read the
+    field without guarding for absence.
+    """
 
     repo: str
     branch: str
@@ -175,6 +181,7 @@ class Meta:
     lookback_days: int
     total_runs_analysed: int
     glitch_version: str
+    workflows: tuple[str, ...] = ()
 
 
 @dataclass(slots=True, frozen=True)

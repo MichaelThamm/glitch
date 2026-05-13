@@ -15,10 +15,12 @@ from glitch.discover.cache import (
     key_jobs,
     key_run,
     key_runs,
+    key_workflows,
     ttl_for_commit,
     ttl_for_jobs,
     ttl_for_run,
     ttl_for_runs_list,
+    ttl_for_workflows,
 )
 
 
@@ -233,3 +235,29 @@ def test_ttl_for_commit_is_none() -> None:
 
 def test_ttl_for_runs_list_is_300() -> None:
     assert ttl_for_runs_list() == 300
+
+
+# --- ADR 0010: Workflow filter cache helpers --------------------------------
+
+
+def test_key_workflows() -> None:
+    assert key_workflows("o", "r") == "workflows_o_r.json"
+
+
+def test_key_runs_with_workflow_id_has_suffix() -> None:
+    assert (
+        key_runs("o", "r", "main", "2026-05-13T00:00:00Z", workflow_id=42)
+        == "runs_o_r_main_2026-05-13T00:00:00Z_w42.json"
+    )
+
+
+def test_key_runs_without_workflow_id_unchanged() -> None:
+    # Explicit None — same shape as the pre-ADR-0010 key.
+    assert (
+        key_runs("o", "r", "main", "2026-05-13T00:00:00Z", workflow_id=None)
+        == "runs_o_r_main_2026-05-13T00:00:00Z.json"
+    )
+
+
+def test_ttl_for_workflows_is_3600() -> None:
+    assert ttl_for_workflows() == 3600

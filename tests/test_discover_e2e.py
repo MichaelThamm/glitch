@@ -591,3 +591,253 @@ def test_pipeline_components_compose_to_spec_shaped_json(
     assert set(payload.keys()) == {"meta", "tests", "insufficient_data"}
     assert payload["meta"]["repo"] == f"{owner}/{repo}"
     assert payload["meta"]["generated_at"] == "2026-05-13T10:00:00Z"
+
+
+# --- 4. ADR 0010 — Workflow filter tests -----------------------------------
+
+# Shared workflow listing fixture for resolution tests.
+_WORKFLOWS = [
+    {
+        "id": 101,
+        "name": "CI",
+        "path": ".github/workflows/ci.yml",
+        "state": "active",
+    },
+    {
+        "id": 202,
+        "name": "Integration",
+        "path": ".github/workflows/integration.yml",
+        "state": "active",
+    },
+]
+
+
+def _register_workflows(workflows: list[dict] | None = None) -> None:
+    responses.add(
+        responses.GET,
+        f"{BASE_URL}/repos/{OWNER}/{REPO}/actions/workflows",
+        json={"total_count": len(workflows or _WORKFLOWS), "workflows": workflows or _WORKFLOWS},
+        status=200,
+    )
+
+
+def _register_workflow_runs(workflow_id: int, runs: list[dict]) -> None:
+    responses.add(
+        responses.GET,
+        f"{BASE_URL}/repos/{OWNER}/{REPO}/actions/workflows/{workflow_id}/runs",
+        json={"total_count": len(runs), "workflow_runs": runs},
+        status=200,
+    )
+
+
+@responses.activate
+def test_workflow_flag_resolve_by_path(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """``--workflow .github/workflows/ci.yml`` resolves by full path."""
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+    now = datetime(2026, 5, 13, 10, 0, 0, tzinfo=UTC)
+
+    runs = [
+        _make_run(7000 + i, "a" * 40, "success", now - timedelta(days=i + 1))
+        for i in range(3)
+    ]
+    _register_repo()
+    _register_workflows()
+    _register_workflow_runs(101, runs)
+    for r in runs:
+        _register_jobs_for_run(
+            r["id"],
+            [_make_job(r["id"] + 5000, r["id"], "build", now, now + timedelta(minutes=5))],
+        )
+
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "discover", "--repo", REPO_FULL,
+            "--workflow", ".github/workflows/ci.yml",
+            "--output", "json",
+            "--cache-dir", str(tmp_path / "cache"),
+        ],
+    )
+    assert result.exit_code == 0, result.stdout + (result.stderr or "")
+    payload = json.loads(result.stdout)
+    assert payload["meta"]["workflows"] == ["CI"]
+
+
+@responses.activate
+def test_workflow_flag_resolve_by_basename(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """``--workflow ci.yml`` resolves by basename of the path."""
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+    now = datetime(2026, 5, 13, 10, 0, 0, tzinfo=UTC)
+
+    runs = [
+        _make_run(8000 + i, "b" * 40, "success", now - timedelta(days=i + 1))
+        for i in range(3)
+    ]
+    _register_repo()
+    _register_workflows()
+    _register_workflow_runs(101, runs)
+    for r in runs:
+        _register_jobs_for_run(
+            r["id"],
+            [_make_job(r["id"] + 5000, r["id"], "build", now, now + timedelta(minutes=5))],
+        )
+
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "discover", "--repo", REPO_FULL,
+            "--workflow", "ci.yml",
+            "--output", "json",
+            "--cache-dir", str(tmp_path / "cache"),
+        ],
+    )
+    assert result.exit_code == 0, result.stdout + (result.stderr or "")
+    payload = json.loads(result.stdout)
+    assert payload["meta"]["workflows"] == ["CI"]
+
+
+@responses.activate
+def test_workflow_flag_resolve_by_display_name(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """``--workflow CI`` resolves by display name."""
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+    now = datetime(2026, 5, 13, 10, 0, 0, tzinfo=UTC)
+
+    runs = [
+        _make_run(8500 + i, "c" * 40, "success", now - timedelta(days=i + 1))
+        for i in range(3)
+    ]
+    _register_repo()
+    _register_workflows()
+    _register_workflow_runs(101, runs)
+    for r in runs:
+        _register_jobs_for_run(
+            r["id"],
+            [_make_job(r["id"] + 5000, r["id"], "build", now, now + timedelta(minutes=5))],
+        )
+
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "discover", "--repo", REPO_FULL,
+            "--workflow", "CI",
+            "--output", "json",
+            "--cache-dir", str(tmp_path / "cache"),
+        ],
+    )
+    assert result.exit_code == 0, result.stdout + (result.stderr or "")
+    payload = json.loads(result.stdout)
+    assert payload["meta"]["workflows"] == ["CI"]
+
+
+@responses.activate
+def test_workflow_flag_resolve_by_numeric_id(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """``--workflow 101`` resolves by str(id)."""
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+    now = datetime(2026, 5, 13, 10, 0, 0, tzinfo=UTC)
+
+    runs = [
+        _make_run(8800 + i, "d" * 40, "success", now - timedelta(days=i + 1))
+        for i in range(3)
+    ]
+    _register_repo()
+    _register_workflows()
+    _register_workflow_runs(101, runs)
+    for r in runs:
+        _register_jobs_for_run(
+            r["id"],
+            [_make_job(r["id"] + 5000, r["id"], "build", now, now + timedelta(minutes=5))],
+        )
+
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "discover", "--repo", REPO_FULL,
+            "--workflow", "101",
+            "--output", "json",
+            "--cache-dir", str(tmp_path / "cache"),
+        ],
+    )
+    assert result.exit_code == 0, result.stdout + (result.stderr or "")
+    payload = json.loads(result.stdout)
+    assert payload["meta"]["workflows"] == ["CI"]
+
+
+@responses.activate
+def test_workflow_flag_unmatched_exits_one(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """An unknown workflow identifier exits 1 with stderr listing candidates."""
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+    _register_repo()
+    _register_workflows()
+
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "discover", "--repo", REPO_FULL,
+            "--workflow", "nope.yml",
+            "--cache-dir", str(tmp_path / "cache"),
+        ],
+    )
+    assert result.exit_code == 1
+    stderr = result.stderr or ""
+    assert "nope.yml" in stderr
+    assert "CI" in stderr  # lists available workflows
+
+
+@responses.activate
+def test_workflow_flag_dedupe_same_workflow(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Two identifiers resolving to the same workflow → single entry, one fan-out."""
+    monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+    now = datetime(2026, 5, 13, 10, 0, 0, tzinfo=UTC)
+
+    runs = [
+        _make_run(9000 + i, "e" * 40, "success", now - timedelta(days=i + 1))
+        for i in range(3)
+    ]
+    _register_repo()
+    _register_workflows()
+    _register_workflow_runs(101, runs)
+    for r in runs:
+        _register_jobs_for_run(
+            r["id"],
+            [_make_job(r["id"] + 5000, r["id"], "build", now, now + timedelta(minutes=5))],
+        )
+
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "discover", "--repo", REPO_FULL,
+            "--workflow", "ci.yml",
+            "--workflow", "CI",  # same workflow, different identifier
+            "--output", "json",
+            "--cache-dir", str(tmp_path / "cache"),
+        ],
+    )
+    assert result.exit_code == 0, result.stdout + (result.stderr or "")
+    payload = json.loads(result.stdout)
+    # Deduplicated: only one workflow name despite two identifiers.
+    assert payload["meta"]["workflows"] == ["CI"]
+
+
+def test_workflow_flag_shows_in_help() -> None:
+    """``--workflow`` appears in ``glitch discover --help``."""
+    runner = CliRunner()
+    result = runner.invoke(app, ["discover", "--help"])
+    assert "--workflow" in result.stdout

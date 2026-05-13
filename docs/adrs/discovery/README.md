@@ -19,3 +19,4 @@ for the ADR template and workflow.
 | 0007 | [Module layout](0007-module-layout.md) |
 | 0008 | [Testing approach](0008-testing-approach.md) |
 | 0009 | [Duration string parsing](0009-duration-string-parsing.md) |
+| 0010 | [Workflow filter for `--workflow`](0010-workflow-filter.md) |

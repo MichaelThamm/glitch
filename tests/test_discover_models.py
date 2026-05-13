@@ -301,6 +301,7 @@ def test_to_json_preserves_meta_and_insufficient_data_fields() -> None:
         "lookback_days": 30,
         "total_runs_analysed": 142,
         "glitch_version": "0.1.0",
+        "workflows": [],
     }
     assert payload["insufficient_data"] == [
         {"id": "integration (test_new_feature)", "run_count": 2},

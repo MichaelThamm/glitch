@@ -15,11 +15,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
 
-CacheKind = Literal["run", "jobs", "commit", "runs"]
+CacheKind = Literal["run", "jobs", "commit", "runs", "workflows"]
 
 # TTL constants (seconds).
 _TTL_IN_PROGRESS = 3600  # 1 hour for in-flight runs/jobs.
 _TTL_RUNS_LIST = 300  # 5 minutes for run-list pages.
+_TTL_WORKFLOWS = 3600  # 1 hour for the workflow listing (ADR 0010).
 
 
 # --- Envelope ---------------------------------------------------------------
@@ -77,9 +78,28 @@ def key_commit(owner: str, repo: str, sha: str) -> str:
     return f"commit_{owner}_{repo}_{sha}.json"
 
 
-def key_runs(owner: str, repo: str, branch: str, since_iso: str) -> str:
-    """Filename for a run-list page scoped to a branch and ``since`` window."""
-    return f"runs_{owner}_{repo}_{branch}_{since_iso}.json"
+def key_runs(
+    owner: str,
+    repo: str,
+    branch: str,
+    since_iso: str,
+    workflow_id: int | str | None = None,
+) -> str:
+    """Filename for a run-list page scoped to a branch and ``since`` window.
+
+    When ``workflow_id`` is supplied (ADR 0010), the workflow-scoped variant of
+    the endpoint is in use; the key gains a ``_w{workflow_id}`` suffix so the
+    flat-endpoint cache and the per-workflow caches never collide.
+    """
+    base = f"runs_{owner}_{repo}_{branch}_{since_iso}"
+    if workflow_id is not None:
+        base = f"{base}_w{workflow_id}"
+    return f"{base}.json"
+
+
+def key_workflows(owner: str, repo: str) -> str:
+    """Filename for the repo's workflow listing (ADR 0010)."""
+    return f"workflows_{owner}_{repo}.json"
 
 
 # --- TTL policy -------------------------------------------------------------
@@ -106,6 +126,11 @@ def ttl_for_jobs(jobs_payload: dict[str, Any]) -> int | None:
 def ttl_for_runs_list() -> int:
     """Run-list pages always cache for 5 minutes."""
     return _TTL_RUNS_LIST
+
+
+def ttl_for_workflows() -> int:
+    """Workflow listings cache for one hour (ADR 0010)."""
+    return _TTL_WORKFLOWS
 
 
 def ttl_for_commit() -> None:
@@ -200,8 +225,10 @@ __all__ = [
     "key_jobs",
     "key_run",
     "key_runs",
+    "key_workflows",
     "ttl_for_commit",
     "ttl_for_jobs",
     "ttl_for_run",
     "ttl_for_runs_list",
+    "ttl_for_workflows",
 ]

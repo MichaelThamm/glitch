@@ -41,6 +41,9 @@ def render_table(report: DiscoveryReport, console: Console | None = None) -> Non
     """
     console = console if console is not None else Console()
 
+    if report.meta.workflows:
+        console.print(f"Workflows: {', '.join(report.meta.workflows)}")
+
     if report.tests:
         table = Table(show_header=True, header_style="bold")
         table.add_column("Rank", justify="right")

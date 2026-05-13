@@ -94,6 +94,49 @@ def fetch_commits(
     return results
 
 
+def fetch_runs_for_workflows(
+    client: GitHubClient,
+    owner: str,
+    repo: str,
+    workflow_ids: Iterable[int],
+    params: dict[str, Any],
+) -> dict[int, list[dict[str, Any]]]:
+    """Fan out the workflow-scoped runs endpoint per resolved workflow id.
+
+    Per ADR 0010, when ``--workflow`` is supplied we replace the flat
+    ``/actions/runs`` call with one
+    ``GET /repos/{owner}/{repo}/actions/workflows/{id}/runs`` per resolved id.
+    Each call carries the same query params (``branch``, ``created``) and is
+    paginated via ``client.paginate``; pagination stays sequential within a
+    workflow per ADR 0004. Returns a mapping of
+    ``workflow_id -> list of raw run dicts``.
+    """
+    ids = list(workflow_ids)
+    results: dict[int, list[dict[str, Any]]] = {}
+
+    def _fetch_one(workflow_id: int) -> list[dict[str, Any]]:
+        runs: list[dict[str, Any]] = []
+        path = f"/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs"
+        for page in client.paginate(path, params=params):
+            runs.extend(page.json().get("workflow_runs", []))
+        return runs
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_id = {
+            executor.submit(_fetch_one, workflow_id): workflow_id
+            for workflow_id in ids
+        }
+        try:
+            for future in as_completed(future_to_id):
+                workflow_id = future_to_id[future]
+                results[workflow_id] = future.result()
+        except BaseException:
+            executor.shutdown(wait=False, cancel_futures=True)
+            raise
+
+    return results
+
+
 def _fetch_json(client: GitHubClient, path: str) -> Any:
     """Issue a single GET via the shared client and return parsed JSON."""
     return client.get(path).json()
