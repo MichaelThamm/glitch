@@ -17,6 +17,7 @@ import logging
 import os
 import subprocess
 import sys
+import threading
 import time
 from collections.abc import Iterator
 from typing import Any
@@ -121,6 +122,11 @@ class GitHubClient:
         # Track the most recently observed rate-limit headers across requests.
         self._rate_remaining: int | None = None
         self._rate_reset: int | None = None
+        # ADR 0004: the threadpool fan-out shares this client across worker
+        # threads, so check-and-update of the rate-limit state must be
+        # serialised. The lock is taken inside the guard and around header
+        # updates; the actual HTTP call is not held under the lock.
+        self._rate_lock = threading.Lock()
 
     # ------------------------------------------------------------------ public
 
@@ -205,28 +211,34 @@ class GitHubClient:
         remaining = response.headers.get("X-RateLimit-Remaining")
         reset = response.headers.get("X-RateLimit-Reset")
         try:
-            if remaining is not None:
-                self._rate_remaining = int(remaining)
-            if reset is not None:
-                self._rate_reset = int(reset)
+            with self._rate_lock:
+                if remaining is not None:
+                    self._rate_remaining = int(remaining)
+                if reset is not None:
+                    self._rate_reset = int(reset)
         except ValueError:
             # If GitHub ever returns a non-integer header we'd rather ignore
             # it than crash; the guard will simply not trigger.
             logger.debug("ignoring non-integer rate-limit headers: %s / %s", remaining, reset)
 
     def _maybe_sleep_for_rate_limit(self) -> None:
-        if self._rate_remaining is None or self._rate_reset is None:
-            return
-        if self._rate_remaining >= RATE_LIMIT_THRESHOLD:
-            return
-        # +1s of headroom so we wake up just after the window flips.
-        wait_seconds = max(0, self._rate_reset - int(time.time())) + 1
-        print(
-            f"glitch: approaching GitHub rate limit "
-            f"(remaining={self._rate_remaining}); sleeping {wait_seconds}s",
-            file=sys.stderr,
-        )
-        time.sleep(wait_seconds)
+        # Hold the lock for the check-and-decide window so a second thread
+        # can't race past the guard while we're computing the sleep duration.
+        # The `time.sleep` itself is intentionally held under the lock — when
+        # we're throttled, every thread should wait for the same window flip.
+        with self._rate_lock:
+            if self._rate_remaining is None or self._rate_reset is None:
+                return
+            if self._rate_remaining >= RATE_LIMIT_THRESHOLD:
+                return
+            # +1s of headroom so we wake up just after the window flips.
+            wait_seconds = max(0, self._rate_reset - int(time.time())) + 1
+            print(
+                f"glitch: approaching GitHub rate limit "
+                f"(remaining={self._rate_remaining}); sleeping {wait_seconds}s",
+                file=sys.stderr,
+            )
+            time.sleep(wait_seconds)
 
 
 def _next_link(link_header: str | None) -> str | None:
