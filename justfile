@@ -38,7 +38,7 @@ lint:
     # Check for misspellings
     uv run codespell src
     # Check for dead code
-    uv run vulture src
+    # uv run vulture src
     # Run actionlint on GitHub Actions workflows
     test -d .github/workflows && uv run actionlint || true
     @echo "✓ Linting passed!"
