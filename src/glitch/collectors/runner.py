@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING
 
 import typer
 from rich.console import Console
+from rich.logging import RichHandler
 from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn, TimeElapsedColumn
 
 from glitch import __version__
@@ -54,7 +55,23 @@ def run_collectors(
     progress: Progress | None = None
     task: TaskID | None = None
 
+    def _log_collector(name: str, status: str, *, artifacts: int = 0, elapsed: float = 0.0) -> None:
+        msg = f"{name}: {status}"
+        if status == "ok":
+            msg += f" ({artifacts} artifacts, {elapsed:.1f}s)"
+        if console is not None:
+            console.log(msg)
+        else:
+            logger.info(msg)
+
+    rich_handler: RichHandler | None = None
+
     if is_tty:
+        rich_handler = RichHandler(
+            console=console, show_time=False, show_path=False
+        )
+        logging.root.addHandler(rich_handler)
+
         progress = Progress(
             TextColumn("[progress.description]{task.description}"),
             BarColumn(),
@@ -64,15 +81,6 @@ def run_collectors(
         )
         task = progress.add_task("Collecting…", total=len(collector_classes))
         progress.start()
-
-    def _log_collector(name: str, status: str, *, artifacts: int = 0, elapsed: float = 0.0) -> None:
-        msg = f"{name}: {status}"
-        if status == "ok":
-            msg += f" ({artifacts} artifacts, {elapsed:.1f}s)"
-        if console is not None:
-            console.log(msg)
-        else:
-            logger.info(msg)
 
     try:
         for cls in collector_classes:
@@ -124,6 +132,8 @@ def run_collectors(
             if progress is not None and task is not None:
                 progress.advance(task)
     finally:
+        if rich_handler is not None:
+            logging.root.removeHandler(rich_handler)
         if progress is not None:
             progress.stop()
 
