@@ -1,4 +1,4 @@
-# glitch
+# Glitch
 
 Automated CI failure remediation for charm development — turn flaky tests and obscure failures into actionable fixes.
 
