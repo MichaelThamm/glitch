@@ -150,3 +150,19 @@ Team chat for the ADR-relay crew implementing Phase 1 Discovery.
 
 ---
 
+
+## ADR 0009 — Duration string parsing
+
+🏗️ **Edmund**: Added `src/glitch/discover/_duration.py` with `parse_duration(s)` following the ADR's reference shape almost verbatim — a `_UNIT_SECONDS` table for `h`/`d`/`w`, an anchored `^(?P<n>\d+)(?P<u>[hdw])$` regex, and a `ValueError` carrying the exact `"invalid duration: {s!r}. Expected <N><h|d|w>"` message the ADR specifies for the Typer entrypoint to surface as exit-1. The underscore prefix honours ADR 0007's "internal helpers live under `_name.py`" convention; stdlib only, no new deps. One judgment call worth flagging openly: I deliberately did *not* wire `parse_duration` into `_entrypoint.py` — `run()` still raises `NotImplementedError`, and the orchestration that would consume `--since` is a future-ADR concern that ADR 0009 does not itself authorise. Smoke check (`30d` → 30 days, `2w` → 2 weeks) passes; `uv run pytest -q` → `120 passed in 0.28s`, holding the line. Handing to @margaret.
+
+👀 **Margaret**: Walked the file against the ADR and it lines up verbatim — regex `^(?P<n>\d+)(?P<u>[hdw])$` anchored both ends, `_UNIT_SECONDS = {"h": 3600, "d": 86400, "w": 7 * 86400}`, and the `ValueError` message is exactly `f"invalid duration: {s!r}. Expected <N><h|d|w>"` with the `!r` repr preserved. Stdlib only, underscore prefix per ADR 0007, and correctly held back from `_entrypoint.py` — that wiring belongs to a future ADR. Full suite `120 passed in 0.25s`.
+- Praise: resisting the temptation to scaffold `--since` plumbing here keeps ADR 0009 a tight 10-LoC unit; the next ADR inherits a clean seam.
+**APPROVE**
+
+✨ **Whimsy**: ten lines???? thats not an ADR thats a haiku 🥲 regex so anchored it pays rent on both ends 💅
+
+🔌 **Kai**: wrote `tests/test_discover_duration.py` — 18 tests. accepted-forms parametrize: `1h`/`12h`/`30d`/`2w`/`0d`/`100w` → matching `timedelta` (6 cases). rejected-forms parametrize raising `ValueError`: `1.5d`, `30 d`, `1d2h`, `30`, `30days`, `1m`, `1M`, `-1d`, `d`, `""`, `"  30d  "` (11 cases — anchored regex rejects the whitespace one ✅). Plus one error-message shape test on `"30days"` asserting the message contains `"invalid duration"`, `"Expected <N><h|d|w>"`, and the `!r` repr `'30days'`. `uv run pytest tests/test_discover_duration.py -q` → `18 passed in 0.02s`; full suite `uv run pytest -q` → `138 passed in 0.26s`. didn't touch impl, held up clean. **APPROVE**
+
+✨ **Whimsy**: 138 PASSED and a 10-line haiku ADR sealed the WHOLE 9-pack 😭 from `NotImplementedError` raw-dog to client→cache→models→fanout→scoring→recency→layout→tests→duration the edmund-margaret-kai-(whimsy ofc) rhythm went UNBROKEN for nine straight rounds — phase 1 discovery officially in the books bestie 🚀✨
+
+---
